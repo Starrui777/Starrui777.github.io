@@ -15,25 +15,25 @@
 <meta property="og:site_name" content="iiiiiiiiii的博客">
 <meta property="og:description" content="Commit靶机-知识点看">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C1.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C2.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C3.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C4.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C4.5.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C5.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C6.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C7.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C8.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C10.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C11.png">
-<meta property="og:image" content="http://example.com/images%5CCommit%5C12.png">
+<meta property="og:image" content="http://example.com/images/Commit/1.png">
+<meta property="og:image" content="http://example.com/images/Commit/2.png">
+<meta property="og:image" content="http://example.com/images/Commit/3.png">
+<meta property="og:image" content="http://example.com/images/Commit/4.png">
+<meta property="og:image" content="http://example.com/images/Commit/4.5.png">
+<meta property="og:image" content="http://example.com/images/Commit/5.png">
+<meta property="og:image" content="http://example.com/images/Commit/6.png">
+<meta property="og:image" content="http://example.com/images/Commit/7.png">
+<meta property="og:image" content="http://example.com/images/Commit/8.png">
+<meta property="og:image" content="http://example.com/images/Commit/10.png">
+<meta property="og:image" content="http://example.com/images/Commit/11.png">
+<meta property="og:image" content="http://example.com/images/Commit/12.png">
 <meta property="article:published_time" content="2025-05-19T00:23:59.644Z">
-<meta property="article:modified_time" content="2025-05-19T01:20:53.896Z">
+<meta property="article:modified_time" content="2025-05-19T01:23:05.652Z">
 <meta property="article:author" content="Starrui">
 <meta property="article:tag" content="bash_history">
 <meta property="article:tag" content="SSH">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images%5CCommit%5C1.png">
+<meta name="twitter:image" content="http://example.com/images/Commit/1.png">
   
     <link rel="alternative" href="/atom.xml" title="iiiiiiiiii的博客" type="application/atom+xml">
   
@@ -206,34 +206,34 @@
         <h2 id="Commit靶机-知识点看"><a href="#Commit靶机-知识点看" class="headerlink" title="Commit靶机-知识点看"></a>Commit靶机-知识点看</h2><span id="more"></span>
 
 <p>我是懦夫我没做出来</p>
-<h3 id="Nmap扫描发现两个端口开放"><a href="#Nmap扫描发现两个端口开放" class="headerlink" title="Nmap扫描发现两个端口开放"></a>Nmap扫描发现两个端口开放</h3><p><img src="/../images%5CCommit%5C1.png" alt="nmap" title="NMAP扫描"></p>
+<h3 id="Nmap扫描发现两个端口开放"><a href="#Nmap扫描发现两个端口开放" class="headerlink" title="Nmap扫描发现两个端口开放"></a>Nmap扫描发现两个端口开放</h3><p><img src="/../images/Commit/1.png" alt="nmap" title="NMAP扫描"></p>
 <p>同时dirsearch一下</p>
-<p><img src="/../images%5CCommit%5C2.png" alt="dirsearch" title="dirsearch"></p>
+<p><img src="/../images/Commit/2.png" alt="dirsearch" title="dirsearch"></p>
 <p>可以发现有几个目录</p>
 <h3 id="拿到shell权限"><a href="#拿到shell权限" class="headerlink" title="拿到shell权限"></a>拿到shell权限</h3><p>但是我们依次访问或者对登录口做爆破啊 sql注入啊发现没有 这时候可以看看源码（其实一开始就可以看看）</p>
-<p><img src="/../images%5CCommit%5C3.png" alt="view" title="源码"></p>
+<p><img src="/../images/Commit/3.png" alt="view" title="源码"></p>
 <p>通过密码登录login.php</p>
-<p><img src="/../images%5CCommit%5C4.png" alt="view" title="源码"></p>
+<p><img src="/../images/Commit/4.png" alt="view" title="源码"></p>
 <p>但是我测试很久的上传和PING；都不行 因为有一个upload文件夹想到上传后可以包含一下通过源码下面的file参数但是都加载不了</p>
 <p>于是我们先查看一下etc&#x2F;passwd发现可以–但是其他都做不了但是我们得到了一个用户lingmj</p>
-<p><img src="/../images%5CCommit%5C4.5.png" alt="view" title="源码"></p>
+<p><img src="/../images/Commit/4.5.png" alt="view" title="源码"></p>
 <p>这时候就要想到.bash_history了</p>
-<p><img src="/../images%5CCommit%5C5.png" alt="view" title="源码"></p>
-<p>再查看git&#x2F;config<br><img src="/../images%5CCommit%5C6.png" alt="view" title="源码"></p>
+<p><img src="/../images/Commit/5.png" alt="view" title="源码"></p>
+<p>再查看git&#x2F;config<br><img src="/../images/Commit/6.png" alt="view" title="源码"></p>
 <p>拿到一个密码直接登录拿到shell 和userflag</p>
-<p><img src="/../images%5CCommit%5C7.png" alt="view" title="源码"></p>
+<p><img src="/../images/Commit/7.png" alt="view" title="源码"></p>
 <h3 id="拿root"><a href="#拿root" class="headerlink" title="拿root"></a>拿root</h3><p>1:我们可以看看SSH的配置文件因为它改端口了2222了</p>
-<p><img src="/../images%5CCommit%5C8.png" alt="view" title="源码"></p>
+<p><img src="/../images/Commit/8.png" alt="view" title="源码"></p>
 <p>发现有Root密码但是拒绝了SSH登录我们可以本地登录过去</p>
-<p><img src="/../images%5CCommit%5C10.png" alt="view" title="源码"></p>
+<p><img src="/../images/Commit/10.png" alt="view" title="源码"></p>
 <p>2：我们可以翻阅etc下面的passwd- 和shadow-获取信息</p>
 <p>发现passwd我们可以看通过passwd-以前的配置文件发现注释有一个密码 是welcome的</p>
-<p><img src="/../images%5CCommit%5C11.png" alt="view" title="源码"></p>
+<p><img src="/../images/Commit/11.png" alt="view" title="源码"></p>
 <p>登录上去也没啥用</p>
 <h4 id="总结一下我们可以用find来看看新的文件"><a href="#总结一下我们可以用find来看看新的文件" class="headerlink" title="总结一下我们可以用find来看看新的文件"></a>总结一下我们可以用find来看看新的文件</h4><p>find &#x2F; -newer &#x2F;etc&#x2F;passwd  2&gt;a | grep -Pv ‘sys|proc|var|run|share|dev|tmp|git’</p>
 <p><strong><code>-newer /etc/passwd</code></strong> ：比etcpasswd新的</p>
 <p>通过正则过滤掉sys|proc|var|run|share|dev|tmp|git开头 就会发现新的文件</p>
-<p><img src="/../images%5CCommit%5C12.png" alt="view" title="源码"></p>
+<p><img src="/../images/Commit/12.png" alt="view" title="源码"></p>
 <p>多看看一些配置文件对一些东西很敏感比如端口改了你就应该去看看SSH配置文件</p>
 
       
@@ -354,8 +354,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2025/05/17/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我自己的第一篇博客</div>
+    <a href="/2025/05/17/Loweeeeeer%E9%9D%B6%E6%9C%BA--%E5%8C%85%E5%90%AB%E7%9F%A5%E8%AF%86%E7%82%B9SSH-%E9%9A%BE%E5%BA%A6-LOW/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Loower靶机---难度LOW-知识点-SSH观察</div>
       <i class="icon-circle-right"></i>
     </a>
   
