@@ -99,6 +99,11 @@
 					<a class="bilibili" target="_blank" href="https://space.bilibili.com/107029949?spm_id_from=333.1007.0.0" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
 			</div>
+			
+   				<div style="position:absolute; bottom:120px left:auto; width:85%">
+    					  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52" src="//music.163.com/outchain/player?type=2&id=1488847372&auto=0&height=32"></iframe>
+  				 </div>
+     	    
 		</nav>
 	</header>		
 </div>
@@ -194,7 +199,7 @@
         <p>Loower靶机</p>
 <h4 id="包含知识点呃呃呃–SSH"><a href="#包含知识点呃呃呃–SSH" class="headerlink" title="包含知识点呃呃呃–SSH"></a>包含知识点呃呃呃–SSH</h4><span id="more"></span>
 
-<h5 id="1：通过FTP发现了两个用户一个是ftpuser-通过爆破获得密码登录"><a href="#1：通过FTP发现了两个用户一个是ftpuser-通过爆破获得密码登录" class="headerlink" title="1：通过FTP发现了两个用户一个是ftpuser,通过爆破获得密码登录"></a>1：通过FTP发现了两个用户一个是ftpuser,通过爆破获得密码登录</h5><h5 id="2：通过ftpuser进入shell-然后查看welcome-发现有一个-backup-sh"><a href="#2：通过ftpuser进入shell-然后查看welcome-发现有一个-backup-sh" class="headerlink" title="2：通过ftpuser进入shell 然后查看welcome 发现有一个 backup.sh"></a>2：通过ftpuser进入shell 然后查看welcome 发现有一个 backup.sh</h5><h6 id="cat一下发现welcome密码通过john爆破得出密码"><a href="#cat一下发现welcome密码通过john爆破得出密码" class="headerlink" title="cat一下发现welcome密码通过john爆破得出密码"></a>cat一下发现welcome密码通过john爆破得出密码</h6><h5 id="3：然后牛逼的就来了-发现sudo-有一个什么figlet-你会想和cowsay有用吗-但是-零蛋！-直接SSHroot因为什么发现welcome下有SSH目录可能可以直接登录"><a href="#3：然后牛逼的就来了-发现sudo-有一个什么figlet-你会想和cowsay有用吗-但是-零蛋！-直接SSHroot因为什么发现welcome下有SSH目录可能可以直接登录" class="headerlink" title="3：然后牛逼的就来了 发现sudo 有一个什么figlet 你会想和cowsay有用吗 但是.. 零蛋！ 直接SSHroot因为什么发现welcome下有SSH目录可能可以直接登录"></a>3：然后牛逼的就来了 发现sudo 有一个什么figlet 你会想和cowsay有用吗 但是.. 零蛋！ 直接SSHroot因为什么发现welcome下有SSH目录可能可以直接登录</h5><p>welcome&#x2F;.ssh&#x2F;id_rsa <a href="mailto:&#114;&#111;&#111;&#116;&#64;&#x31;&#55;&#50;&#46;&#50;&#x30;&#46;&#49;&#48;&#46;&#x32;">root@172.20.10.2</a> 来登录root 因为包含了welcome的公钥</p>
+<h5 id="1：通过FTP发现了两个用户一个是ftpuser-通过爆破获得密码登录"><a href="#1：通过FTP发现了两个用户一个是ftpuser-通过爆破获得密码登录" class="headerlink" title="1：通过FTP发现了两个用户一个是ftpuser,通过爆破获得密码登录"></a>1：通过FTP发现了两个用户一个是ftpuser,通过爆破获得密码登录</h5><h5 id="2：通过ftpuser进入shell-然后查看welcome-发现有一个-backup-sh"><a href="#2：通过ftpuser进入shell-然后查看welcome-发现有一个-backup-sh" class="headerlink" title="2：通过ftpuser进入shell 然后查看welcome 发现有一个 backup.sh"></a>2：通过ftpuser进入shell 然后查看welcome 发现有一个 backup.sh</h5><h6 id="cat一下发现welcome密码通过john爆破得出密码"><a href="#cat一下发现welcome密码通过john爆破得出密码" class="headerlink" title="cat一下发现welcome密码通过john爆破得出密码"></a>cat一下发现welcome密码通过john爆破得出密码</h6><h5 id="3：然后牛逼的就来了-发现sudo-有一个什么figlet-你会想和cowsay有用吗-但是-零蛋！-直接SSHroot因为什么发现welcome下有SSH目录可能可以直接登录"><a href="#3：然后牛逼的就来了-发现sudo-有一个什么figlet-你会想和cowsay有用吗-但是-零蛋！-直接SSHroot因为什么发现welcome下有SSH目录可能可以直接登录" class="headerlink" title="3：然后牛逼的就来了 发现sudo 有一个什么figlet 你会想和cowsay有用吗 但是.. 零蛋！ 直接SSHroot因为什么发现welcome下有SSH目录可能可以直接登录"></a>3：然后牛逼的就来了 发现sudo 有一个什么figlet 你会想和cowsay有用吗 但是.. 零蛋！ 直接SSHroot因为什么发现welcome下有SSH目录可能可以直接登录</h5><p>welcome&#x2F;.ssh&#x2F;id_rsa <a href="mailto:&#114;&#111;&#x6f;&#116;&#x40;&#49;&#x37;&#50;&#46;&#50;&#x30;&#x2e;&#49;&#48;&#46;&#x32;">root@172.20.10.2</a> 来登录root 因为包含了welcome的公钥</p>
 <p><img src="/../images/1.jpg" alt="测试下图片加载" title="测试图片加载"></p>
 <h4 id="谢谢观看"><a href="#谢谢观看" class="headerlink" title="谢谢观看"></a>谢谢观看</h4>
       
@@ -310,20 +315,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2025/05/19/Commit%E9%9D%B6%E6%9C%BA---%E9%9A%BE%E5%BA%A6LOW-%E7%9F%A5%E8%AF%86%E7%82%B9-bash_history/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2025/05/17/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Commit靶机---难度LOW-知识点-bash_history
+          我自己的第一篇博客
         
       </div>
     </a>
   
-  
-    <a href="/2025/05/17/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我自己的第一篇博客</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
