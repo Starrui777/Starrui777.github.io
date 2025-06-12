@@ -6,31 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>observe靶机---难度low知识点-fuzz-ln | iiiiiiiiii的博客</title>
+  <title>Locker靶机---难度easy知识点-分号截断,Sulogin | iiiiiiiiii的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="observe靶机—难度low知识点-fuzz">
+  <meta name="description" content="Locker靶机—难度easy知识点-分号截断,Sulogin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="observe靶机---难度low知识点-fuzz-ln">
-<meta property="og:url" content="http://example.com/2025/06/11/Observer/index.html">
+<meta property="og:title" content="Locker靶机---难度easy知识点-分号截断,Sulogin">
+<meta property="og:url" content="http://example.com/2025/06/12/Locker/index.html">
 <meta property="og:site_name" content="iiiiiiiiii的博客">
-<meta property="og:description" content="observe靶机—难度low知识点-fuzz">
+<meta property="og:description" content="Locker靶机—难度easy知识点-分号截断,Sulogin">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/observe/nmap.png">
-<meta property="og:image" content="http://example.com/images/observe/web.png">
-<meta property="og:image" content="http://example.com/images/observe/fuzz.png">
-<meta property="og:image" content="http://example.com/images/observe/history.png">
-<meta property="og:image" content="http://example.com/images/observe/ssh.png">
-<meta property="og:image" content="http://example.com/images/observe/sudo.png">
-<meta property="og:image" content="http://example.com/images/observe/ln.png">
-<meta property="og:image" content="http://example.com/images/observe/pass.png">
-<meta property="og:image" content="http://example.com/images/observe/root.png">
-<meta property="article:published_time" content="2025-06-11T15:43:05.034Z">
-<meta property="article:modified_time" content="2025-06-12T15:13:47.461Z">
+<meta property="og:image" content="http://example.com/images/Locker/nmap.png">
+<meta property="og:image" content="http://example.com/images/Locker/web1.png">
+<meta property="og:image" content="http://example.com/images/Locker/web2.png">
+<meta property="og:image" content="http://example.com/images/Locker/2.png">
+<meta property="og:image" content="http://example.com/images/Locker/1.png">
+<meta property="og:image" content="http://example.com/images/Locker/root3.png">
+<meta property="og:image" content="http://example.com/images/Locker/shell2.png">
+<meta property="article:published_time" content="2025-06-12T15:12:27.489Z">
+<meta property="article:modified_time" content="2025-06-12T15:50:00.416Z">
 <meta property="article:author" content="Starrui">
-<meta property="article:tag" content="fuzz">
-<meta property="article:tag" content="ln">
+<meta property="article:tag" content="Sulogin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/observe/nmap.png">
+<meta name="twitter:image" content="http://example.com/images/Locker/nmap.png">
   
     <link rel="alternative" href="/atom.xml" title="iiiiiiiiii的博客" type="application/atom+xml">
   
@@ -177,20 +174,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Observer" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Locker" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      observe靶机---难度low知识点-fuzz-ln
+      Locker靶机---难度easy知识点-分号截断,Sulogin
     </h1>
   
 
         
-        <a href="/2025/06/11/Observer/" class="archive-article-date">
-  	<time datetime="2025-06-11T15:43:05.034Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-06-11</time>
+        <a href="/2025/06/12/Locker/" class="archive-article-date">
+  	<time datetime="2025-06-12T15:12:27.489Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-06-12</time>
 </a>
         
         
@@ -200,33 +197,70 @@
         
       </header>
       <div align="center" class="post-count">
-       字数：249字 | 预计阅读时长：1分钟
+       字数：620字 | 预计阅读时长：2分钟
      </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="observe靶机—难度low知识点-fuzz"><a href="#observe靶机—难度low知识点-fuzz" class="headerlink" title="observe靶机—难度low知识点-fuzz"></a>observe靶机—难度low知识点-fuzz</h2><span id="more"></span>
+        <h2 id="Locker靶机—难度easy知识点-分号截断-Sulogin"><a href="#Locker靶机—难度easy知识点-分号截断-Sulogin" class="headerlink" title="Locker靶机—难度easy知识点-分号截断,Sulogin"></a>Locker靶机—难度easy知识点-分号截断,Sulogin</h2><span id="more"></span> 
 
-<p>只做了WEB 后面linux的苦手了</p>
-<h3 id="Nmap扫描发现端口开放"><a href="#Nmap扫描发现端口开放" class="headerlink" title="Nmap扫描发现端口开放"></a>Nmap扫描发现端口开放</h3><p>3333端口和一个SSH我们上去网页</p>
-<p><img src="/../images/observe/nmap.png" alt="nmap" title="NMAP扫描"></p>
-<p>这里发现我们输入什么他就显示什么比如你输入123就在home的123 可以试试看目录穿越但是没出来 我们得到了一个思路 爆破用户名呗</p>
-<p><img src="/../images/observe/web.png" alt="nmap" title="NMAP扫描"></p>
-<p>我们使用FUZZ来爆破下用户名 后缀就写.bash_history    用户名jan</p>
-<p>wfuzz -w &#x2F;usr&#x2F;share&#x2F;zidian&#x2F;SecLists-2023.2&#x2F;Usernames&#x2F;xato-net-10-million-usernames.txt -u <a target="_blank" rel="noopener" href="http://172.20.10.2:3333/FUZZ/.bash_history">http://172.20.10.2:3333/FUZZ/.bash_history</a>  –hw 8</p>
-<p><img src="/../images/observe/fuzz.png" alt="nmap" title="NMAP扫描"></p>
-<p>网页查看下</p>
-<p><img src="/../images/observe/history.png" alt="nmap" title="NMAP扫描"></p>
-<p>然后读下ssh的公钥我们直接登录</p>
-<p><img src="/../images/observe/ssh.png" alt="nmap" title="NMAP扫描"></p>
-<h3 id="拿到shell权限"><a href="#拿到shell权限" class="headerlink" title="拿到shell权限"></a>拿到shell权限</h3><p><img src="/../images/observe/sudo.png" alt="nmap" title="NMAP扫描"></p>
-<p>这里有一个systemctl 但是我没法提权后面看WP了 </p>
-<h3 id="拿root"><a href="#拿root" class="headerlink" title="拿root"></a>拿root</h3><p>这里有一个ROOT进程的observe进程  我们的那个网页就是用root运行的 我们可以直接用网页来读取</p>
-<p><img src="/../images/observe/ln.png" alt="nmap" title="NMAP扫描"></p>
-<p><img src="/../images/observe/pass.png" alt="nmap" title="NMAP扫描"></p>
-<p><img src="/../images/observe/root.png" alt="nmap" title="NMAP扫描"></p>
-<h4 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h4><p>1：多看看进程</p>
-<p>2：软连接命令  ln -sv &#x2F;root xxoo</p>
+<h3 id="Nmap扫描发现端口开放"><a href="#Nmap扫描发现端口开放" class="headerlink" title="Nmap扫描发现端口开放"></a>Nmap扫描发现端口开放</h3><p><img src="/../images/Locker/nmap.png" alt="nmap" title="NMAP扫描"></p>
+<p>我们访问发现一个</p>
+<p><img src="/../images/Locker/web1.png" alt="nmap" title="NMAP扫描"></p>
+<p>这里穿越啊 注入啊 包含 都不行 </p>
+<p><img src="/../images/Locker/web2.png" alt="nmap" title="NMAP扫描"></p>
+<p>结果使用分号截断</p>
+<p><img src="/../images/Locker/2.png" alt="nmap" title="NMAP扫描"></p>
+<p>所以平时多用分号没问题  </p>
+<h3 id="拿到shell权限"><a href="#拿到shell权限" class="headerlink" title="拿到shell权限"></a>拿到shell权限</h3><p>我们到web权限查看发现一个sulogin</p>
+<p><img src="/../images/Locker/1.png" alt="nmap" title="NMAP扫描"></p>
+<p>sulogin:  用于 <strong>单用户模式下获取 root 权限</strong> 如  </p>
+<ul>
+<li>系统故障修复（如忘记 root 密码时重置密码）。</li>
+<li>维护模式下执行特权操作（需通过安全验证）。</li>
+</ul>
+<p>它可以直接读取环境变量里面的值  </p>
+<p>例如：<code>export SUSHELL=/tmp/恶意程序 &amp;&amp; sulogin</code> 会直接执行 <code>/tmp/恶意程序</code>。</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>环境变量依赖</th>
+<th>执行逻辑</th>
+<th>安全设计目的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sulogin</code></td>
+<td>仅依赖 自定义变量</td>
+<td>直接执行指定路径的程序</td>
+<td>避免被 PATH 注入恶意程序</td>
+</tr>
+<tr>
+<td><code>cat</code> 等命令</td>
+<td>依赖 PATH</td>
+<td>按 PATH 顺序搜索可执行文件</td>
+<td>提供用户自定义路径的灵活性</td>
+</tr>
+</tbody></table>
+<h3 id="拿root"><a href="#拿root" class="headerlink" title="拿root"></a>拿root</h3><p>我们用老版本的C语言编写一个设置系统命令的代码</p>
+<p><img src="/../images/Locker/root3.png" alt="nmap" title="NMAP扫描"></p>
+<p>为什么要建立C文件</p>
+<ul>
+<li><strong>区别</strong>：C 程序通过 <code>setuid(0)</code> 直接修改进程权限，而 Shell 脚本依赖外部机制（如 SUID 权限）间接提权。</li>
+</ul>
+<p>我们WGET下来添加X 后 记得导入环境变量SUSHELL是我自定义的变量他会优秀读取后读&#x2F;etc&#x2F;passwd的root</p>
+<p><img src="/../images/Locker/shell2.png" alt="nmap" title="NMAP扫描"></p>
+<h4 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h4><p>1：多用用；截断</p>
+<p>2：sulogin<code>是 Linux 系统中专门用于单用户模式的登录程序，路径为</code>&#x2F;sbin&#x2F;sulogin<code>。当系统进入单用户模式时，会自动调用 </code>sulogin&#96;，要求用户输入 root 密码（部分旧系统可直接进入）。  这靶机把root锁定了不能SU ROOT 感叹号可以把root锁定在&#x2F;etc&#x2F;shadow里面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root:!:18649:0:99999:7:::  # 表示 root 被锁定</span><br></pre></td></tr></table></figure>
+
+<p>本身可以-e 获得权限可能被锁定了就不行</p>
+<p>SUSHELL是sulogin调用的另一个环境变量 手动指定就行</p>
+<p>3：单用户模式是操作系统的一种特殊启动状态，<strong>仅允许一个超级用户（root）登录系统</strong>，且不加载网络服务、图形界面等非必要组件</p>
+<p>4：sulogin 和 path 的区别 </p>
+<p>​	4.1sulogin 会执行你的命令    安全风险- 依赖 PATH 可能引入路径遍历风险</p>
+<p>​	4.2path会找命令的程序找到就执行 比如 CAT他就会在如BIN里面找   安全风险 - 环境变量修改</p>
 
       
 
@@ -271,11 +305,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">fuzz</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ln</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Sulogin</a>
         		</li>
       		
 		</ul>
@@ -331,7 +361,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/06/11/Observer/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/06/12/Locker/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -345,18 +375,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2025/06/12/vulny/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vulny靶机---难度easy知识点-file-manager
-        
-      </div>
-    </a>
   
-  
-    <a href="/2025/06/03/flower/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flower靶机---难度low知识点-base64-py</div>
+    <a href="/2025/06/12/vulny/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vulny靶机---难度easy知识点-file-manager</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -383,7 +404,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#observe%E9%9D%B6%E6%9C%BA%E2%80%94%E9%9A%BE%E5%BA%A6low%E7%9F%A5%E8%AF%86%E7%82%B9-fuzz"><span class="toc-number">1.</span> <span class="toc-text">observe靶机—难度low知识点-fuzz</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nmap%E6%89%AB%E6%8F%8F%E5%8F%91%E7%8E%B0%E7%AB%AF%E5%8F%A3%E5%BC%80%E6%94%BE"><span class="toc-number">1.1.</span> <span class="toc-text">Nmap扫描发现端口开放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%BF%E5%88%B0shell%E6%9D%83%E9%99%90"><span class="toc-number">1.2.</span> <span class="toc-text">拿到shell权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%BFroot"><span class="toc-number">1.3.</span> <span class="toc-text">拿root</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">总结一下</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Locker%E9%9D%B6%E6%9C%BA%E2%80%94%E9%9A%BE%E5%BA%A6easy%E7%9F%A5%E8%AF%86%E7%82%B9-%E5%88%86%E5%8F%B7%E6%88%AA%E6%96%AD-Sulogin"><span class="toc-number">1.</span> <span class="toc-text">Locker靶机—难度easy知识点-分号截断,Sulogin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nmap%E6%89%AB%E6%8F%8F%E5%8F%91%E7%8E%B0%E7%AB%AF%E5%8F%A3%E5%BC%80%E6%94%BE"><span class="toc-number">1.1.</span> <span class="toc-text">Nmap扫描发现端口开放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%BF%E5%88%B0shell%E6%9D%83%E9%99%90"><span class="toc-number">1.2.</span> <span class="toc-text">拿到shell权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%BFroot"><span class="toc-number">1.3.</span> <span class="toc-text">拿root</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">总结一下</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
