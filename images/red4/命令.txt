@@ -52,3 +52,9 @@ git clone https://github.com/scumjr/dirtycow-vdso.git
 本地编译
 make
 wget 下载
+
+
+
+sudo apt-get install libqt5webenginewidgets5 libqt5websockets5
+sudo apt-get install nasm mingw-w64 
+yum install libqt5webenginewidgets5 libqt5websockets5
