@@ -33,9 +33,10 @@
 <meta property="og:image" content="http://example.com/images/oss/18.png">
 <meta property="og:image" content="http://example.com/images/oss/15.png">
 <meta property="og:image" content="http://example.com/images/oss/16.png">
+<meta property="og:image" content="http://example.com/images/oss/20.png">
 <meta property="og:image" content="http://example.com/images/oss/19.png">
 <meta property="article:published_time" content="2025-08-14T02:12:34.336Z">
-<meta property="article:modified_time" content="2025-08-14T03:32:23.239Z">
+<meta property="article:modified_time" content="2025-08-14T03:36:28.267Z">
 <meta property="article:author" content="Starrui">
 <meta property="article:tag" content="oss">
 <meta name="twitter:card" content="summary">
@@ -287,6 +288,7 @@ OSSFileBrowse-1.0-SNAPSHOT-工具查看内容
 <p><img src="/../images/oss/16.png" alt="nmap" title="NMAP扫描"></p>
 <h3 id="OSS-域名接管"><a href="#OSS-域名接管" class="headerlink" title="OSS-域名接管"></a>OSS-域名接管</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">原理如下：</span><br><span class="line"></span><br><span class="line">比如你的网站</span><br><span class="line"></span><br><span class="line">ameti14.oss-cn-beijing.aliyuncs.com/ -&gt; 绑定域名 ti14cham.sec.cloud 上去</span><br><span class="line"></span><br><span class="line">然后你没用了你把这个ameti14.oss-cn-beijing.aliyuncs.com桶删除了X 但是注意你的域名还在和你的桶绑定</span><br><span class="line"></span><br><span class="line">而你的桶因为释放了别人就可以创建同一地区，同一名字实现接管域名  当你访问那个域名后会泄露本身的如alixx地址所以你知道可以地区域名接管</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<p><img src="/../images/oss/20.png" alt="nmap" title="NMAP扫描"></p>
 <h3 id="AKSK泄露接管"><a href="#AKSK泄露接管" class="headerlink" title="AKSK泄露接管"></a>AKSK泄露接管</h3><p>根据AKSK权限区分控制OSS或者账号全部资产</p>
 <p>下面是官方工具需要AKSK登录</p>
 <p><img src="/../images/oss/19.png" alt="nmap" title="NMAP扫描"></p>
@@ -564,15 +566,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">APP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">App</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,6 +587,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">weblogic</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">App</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,6 +646,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Sulogin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">fuzz</a>
               </li>
              
@@ -652,31 +658,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Sulogin</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">websocket</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">portswigger</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vshell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ms-17-010永恒之蓝smb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">内网</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,6 +690,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vshell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ms-17-010永恒之蓝smb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">内网</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Agent</a>
               </li>
              
@@ -720,19 +722,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">smb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">creatab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">tftp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">smb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -752,11 +750,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">分号截断</a>
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -768,11 +766,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">nps</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nuclei</a>
+                <a href="javascript:void(0)" class="js-tag color5">分号截断</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -784,11 +778,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AVWS</a>
+                <a href="javascript:void(0)" class="js-tag color4">nps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nuclei</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">oss</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AVWS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -824,15 +826,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sqlmap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">TOTP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sqlmap</a>
               </li>
             
             <div class="clearfix"></div>
