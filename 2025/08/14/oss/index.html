@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>云上服务-OSS存储桶渗透 | iiiiiiiiii的博客</title>
+  <title>云上服务-OSS存储桶渗透-AKSK两种利用特征 | iiiiiiiiii的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="云上服务-OSS存储桶渗透">
+  <meta name="description" content="云上服务-OSS存储桶渗透-AKSK两种利用特征-ECS元数据横向移动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="云上服务-OSS存储桶渗透">
+<meta property="og:title" content="云上服务-OSS存储桶渗透-AKSK两种利用特征">
 <meta property="og:url" content="http://example.com/2025/08/14/oss/index.html">
 <meta property="og:site_name" content="iiiiiiiiii的博客">
-<meta property="og:description" content="云上服务-OSS存储桶渗透">
+<meta property="og:description" content="云上服务-OSS存储桶渗透-AKSK两种利用特征-ECS元数据横向移动">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/oss/1.png">
 <meta property="og:image" content="http://example.com/images/oss/2.png">
@@ -34,11 +34,23 @@
 <meta property="og:image" content="http://example.com/images/oss/15.png">
 <meta property="og:image" content="http://example.com/images/oss/16.png">
 <meta property="og:image" content="http://example.com/images/oss/20.png">
+<meta property="og:image" content="http://example.com/images/oss/21.png">
+<meta property="og:image" content="http://example.com/images/oss/22.png">
+<meta property="og:image" content="http://example.com/images/oss/24.png">
+<meta property="og:image" content="http://example.com/images/oss/23.png">
+<meta property="og:image" content="http://example.com/images/oss/25.png">
+<meta property="og:image" content="http://example.com/images/oss/26.png">
 <meta property="og:image" content="http://example.com/images/oss/19.png">
+<meta property="og:image" content="http://example.com/images/oss/27.png">
+<meta property="og:image" content="http://example.com/images/oss/28.png">
+<meta property="og:image" content="http://example.com/images/oss/29.png">
+<meta property="og:image" content="http://example.com/images/oss/30.png">
+<meta property="og:image" content="http://example.com/images/oss/31.png">
 <meta property="article:published_time" content="2025-08-14T02:12:34.336Z">
-<meta property="article:modified_time" content="2025-08-14T03:36:28.267Z">
+<meta property="article:modified_time" content="2025-08-16T05:35:27.932Z">
 <meta property="article:author" content="Starrui">
 <meta property="article:tag" content="oss">
+<meta property="article:tag" content="aksk">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/oss/1.png">
   
@@ -106,7 +118,7 @@
    				 总文章数 48
 		</nav>
 		<nav>
-				总字数 <span class="post-count">23.1k</span>
+				总字数 <span class="post-count">24.2k</span>
 		</nav>
 		<nav class="header-nav">
 			<div class="social">
@@ -194,7 +206,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      云上服务-OSS存储桶渗透
+      云上服务-OSS存储桶渗透-AKSK两种利用特征
     </h1>
   
 
@@ -210,14 +222,14 @@
         
       </header>
       <div align="center" class="post-count">
-       字数：756字 | 预计阅读时长：2分钟
+       字数：1.8k字 | 预计阅读时长：7分钟
      </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="云上服务-OSS存储桶渗透"><a href="#云上服务-OSS存储桶渗透" class="headerlink" title="云上服务-OSS存储桶渗透"></a>云上服务-OSS存储桶渗透</h2><span id="more"></span> 
+        <h2 id="云上服务-OSS存储桶渗透-AKSK两种利用特征-ECS元数据横向移动"><a href="#云上服务-OSS存储桶渗透-AKSK两种利用特征-ECS元数据横向移动" class="headerlink" title="云上服务-OSS存储桶渗透-AKSK两种利用特征-ECS元数据横向移动"></a>云上服务-OSS存储桶渗透-AKSK两种利用特征-ECS元数据横向移动</h2><span id="more"></span> 
 
-<h3 id="OSS介绍"><a href="#OSS介绍" class="headerlink" title="OSS介绍"></a>OSS介绍</h3><p>特别提示访问阿里云不要开启抓包可能会封号</p>
+<h2 id="OSS"><a href="#OSS" class="headerlink" title="OSS"></a>OSS</h2><h3 id="OSS介绍"><a href="#OSS介绍" class="headerlink" title="OSS介绍"></a>OSS介绍</h3><p>特别提示访问阿里云不要开启抓包可能会封号</p>
 <pre><code>各个云厂商对云服务的叫法都不统一，这里统一以AWS为例。
 S3 对象存储Simple Storage Service，
 简单的说就是一个类似网盘的东西
@@ -289,9 +301,43 @@ OSSFileBrowse-1.0-SNAPSHOT-工具查看内容
 <h3 id="OSS-域名接管"><a href="#OSS-域名接管" class="headerlink" title="OSS-域名接管"></a>OSS-域名接管</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">原理如下：</span><br><span class="line"></span><br><span class="line">比如你的网站</span><br><span class="line"></span><br><span class="line">ameti14.oss-cn-beijing.aliyuncs.com/ -&gt; 绑定域名 ti14cham.sec.cloud 上去</span><br><span class="line"></span><br><span class="line">然后你没用了你把这个ameti14.oss-cn-beijing.aliyuncs.com桶删除了X 但是注意你的域名还在和你的桶绑定</span><br><span class="line"></span><br><span class="line">而你的桶因为释放了别人就可以创建同一地区，同一名字实现接管域名  当你访问那个域名后会泄露本身的如alixx地址所以你知道可以地区域名接管</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><img src="/../images/oss/20.png" alt="nmap" title="NMAP扫描"></p>
-<h3 id="AKSK泄露接管"><a href="#AKSK泄露接管" class="headerlink" title="AKSK泄露接管"></a>AKSK泄露接管</h3><p>根据AKSK权限区分控制OSS或者账号全部资产</p>
+<h2 id="AKSK泄露接管"><a href="#AKSK泄露接管" class="headerlink" title="AKSK泄露接管"></a>AKSK泄露接管</h2><p>AKSK不同厂商特征</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">怎么得到AKSK：</span><br><span class="line">1：JS泄露</span><br><span class="line">2：APP反编译泄露</span><br><span class="line">3：拿到shell了翻文件</span><br><span class="line">4：源码泄露</span><br><span class="line"></span><br><span class="line">Ak/SK特征识别：</span><br><span class="line"></span><br><span class="line">亚马逊云 (Amazon Web Services, AWS)的开头标识一般是&quot;AKIA&quot;</span><br><span class="line"></span><br><span class="line">Google云 Cloud Platform (GCP)的 开头标识一般是 &quot;GOOG&quot;</span><br><span class="line"></span><br><span class="line">Microsoft Azure 的 Access Key 开头标识一般是 &quot;AZ&quot;</span><br><span class="line"></span><br><span class="line">IBM 云 (IBM Cloud) 的 Access Key 开头标识一般是 &quot;IBM&quot;</span><br><span class="line"></span><br><span class="line">Oracle云 (Oracle Cloud) 的 Access Key 开头标识一般是 &quot;OCID&quot;</span><br><span class="line"></span><br><span class="line">腾讯云 (Tencent Cloud)的Access Key开头标识一般是 &quot;AKID&quot;</span><br><span class="line"></span><br><span class="line">阿里云 (Alibaba Cloud)的Access Key开头标识一般是 &quot;LTAI&quot;</span><br><span class="line"></span><br><span class="line">华为云 (Huawei Cloud)的 Access Key是20个随机大写字母和数字组成</span><br><span class="line"></span><br><span class="line">百度云 (Baidu Cloud) 的 Access Key开头标识一般是 &quot;AK&quot;</span><br><span class="line"></span><br><span class="line">京东云 (JD Cloud)的Access Key开头标识一般是 &quot;JDC_&quot;</span><br><span class="line"></span><br><span class="line">联通云 (China Unicom Cloud)的Access Key开头标识一般是 &quot;LTC&quot;</span><br><span class="line"></span><br><span class="line">移动云 (China Mobile Cloud)的Access Key开头标识一般是 &quot;YD&quot;</span><br><span class="line"></span><br><span class="line">中国电信云 (China Telecom Cloud)的开头标识一般是 &quot;CTC&quot;</span><br><span class="line"></span><br><span class="line">参考：https://wiki.teamssix.com/CloudService/more/</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Ram用户权限-AKSK"><a href="#Ram用户权限-AKSK" class="headerlink" title="Ram用户权限-AKSK"></a>Ram用户权限-AKSK</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RAM账号就是分配用户给他们用户可以用这个来登录阿里云，而这个用户有相应的AK和SK，不同用户权限由用户分配</span><br><span class="line"></span><br><span class="line">通过RAM控制台创建用户会生成对应的AKSK</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/oss/21.png" alt="nmap" title="NMAP扫描"></p>
+<p>生成后记得复制不然看不了</p>
+<p><img src="/../images/oss/22.png" alt="nmap" title="NMAP扫描"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">这里账号密码可以用户ram登录 AKSK用户调用</span><br><span class="line"></span><br><span class="line">https://signin.aliyun.com RAM用户登录网址</span><br><span class="line"></span><br><span class="line">使用工具云资产管理工具图形化界面</span><br><span class="line"></span><br><span class="line">https://github.com/wgpsec/lc</span><br><span class="line"></span><br><span class="line">https://github.com/wgpsec/cloudsword</span><br><span class="line"></span><br><span class="line">https://github.com/dark-kingA/cloudTools</span><br><span class="line"></span><br><span class="line">https://github.com/iiiusky/alicloud-tools</span><br><span class="line"></span><br><span class="line">这里我们输入AKSK但是还是不行因为用户也是有授权的</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/oss/24.png" alt="nmap" title="NMAP扫描"></p>
+<p>当你给了这些全部权限后</p>
+<p><img src="/../images/oss/23.png" alt="nmap" title="NMAP扫描"></p>
+<p>成功识别当前账号的ECS 你可以点击接管会自动创建一个RAM用户进行点击RAM登录上去账户</p>
+<p><img src="/../images/oss/25.png" alt="nmap" title="NMAP扫描"></p>
+<p><img src="/../images/oss/26.png" alt="nmap" title="NMAP扫描"></p>
+<p>所以AKSK是要看运气的看权限的不然也没啥用</p>
+<p>根据AKSK权限区分控制OSS或者账号全部资产</p>
 <p>下面是官方工具需要AKSK登录</p>
 <p><img src="/../images/oss/19.png" alt="nmap" title="NMAP扫描"></p>
+<h4 id="云账户下面的AKSK"><a href="#云账户下面的AKSK" class="headerlink" title="云账户下面的AKSK"></a>云账户下面的AKSK</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可以看到我们用户下面本来就有AKSK</span><br><span class="line"></span><br><span class="line">云账号的AKSK默认就是绑定云账户，云账号什么权限他就是什么权限不需要额外设置  一种ram是下面分支而云账号的AKSK是他的载体</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/oss/27.png" alt="nmap" title="NMAP扫描"></p>
+<p><img src="/../images/oss/28.png" alt="nmap" title="NMAP扫描"></p>
+<p>生成后它不需要设置什么权限-只要你账户有OSS他就可以看有ECS他就可以看，并且可以生成RAM用户</p>
+<h2 id="ECS-元数据"><a href="#ECS-元数据" class="headerlink" title="ECS-元数据"></a>ECS-元数据</h2><h3 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h3><p>实例元数据是指实例ID、VPC信息、网卡信息等实例属性信息，支持在ECS实例内部通过访问元数据服务（Metadata Service）获取。<br>通过该获取方式，您无需登录控制台或调用API，在实例内部即可访问实例信息，可以更便捷、安全地配置或管理正在运行的实例或实例上的程序。</p>
+<p>阿里云元数据地址：<a target="_blank" rel="noopener" href="http://100.100.100.200/">http://100.100.100.200/</a><br>腾讯云元数据地址：<a target="_blank" rel="noopener" href="http://metadata.tencentyun.com/">http://metadata.tencentyun.com/</a><br>华为云元数据地址：<a target="_blank" rel="noopener" href="http://169.254.169.254/">http://169.254.169.254/</a><br>亚马云元数据地址：<a target="_blank" rel="noopener" href="http://169.254.169.254/">http://169.254.169.254/</a><br>微软云元数据地址：<a target="_blank" rel="noopener" href="http://169.254.169.254/">http://169.254.169.254/</a><br>谷歌云元数据地址：<a target="_blank" rel="noopener" href="http://metadata.google.internal/">http://metadata.google.internal/</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1、前提条件：</span><br><span class="line">-弹性计算配置访问控制角色</span><br><span class="line">-SSRF漏洞或已取得某云服务器权限（webshell或漏洞rce可以访问触发URL）</span><br><span class="line">RAM用户不同，RAM角色没有永久身份凭证（登录密码或访问密钥），需要被一个可信实体扮演 分配角色到ECS上面</span><br><span class="line"></span><br><span class="line">获取关键信息</span><br><span class="line"></span><br><span class="line">http://100.100.100.200/latest/meta-data/</span><br><span class="line"></span><br><span class="line">http://100.100.100.200/latest/meta-data/ram/security-credentials/   获得用户</span><br><span class="line"></span><br><span class="line">获取临时凭证</span><br><span class="line"></span><br><span class="line">http://100.100.100.200/latest/meta-data/ram/security-credentials/xxxxxx   访问后获得AKSK以及TOKEN然后使用云管理工具连接</span><br><span class="line"></span><br><span class="line">利用条件：SSRF，或者得到SHELL</span><br><span class="line"></span><br><span class="line">所以条件下:横向移动</span><br><span class="line">1：你拿到权限里面是ROOT你可以直接访问对应有没有用户获得AKSK如果对方AKSK权限大进而扩大战果</span><br><span class="line">2：可以利用SSRF获得AKSK</span><br></pre></td></tr></table></figure>
+
+<h3 id="基础利用"><a href="#基础利用" class="headerlink" title="基础利用"></a>基础利用</h3><p>授予角色</p>
+<p><img src="/../images/oss/29.png" alt="nmap" title="NMAP扫描"></p>
+<p>访问对应的元数据获得用户然后访问用户得到AKSK放入利用工具利用</p>
+<p><img src="/../images/oss/30.png" alt="nmap" title="NMAP扫描"></p>
+<p>一旦收回就显示404了</p>
+<p><img src="/../images/oss/31.png" alt="nmap" title="NMAP扫描"></p>
 
       
 
@@ -337,6 +383,10 @@ OSSFileBrowse-1.0-SNAPSHOT-工具查看内容
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">oss</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">aksk</a>
         		</li>
       		
 		</ul>
@@ -435,7 +485,7 @@ OSSFileBrowse-1.0-SNAPSHOT-工具查看内容
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E4%B8%8A%E6%9C%8D%E5%8A%A1-OSS%E5%AD%98%E5%82%A8%E6%A1%B6%E6%B8%97%E9%80%8F"><span class="toc-number">1.</span> <span class="toc-text">云上服务-OSS存储桶渗透</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OSS%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">OSS介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAOSS%E6%A1%B6"><span class="toc-number">1.2.</span> <span class="toc-text">创建OSS桶</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E5%BC%80%E8%AF%BB%E5%8F%96-%E9%9C%80%E8%A6%81%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">1.2.1.</span> <span class="toc-text">公开读取-需要文件名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E5%BC%80%E4%B8%8A%E4%BC%A0-%E4%BB%BB%E6%84%8F%E4%B8%8A%E4%BC%A0"><span class="toc-number">1.2.2.</span> <span class="toc-text">公开上传-任意上传</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSS-%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86"><span class="toc-number">1.3.</span> <span class="toc-text">OSS-目录遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSS-%E4%BB%BB%E6%84%8F%E4%BF%AE%E6%94%B9%E7%AD%96%E7%95%A5"><span class="toc-number">1.4.</span> <span class="toc-text">OSS-任意修改策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSS-%E5%9F%9F%E5%90%8D%E6%8E%A5%E7%AE%A1"><span class="toc-number">1.5.</span> <span class="toc-text">OSS-域名接管</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AKSK%E6%B3%84%E9%9C%B2%E6%8E%A5%E7%AE%A1"><span class="toc-number">1.6.</span> <span class="toc-text">AKSK泄露接管</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E4%B8%8A%E6%9C%8D%E5%8A%A1-OSS%E5%AD%98%E5%82%A8%E6%A1%B6%E6%B8%97%E9%80%8F-AKSK%E4%B8%A4%E7%A7%8D%E5%88%A9%E7%94%A8%E7%89%B9%E5%BE%81-ECS%E5%85%83%E6%95%B0%E6%8D%AE%E6%A8%AA%E5%90%91%E7%A7%BB%E5%8A%A8"><span class="toc-number">1.</span> <span class="toc-text">云上服务-OSS存储桶渗透-AKSK两种利用特征-ECS元数据横向移动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSS"><span class="toc-number">2.</span> <span class="toc-text">OSS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OSS%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.1.</span> <span class="toc-text">OSS介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAOSS%E6%A1%B6"><span class="toc-number">2.2.</span> <span class="toc-text">创建OSS桶</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E5%BC%80%E8%AF%BB%E5%8F%96-%E9%9C%80%E8%A6%81%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">2.2.1.</span> <span class="toc-text">公开读取-需要文件名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%AC%E5%BC%80%E4%B8%8A%E4%BC%A0-%E4%BB%BB%E6%84%8F%E4%B8%8A%E4%BC%A0"><span class="toc-number">2.2.2.</span> <span class="toc-text">公开上传-任意上传</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSS-%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86"><span class="toc-number">2.3.</span> <span class="toc-text">OSS-目录遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSS-%E4%BB%BB%E6%84%8F%E4%BF%AE%E6%94%B9%E7%AD%96%E7%95%A5"><span class="toc-number">2.4.</span> <span class="toc-text">OSS-任意修改策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSS-%E5%9F%9F%E5%90%8D%E6%8E%A5%E7%AE%A1"><span class="toc-number">2.5.</span> <span class="toc-text">OSS-域名接管</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AKSK%E6%B3%84%E9%9C%B2%E6%8E%A5%E7%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">AKSK泄露接管</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Ram%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90-AKSK"><span class="toc-number">3.0.1.</span> <span class="toc-text">Ram用户权限-AKSK</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%91%E8%B4%A6%E6%88%B7%E4%B8%8B%E9%9D%A2%E7%9A%84AKSK"><span class="toc-number">3.0.2.</span> <span class="toc-text">云账户下面的AKSK</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECS-%E5%85%83%E6%95%B0%E6%8D%AE"><span class="toc-number">4.</span> <span class="toc-text">ECS-元数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.</span> <span class="toc-text">元数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%88%A9%E7%94%A8"><span class="toc-number">4.2.</span> <span class="toc-text">基础利用</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -566,6 +616,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">CS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">APP</a>
               </li>
              
@@ -590,14 +644,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">CS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">App</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jackson</a>
               </li>
              
@@ -607,6 +653,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">fastjson</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">App</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,18 +728,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ActiveMQ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RocketMQ</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Kafka</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Vshell</a>
               </li>
              
@@ -703,6 +741,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">内网</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ActiveMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RocketMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Kafka</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,7 +784,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">nail</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">module</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -750,11 +808,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">module</a>
+                <a href="javascript:void(0)" class="js-tag color5">分号截断</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -766,10 +820,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">分号截断</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">logic</a>
               </li>
              
@@ -778,11 +828,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">nps</a>
+                <a href="javascript:void(0)" class="js-tag color2">nuclei</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nuclei</a>
+                <a href="javascript:void(0)" class="js-tag color4">nps</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -790,7 +840,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AVWS</a>
+                <a href="javascript:void(0)" class="js-tag color5">aksk</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -798,7 +848,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
+                <a href="javascript:void(0)" class="js-tag color5">AVWS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -814,7 +864,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+                <a href="javascript:void(0)" class="js-tag color1">SQL注入</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -826,15 +876,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sqlmap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">TOTP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">sqlmap</a>
               </li>
             
             <div class="clearfix"></div>
