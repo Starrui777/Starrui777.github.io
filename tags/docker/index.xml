@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on IIIIIII的博客</title>
+    <link>https://Starrui777.github.io/tags/docker/</link>
+    <description>Recent content in Docker on IIIIIII的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 IIIIIIIIIIII</copyright>
+    <lastBuildDate>Sat, 23 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker-逃逸-本身漏洞-CDK工具使用</title>
+      <link>https://Starrui777.github.io/posts/docker2/</link>
+      <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/docker2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Docker-逃逸-安全</title>
+      <link>https://Starrui777.github.io/posts/docker/</link>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/docker/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>红日靶场4</title>
+      <link>https://Starrui777.github.io/posts/red4/</link>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/red4/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>红日靶场7-WP-MS17-010-WMI-laravel-docker-exp</title>
+      <link>https://Starrui777.github.io/posts/red7/</link>
+      <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/red7/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

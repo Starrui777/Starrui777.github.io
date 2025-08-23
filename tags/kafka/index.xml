@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kafka on IIIIIII的博客</title>
+    <link>https://Starrui777.github.io/tags/kafka/</link>
+    <description>Recent content in Kafka on IIIIIII的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 IIIIIIIIIIII</copyright>
+    <lastBuildDate>Fri, 18 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ActiveMQ-RocketMQ-Kafka-CVE</title>
+      <link>https://Starrui777.github.io/posts/active/</link>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/active/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

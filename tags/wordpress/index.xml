@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress on IIIIIII的博客</title>
+    <link>https://Starrui777.github.io/tags/wordpress/</link>
+    <description>Recent content in Wordpress on IIIIIII的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 IIIIIIIIIIII</copyright>
+    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>vulny靶机---难度easy知识点-file-manager</title>
+      <link>https://Starrui777.github.io/posts/vulny/</link>
+      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/vulny/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>ximai靶机---难度LOW-easy-知识点-wp-sqlmap-wpplugin</title>
+      <link>https://Starrui777.github.io/posts/ximai/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/ximai/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

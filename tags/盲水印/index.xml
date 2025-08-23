@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>盲水印 on IIIIIII的博客</title>
+    <link>https://Starrui777.github.io/tags/%E7%9B%B2%E6%B0%B4%E5%8D%B0/</link>
+    <description>Recent content in 盲水印 on IIIIIII的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 IIIIIIIIIIII</copyright>
+    <lastBuildDate>Mon, 23 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/%E7%9B%B2%E6%B0%B4%E5%8D%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hoshi靶机---难度medium知识点-文件包含&#43;表达式注入&#43;盲水印</title>
+      <link>https://Starrui777.github.io/posts/hoshi/</link>
+      <pubDate>Mon, 23 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/hoshi/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

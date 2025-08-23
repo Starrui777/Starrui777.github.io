@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>App on IIIIIII的博客</title>
+    <link>https://Starrui777.github.io/tags/app/</link>
+    <description>Recent content in App on IIIIIII的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 IIIIIIIIIIII</copyright>
+    <lastBuildDate>Fri, 25 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/app/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>APP-逆向修改</title>
+      <link>https://Starrui777.github.io/posts/apptest3/</link>
+      <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/apptest3/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>APP-安卓9模拟器抓包设置-绕过双向验证</title>
+      <link>https://Starrui777.github.io/posts/apptest2/</link>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/apptest2/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>APP-安卓9模拟器抓包设置-安装系统BP证书</title>
+      <link>https://Starrui777.github.io/posts/apptest/</link>
+      <pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/apptest/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

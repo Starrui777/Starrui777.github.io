@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>爆破 on IIIIIII的博客</title>
+    <link>https://Starrui777.github.io/tags/%E7%88%86%E7%A0%B4/</link>
+    <description>Recent content in 爆破 on IIIIIII的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 IIIIIIIIIIII</copyright>
+    <lastBuildDate>Sat, 12 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/%E7%88%86%E7%A0%B4/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>sudo靶机---难度low知识点-爆破-sudoers</title>
+      <link>https://Starrui777.github.io/posts/sudo/</link>
+      <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/sudo/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>language靶机---难度easy知识点-docker逃逸-爆破</title>
+      <link>https://Starrui777.github.io/posts/language/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/language/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
