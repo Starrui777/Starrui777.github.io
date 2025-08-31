@@ -7,24 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 IIIIIIIIIIII</copyright>
-    <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>K8s-1</title>
-      <link>https://Starrui777.github.io/posts/k8s1/</link>
-      <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
+      <title>K8s-2-未授权访问-proxy</title>
+      <link>https://Starrui777.github.io/posts/k8s2/</link>
+      <pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://Starrui777.github.io/posts/k8s1/</guid>
+      <guid>https://Starrui777.github.io/posts/k8s2/</guid>
       <description></description>
       
     </item>
     
     <item>
-      <title>K8s-1</title>
-      <link>https://Starrui777.github.io/posts/k8s2/</link>
+      <title>K8s-1-未授权访问</title>
+      <link>https://Starrui777.github.io/posts/k8s1/</link>
       <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://Starrui777.github.io/posts/k8s2/</guid>
+      <guid>https://Starrui777.github.io/posts/k8s1/</guid>
       <description></description>
       
     </item>
