@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 IIIIIIIIIIII</copyright>
-    <lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>K8s-3-靶场渗透</title>
+      <link>https://Starrui777.github.io/posts/k8s3/</link>
+      <pubDate>Sun, 31 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/k8s3/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>K8s-2-未授权访问-proxy</title>
