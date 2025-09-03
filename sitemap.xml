@@ -3,6 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://Starrui777.github.io/</loc>
+    <lastmod>2025-09-03T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://Starrui777.github.io/posts/poppips-mazasec/</loc>
+    <lastmod>2025-09-03T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://Starrui777.github.io/posts/</loc>
+    <lastmod>2025-09-03T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://Starrui777.github.io/posts/editor-htb/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -10,18 +28,6 @@
   </url>
   <url>
     <loc>https://Starrui777.github.io/posts/fluffy-htb-w/</loc>
-    <lastmod>2025-09-02T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://Starrui777.github.io/</loc>
-    <lastmod>2025-09-02T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://Starrui777.github.io/posts/</loc>
     <lastmod>2025-09-02T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
