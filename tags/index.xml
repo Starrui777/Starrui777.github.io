@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 IIIIIIIIIIII</copyright>
-    <lastBuildDate>Fri, 12 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Wordpress</title>
+      <link>https://Starrui777.github.io/tags/wordpress/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/tags/wordpress/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>通配符</title>
+      <link>https://Starrui777.github.io/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Ldap</title>
@@ -615,16 +635,6 @@
       <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
       
       <guid>https://Starrui777.github.io/tags/sulogin/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Wordpress</title>
-      <link>https://Starrui777.github.io/tags/wordpress/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://Starrui777.github.io/tags/wordpress/</guid>
       <description></description>
       
     </item>
