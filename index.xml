@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 IIIIIIIIIIII</copyright>
-    <lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MVC-PHP代码审计2</title>
+      <link>https://Starrui777.github.io/posts/code4phpmvc/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/code4phpmvc/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Dockerfile-使用-docker语法</title>
