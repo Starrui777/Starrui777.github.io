@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 IIIIIIIIIIII</copyright>
-    <lastBuildDate>Sun, 28 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Logi靶机-maze-JWT-Ti15中国队加油！</title>
+      <link>https://Starrui777.github.io/posts/ame/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/ame/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>MVC-PHP代码审计4-框架-SQL注入</title>
+      <link>https://Starrui777.github.io/posts/code6phpmvc/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/code6phpmvc/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>readfile靶机-maze-snmp-rbash-能力机制</title>
@@ -25,6 +45,16 @@
       <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>https://Starrui777.github.io/posts/code4phpmvc/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>MVC-PHP代码审计3-反序列化-原生-框架</title>
+      <link>https://Starrui777.github.io/posts/code5phpmvc/</link>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/code5phpmvc/</guid>
       <description></description>
       
     </item>
