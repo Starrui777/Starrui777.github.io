@@ -7,14 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 IIIIIIIIIIII</copyright>
-    <lastBuildDate>Wed, 01 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Jwt</title>
-      <link>https://Starrui777.github.io/tags/jwt/</link>
-      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      <title>Strings</title>
+      <link>https://Starrui777.github.io/tags/strings/</link>
+      <pubDate>Tue, 07 Oct 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://Starrui777.github.io/tags/jwt/</guid>
+      <guid>https://Starrui777.github.io/tags/strings/</guid>
       <description></description>
       
     </item>
@@ -22,9 +22,19 @@
     <item>
       <title>Php</title>
       <link>https://Starrui777.github.io/tags/php/</link>
-      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://Starrui777.github.io/tags/php/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Jwt</title>
+      <link>https://Starrui777.github.io/tags/jwt/</link>
+      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/tags/jwt/</guid>
       <description></description>
       
     </item>
