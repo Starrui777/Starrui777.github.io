@@ -4,18 +4,36 @@
 
   <url>
     <loc>https://Starrui777.github.io/</loc>
-    <lastmod>2025-10-07T00:00:00+00:00</lastmod>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://Starrui777.github.io/posts/guoqing/</loc>
-    <lastmod>2025-10-07T00:00:00+00:00</lastmod>
+    <loc>https://Starrui777.github.io/posts/code10phpmvc/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://Starrui777.github.io/posts/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://Starrui777.github.io/posts/code9phpmvc/</loc>
+    <lastmod>2025-10-10T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://Starrui777.github.io/posts/code8phpmvc/</loc>
+    <lastmod>2025-10-09T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://Starrui777.github.io/posts/guoqing/</loc>
     <lastmod>2025-10-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

