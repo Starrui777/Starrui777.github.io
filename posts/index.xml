@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 IIIIIIIIIIII</copyright>
-    <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PHP代码审计9-框架-YII</title>
+      <link>https://Starrui777.github.io/posts/code11phpmvc/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/code11phpmvc/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>PHP代码审计8-XXE-XSS</title>
