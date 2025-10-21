@@ -101,8 +101,8 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-07-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-07-20T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-10-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-21T00:00:00+00:00">
     <meta property="article:tag" content="Nps">
 
   
@@ -125,15 +125,15 @@
       "name": "IIIIIIIIIIII"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-07-20T00:00:00\u002b00:00",
-    "datePublished": "2025-07-20T00:00:00\u002b00:00",
+    "dateCreated": "2025-10-21T00:00:00\u002b00:00",
+    "datePublished": "2025-10-21T00:00:00\u002b00:00",
     
-    "dateModified": "2025-07-20T00:00:00\u002b00:00",
+    "dateModified": "2025-10-21T00:00:00\u002b00:00",
     
     "keywords": ["nps"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "82"
+    "wordCount": "467"
   }]
   </script>
 
@@ -562,7 +562,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-20T00:00:00&#43;00:00">20 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>82 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-10-21T00:00:00&#43;00:00">21 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>467 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
     
 
     
@@ -743,8 +743,17 @@
     <li><a href="#nps-内网攻防信息打点工具">NPS-内网攻防信息打点工具</a>
       <ul>
         <li><a href="#实现目标-通过本机访问别人的localhost3306数据库">实现目标-通过本机访问别人的localhost3306数据库</a></li>
-        <li><a href="#实现目标通过socks建立节点打通内网">实现目标通过socks建立节点打通内网</a></li>
-        <li><a href="#实现通过vshell平台设置端口映射">实现通过VSHELL平台设置端口映射</a></li>
+        <li><a href="#实现目标通过socks建立节点打通内网">实现目标通过socks建立节点打通内网</a>
+          <ul>
+            <li><a href="#内网不出网络的通过nps转发端口实现">内网不出网络的通过NPS转发端口实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#实现通过vshell平台设置端口映射">实现通过VSHELL平台设置端口映射</a>
+          <ul>
+            <li><a href="#通过vshell转发内网端口通过跳板">通过vshell转发内网端口通过跳板</a></li>
+            <li><a href="#基于端口转发技术挂载在公网">基于端口转发技术挂载在公网</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -763,8 +772,17 @@
     <li><a href="#nps-内网攻防信息打点工具">NPS-内网攻防信息打点工具</a>
       <ul>
         <li><a href="#实现目标-通过本机访问别人的localhost3306数据库">实现目标-通过本机访问别人的localhost3306数据库</a></li>
-        <li><a href="#实现目标通过socks建立节点打通内网">实现目标通过socks建立节点打通内网</a></li>
-        <li><a href="#实现通过vshell平台设置端口映射">实现通过VSHELL平台设置端口映射</a></li>
+        <li><a href="#实现目标通过socks建立节点打通内网">实现目标通过socks建立节点打通内网</a>
+          <ul>
+            <li><a href="#内网不出网络的通过nps转发端口实现">内网不出网络的通过NPS转发端口实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#实现通过vshell平台设置端口映射">实现通过VSHELL平台设置端口映射</a>
+          <ul>
+            <li><a href="#通过vshell转发内网端口通过跳板">通过vshell转发内网端口通过跳板</a></li>
+            <li><a href="#基于端口转发技术挂载在公网">基于端口转发技术挂载在公网</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -817,7 +835,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/nps.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>本地启动nps服务端  默认打开8080端口web服务 账号admin密码123   可以在conf里面修改密码</p>
@@ -832,7 +849,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/1.1.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>登录后创建一个客户端复制连接口令</p>
@@ -847,7 +863,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/1.2.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>把下面命令复制给客户端的一台跳板主机</p>
@@ -862,7 +877,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/1.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>
@@ -876,7 +890,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/2.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>运行刷新连接变成了就绪我们点击隧道创建一个本地的6666就是对应对方IP的3306 对应数据库服务</p>
@@ -891,7 +904,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/tcp.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>访问查看发现可以直接连接</p>
@@ -906,7 +918,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/mysql1.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>后续使用Socket建立一个节点也可以</p>
@@ -946,7 +957,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/socks.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>NPS设置界面为9999和本地吻合</p>
@@ -961,7 +971,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/socks2.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <pre tabindex="0"><code>使用proxychains4 curl xx 代理来运行 不要直接运行
@@ -978,12 +987,105 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/socks3.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>nps改默认密码</p>
 <p>修改 nps.conf 文件把默认密码123修改即可</p>
 
+<h4 class="relative group">内网不出网络的通过NPS转发端口实现 
+    <div id="内网不出网络的通过nps转发端口实现" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%86%85%e7%bd%91%e4%b8%8d%e5%87%ba%e7%bd%91%e7%bb%9c%e7%9a%84%e9%80%9a%e8%bf%87nps%e8%bd%ac%e5%8f%91%e7%ab%af%e5%8f%a3%e5%ae%9e%e7%8e%b0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>首先网段是内网192.168.22.131 被拿shell跳板机  192.168.22.130 mysql服务机器</p>
+<p>本地不能访问192.168.22.0网段</p>
+<pre tabindex="0"><code>ping 192.168.22.130
+
+正在 Ping 192.168.22.130 具有 32 字节的数据:
+请求超时。
+</code></pre><p>首先连接nps和上面一样</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/11.png">
+
+  
+</figure>
+</p>
+<p>这里转发端口设置是我们要的内网端口它会自动吧当前客户端当成跳板</p>
+<p>然后我们本地通过VPS来登录测试</p>
+<p>可以发现不能连接的也可以转发了</p>
+<pre tabindex="0"><code>mysql -h 116.62.32.64 -P 33306 -u root -proot
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 32
+Server version: 5.5.5-10.6.7-MariaDB-3 Debian buildd-unstable
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+mysql&gt;
+mysql&gt;
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.12 sec)
+
+mysql&gt;
+
+
+
+vps上面测试 vps要用127.0.0.1 TCP的
+
+mysql -P 33306 -u root -proot
+ERROR 1045 (28000): Access denied for user &#39;root&#39;@&#39;localhost&#39; (using password: YES)
+[root@iZbp156z1grx9b9s1305p0Z ~]# mysql -h localhost -P 33306 -u root -proot
+ERROR 1045 (28000): Access denied for user &#39;root&#39;@&#39;localhost&#39; (using password: YES)
+[root@iZbp156z1grx9b9s1305p0Z ~]# mysql -h localhost -P 33306 -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user &#39;root&#39;@&#39;localhost&#39; (using password: YES)
+[root@iZbp156z1grx9b9s1305p0Z ~]# mysql -h 127.0.0.1 -P 33306 -u root -proot
+showWelcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 33
+Server version: 10.6.7-MariaDB-3 Debian buildd-unstable
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+MariaDB [(none)]&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.09 sec)
+
+MariaDB [(none)]&gt; 
+</code></pre>
 <h3 class="relative group">实现通过VSHELL平台设置端口映射 
     <div id="实现通过vshell平台设置端口映射" class="anchor"></div>
     
@@ -993,7 +1095,66 @@
     </span>        
     
 </h3>
-<p>基于端口转发技术挂载在公网</p>
+
+<h4 class="relative group">通过vshell转发内网端口通过跳板 
+    <div id="通过vshell转发内网端口通过跳板" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%9a%e8%bf%87vshell%e8%bd%ac%e5%8f%91%e5%86%85%e7%bd%91%e7%ab%af%e5%8f%a3%e9%80%9a%e8%bf%87%e8%b7%b3%e6%9d%bf" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>上线了后转发即可</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/v4.png">
+
+  
+</figure>
+</p>
+<pre tabindex="0"><code>C:\Users\22118&gt;mysql -h 127.0.0.1 -P 33066 -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 34
+Server version: 5.5.5-10.6.7-MariaDB-3 Debian buildd-unstable
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
+
+mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<h4 class="relative group">基于端口转发技术挂载在公网 
+    <div id="基于端口转发技术挂载在公网" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%9f%ba%e4%ba%8e%e7%ab%af%e5%8f%a3%e8%bd%ac%e5%8f%91%e6%8a%80%e6%9c%af%e6%8c%82%e8%bd%bd%e5%9c%a8%e5%85%ac%e7%bd%91" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
 <p>实现隐藏真实IP只有转发服务器IP
 
 
@@ -1005,7 +1166,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/v1.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 <p>把8084转发到内网的8084干到了公网上</p>
@@ -1020,7 +1180,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/v2.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 
 
@@ -1033,7 +1192,6 @@
     <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/nps/v3.png">
 
   
-    <figcaption>test</figcaption>
 </figure>
 </p>
 
@@ -1057,9 +1215,9 @@
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/active/"
+  href="/posts/code13phpmvc/"
     class="absolute inset-0"
-    aria-label="ActiveMQ-RocketMQ-Kafka-CVE"></a>
+    aria-label="PHP11-Laravel-代码审计"></a>
       
     
         
@@ -1072,7 +1230,7 @@
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        ActiveMQ-RocketMQ-Kafka-CVE
+        PHP11-Laravel-代码审计
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1123,7 +1281,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-18T00:00:00&#43;00:00">18 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>90 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-10-19T00:00:00&#43;00:00">19 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>305 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -1147,31 +1305,11 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/activemq/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    ActiveMQ
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/rocketmq/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    RocketMQ
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/kafka/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Kafka
+    Php
   </span>
 </span>
 </a
@@ -1200,9 +1338,9 @@
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/tp-lara-springboot/"
+  href="/posts/code12phpmvc/"
     class="absolute inset-0"
-    aria-label="THINKPHP-laravel-SpringBoot-Gateway-Struct2 CVE"></a>
+    aria-label="PHP10-thinkphp-RCE"></a>
       
     
         
@@ -1215,7 +1353,7 @@
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        THINKPHP-laravel-SpringBoot-Gateway-Struct2 CVE
+        PHP10-thinkphp-RCE
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1266,7 +1404,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-17T00:00:00&#43;00:00">17 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>97 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-10-18T00:00:00&#43;00:00">18 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>112 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -1290,31 +1428,11 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/thinkphp/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    THINKPHP
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/struct2/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Struct2
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/springboot/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    SpringBoot
+    Php
   </span>
 </span>
 </a
@@ -1343,9 +1461,9 @@
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/fastjson/"
+  href="/posts/code11phpmvc/"
     class="absolute inset-0"
-    aria-label="Fastjson"></a>
+    aria-label="PHP代码审计9-框架-YII"></a>
       
     
         
@@ -1358,7 +1476,7 @@
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        Fastjson
+        PHP代码审计9-框架-YII
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1409,7 +1527,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-16T00:00:00&#43;00:00">16 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>96 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-10-16T00:00:00&#43;00:00">16 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>263 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -1433,11 +1551,11 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/fastjson/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Fastjson
+    Php
   </span>
 </span>
 </a
@@ -1466,9 +1584,9 @@
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/cve-java-jackson-xstream-fastjson/"
+  href="/posts/code10phpmvc/"
     class="absolute inset-0"
-    aria-label="CVE-java-jackson-xstream-fastjson"></a>
+    aria-label="PHP代码审计8-XXE-XSS"></a>
       
     
         
@@ -1481,7 +1599,7 @@
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        CVE-java-jackson-xstream-fastjson
+        PHP代码审计8-XXE-XSS
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1532,7 +1650,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-14T00:00:00&#43;00:00">14 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>109 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-10-15T00:00:00&#43;00:00">15 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>272 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -1556,31 +1674,11 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/jackson/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Jackson
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/xstream/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Xstream
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/fastjson/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Fastjson
+    Php
   </span>
 </span>
 </a
@@ -1609,9 +1707,9 @@
   class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
   <a
     
-  href="/posts/cve-java-solr/"
+  href="/posts/code9phpmvc/"
     class="absolute inset-0"
-    aria-label="CVE-java-solr-log4j-shiro"></a>
+    aria-label="PHP代码审计7-变量覆盖"></a>
       
     
         
@@ -1624,7 +1722,7 @@
     
       <div
         class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        CVE-java-solr-log4j-shiro
+        PHP代码审计7-变量覆盖
       </div>
     
     <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
@@ -1675,7 +1773,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-13T00:00:00&#43;00:00">13 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>77 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-10-10T00:00:00&#43;00:00">10 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>190 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
     
 
     
@@ -1699,51 +1797,11 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/vulhub/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Vulhub
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/apache/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Apache
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/shiro/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Shiro
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/solr/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Solr
-  </span>
-</span>
-</a
-              >
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/log4j/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Log4j
+    Php
   </span>
 </span>
 </a
@@ -1803,7 +1861,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/active/">
+            <a class="flex group mr-3" href="/posts/code13phpmvc/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1814,11 +1872,11 @@
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >ActiveMQ-RocketMQ-Kafka-CVE</span
+                  >PHP11-Laravel-代码审计</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-07-18T00:00:00&#43;00:00">18 July 2025</time>
+                    <time datetime="2025-10-19T00:00:00&#43;00:00">19 October 2025</time>
                   
                 </span>
               </span>
@@ -1826,27 +1884,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/apptest/">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >APP-安卓9模拟器抓包设置-安装系统BP证书</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-07-21T00:00:00&#43;00:00">21 July 2025</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
