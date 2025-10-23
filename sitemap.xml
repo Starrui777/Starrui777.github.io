@@ -4,18 +4,30 @@
 
   <url>
     <loc>https://Starrui777.github.io/</loc>
+    <lastmod>2025-10-23T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://Starrui777.github.io/posts/code2javaee/</loc>
+    <lastmod>2025-10-23T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://Starrui777.github.io/posts/</loc>
+    <lastmod>2025-10-23T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://Starrui777.github.io/posts/code1javaee/</loc>
     <lastmod>2025-10-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://Starrui777.github.io/posts/nps/</loc>
-    <lastmod>2025-10-21T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://Starrui777.github.io/posts/</loc>
     <lastmod>2025-10-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
