@@ -7,14 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 IIIIIIIIIIII</copyright>
-    <lastBuildDate>Tue, 28 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Starrui777.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>JavaEECC1链条持续更新</title>
+      <title>JavaEECC1链条持续更新&#43;fastjson1.2.24</title>
       <link>https://Starrui777.github.io/posts/cc/</link>
-      <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
       
       <guid>https://Starrui777.github.io/posts/cc/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>JavaEE代码审计-鉴权逻辑</title>
+      <link>https://Starrui777.github.io/posts/code3javaee/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://Starrui777.github.io/posts/code3javaee/</guid>
       <description></description>
       
     </item>
