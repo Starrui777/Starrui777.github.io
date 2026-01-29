@@ -1,0 +1,151 @@
+---
+
+title: 公交车事件排查靶机---
+date: 2026-01-19
+tags:
+
+  - blueteam
+
+---
+
+
+
+https://www.brimdata.io/download/ zui工具抓包流量分析
+
+https://mp.weixin.qq.com/s/BoS3eNyC7Vn7phkTRpg2og?spm_id_from=333.1369.0.0 webshell特征大全分析
+
+## Flag1
+
+https://www.qsnctf.com/#/main/driving-range?page=1&category=&difficulty=&keyword=%E5%85%AC%E4%BA%A4%E8%BD%A6%E7%B3%BB%E7%BB%9F&user_answer=&user_favorite=&tag_ids=
+
+Flag1: 中间件中日志找到第一个漏洞，通过分析日志、解密出用户密码数据提交前面两个用户名
+
+```language-javascript
+netstat -lntp 查看端口信息发现开启了哪些服务
+
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      19/sshd: /usr/sbin/ 
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      16/apache2          
+tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      19/sshd: /usr/sbin/ 
+
+```
+
+发现开启了80 3306那么就是通过webshell打进来了，或者ssh爆破
+
+```language-javascript
+cat -n /var/log/apache2/access.log
+
+```
+
+```
+awk '{print $1,$6,$7}' access.log  筛选出来1 6 7行的数据
+
+awk 会把一行按**空白字符（空格或 Tab）**拆成很多“字段”：
+
+没有筛选
+  5952  171.213.255.181 - - [19/Jan/2026:01:08:26 +0000] "GET /favicon.ico HTTP/1.1" 404 501 "http://challenge.qsnctf.com:34081/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0"
+
+筛选过后
+171.213.255.181 "GET /favicon.ico
+```
+
+```
+cat /result1.pcap >/dev/tcp/116.62.32.64/6666 下载流量包文件分析 实战没有这种pcpa包只能自己分析 通过下载软件分析zen也行 easytshark也行
+```
+
+![1](../bt1/1.png)
+
+然后放到web界面上吗成功sleep了发现存在sql注入
+
+然后你通过这个access.log 给ai分析 查看里面泄露的用户名字
+
+![1](../bt1/2.png)
+
+解出flag
+
+flag{sunyue-chenhao}
+
+## Flag2
+
+黑客通过获取的用户名密码，利用密码复用技术，爆破了FTP服务，分析流量以后找到开放的FTP端口，并找到黑客登录成功后获取的私密文件，提交其文件中内容
+
+因为靶场映射的关系端口不一查看2121端口试试
+
+```
+tcp.port==2121&&tcp contains "successfully"
+```
+
+![1](../bt1/4.png)
+
+![1](../bt1/3.png)
+
+```
+root
+root@2c21674009a4:~# cd /home/wangqiang/ftp/
+root@2c21674009a4:/home/wangqiang/ftp# ls
+sensitive_credentials.txt
+root@2c21674009a4:/home/wangqiang/ftp# ls -al
+total 12
+drwxr-xr-x 2 root root 4096 Jul 24 03:52 .
+drwxr-xr-x 3 root root 4096 Jul 24 03:52 ..
+-rw-r--r-- 1 root root   62 Jul 23 01:21 sensitive_credentials.txt
+root@2c21674009a4:/home/wangqiang/ftp# cat sensitive_credentials.txt 
+INTERNAL_FTP_ADMIN_PASSWORD=FtpP@ssw0rd_For_Admin_Backup_2025
+root@2c21674009a4:/home/wangqiang/ftp# ls
+sensitive_credentials.txt
+root@2c21674009a4:/home/wangqiang/ftp# 
+
+```
+
+flag{INTERNAL_FTP_ADMIN_PASSWORD=FtpP@ssw0rd_For_Admin_Backup_2025}
+
+## Flag3
+
+可恶的黑客找到了任意文件上传点，你需要分析日志和流量以及web开放的程序找到黑客上传的文件，提交木马使用的密码，提交格式：flag{password}
+
+![1](../bt1/5.png)
+
+![1](../bt1/6.png)
+
+判断为哥斯拉木马webshell
+
+Flag{woaiwojia}
+
+## Flag4
+
+分析流量，黑客植入了一个web挖矿木马，这个木马现实情况下会在用户访问后消耗用户的资源进行挖矿(本环境已做无害化处理)，提交黑客上传这个文件时的初始名称，提交格式：flag{xxx.xxx}
+
+![1](../bt1/6.5.png)
+
+![1](../bt1/7.png)
+
+得到信息
+
+```
+cmdLine Xsh -c "cd "/var/www/html/public";mv uploads/map.php /var/www/html/public/index.php" 2>&1methodName execCommand
+移动map.php 到index.php
+```
+
+发现他使用了哥斯拉的上传功能
+
+![1](../bt1/8.png)
+
+fileName ... /var/www/html/public/uploads/map.php 表示上传的文件
+
+fileValue ... <?php ... ?>表示写入的具体内容
+
+所以上传文件为
+
+flag{map.php}
+
+## Flag5
+
+分析流量并上机排查，黑客植入的网页挖矿木马所使用的矿池地址是什么，提交矿池地址(排查完毕后可以尝试删除它)提交格式：flag{xxxxxxx.xxxx.xxx:xxxx}
+
+因为他替换了index.php 所以我们查看index.php 然后给ai分析
+
+![1](../bt1/9.png)
+
+flag{gulf.moneroocean.stream:10128}

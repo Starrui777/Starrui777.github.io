@@ -1,0 +1,151 @@
+title: 勒索事件排查-青少年
+date: 2026-01-20
+tags:
+
+  - blueteam
+
+## 环境
+
+
+
+网址如下 Administrator 密码为 Sierting789@
+
+https://www.qsnctf.com/#/main/driving-range?page=8&category=27&difficulty=&keyword=&user_answer=&user_favorite=&tag_ids= 
+
+## flag1
+
+上机排查提交病毒家族的名称，可访问应急响应.com确定家族名称，以flag{xxx}提交(大小写敏感)
+
+![1](../bt2/1.png)
+
+![1](../bt2/2.png)
+
+flag{Live}
+
+## Flag2
+
+提交勒索病毒预留的ID，以flag{xxxxxx}进行提交
+
+对照上图txt文件id
+
+flag{170605242653}
+
+## Flag3
+
+解密并提交桌面中flag.txt.LIVE的flag，以flag{xxxx}提交
+
+https://www.solarsecurity.cn/tools.html。工具下载
+
+解压密码solarsecurity
+
+![1](../bt2/3.png)
+
+flag{cf0971c1d17a03823c3db541ea3b4ec2}
+
+## Flag4
+
+提交Windows Defender删除攻击者C2的时间，以flag{2025.1.1_1:10}格式提交
+
+![1](../bt2/4.png)
+
+flag{2025.8.25_10:43}
+
+## Flag5
+
+提交攻击者关闭Windows Defender的时间，以flag{2025.1.1_1:10}格式提交
+
+```
+  事件id：
+	4624：表示帐户已成功登录。这个事件ID可以用来筛选系统中所有成功登录的记录
+	4625：表示帐户登录失败。这个事件ID可以帮助我们判断是否存在RDP爆破攻击等情况
+	4634：表示帐户被注销。这个事件ID记录了用户注销的情况
+	4647：表示用户发起注销。这个事件ID记录了用户主动注销的行为
+	4648：表示试图使用明确的凭证登录。这个事件ID可以查看远程登录的相关信息，比如IP地址等
+	4672：表示超级管理员登录
+	4720：表示新用户的创建
+	5001：Real‑time protection is disabled 防护被关闭
+```
+
+使用fulleventlogview工具查看事件
+
+![1](../bt2/5.png)
+
+flag{2025.8.25_10:45}
+
+
+
+
+
+## Flag6
+
+提交攻击者上传C2的绝对路径，格式以flag{C:\xxx\xxx}提交
+
+![1](../bt2/6.png)
+
+![1](../bt2/7.png)
+
+flag{C:\Users\Administrator\Downloads\Wq12D.exe}
+
+## Flag7
+
+提交攻击者C2的IP外联地址，格式以flag{xx.x.x.x}提交
+
+微步在线
+
+![1](../bt2/8.png)
+
+flag{192.168.186.2}
+
+## flag8
+
+提交攻击者加密器绝对路径，格式以flag{C:\xxx\xxx}提交
+
+加密器是必需组件对于勒索病毒来说 	
+
+- 遍历目标文件 → 用指定加密算法和密钥把内容变成密文 → 让原文件打不开。
+  它可以是：
+- 勒索软件 exe 里的一个内部模块/函数；
+- 单独的一个 exe/DLL，由主程序调用；
+- 被脚本/宏释放和执行的一段加密逻辑。
+
+是一个exe或者dll模块
+
+勒索软件 = 带有“加密器”功能的恶意程序；
+加密器 = 勒索软件里具体负责“把你的文件锁死”的那部分实现。
+
+？为什么不直接包含一起呢
+
+1:模块化，方便复用和升级
+
+2:降低曝光面、对抗安全检测
+
+![1](../bt2/9.png)
+
+![1](../bt2/10.png)
+
+flag{C:\Users\Administrator\Documents\systime.exe}
+
+## flag9
+
+溯源黑客攻击路径，利用的哪个漏洞并推测验证，提交起运行文件绝对路径，如：flag{C:\xxx\xxx\xxx}
+
+
+
+查看是否是ftp未授权 通过4624id查看日志呢 或者查看其他端口信息
+
+发现存在若依
+
+![1](../bt2/11.png)
+
+通过搜索.jar发现若依目录
+
+![1](../bt2/12.png)
+
+```language-javascript
+powershell Set-MpPreference -DisableRealtimeMonitoring $true 关闭实时监控
+```
+
+![1](../bt2/13.png)
+
+flag{E:\ruoyi\ruoyi-admin.jar}
+
