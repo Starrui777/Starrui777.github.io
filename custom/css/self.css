@@ -1,0 +1,14 @@
+.post-count {
+    scrollbar-width: none;
+    color: var(--text-p4);
+  }
+
+.totalcount {
+    color: var(--text-p4);
+  }
+
+.page-footer {
+    text-align: center; 
+    margin: 0 auto; 
+    width: 100%; 
+}

